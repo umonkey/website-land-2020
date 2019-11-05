@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block page_title %}Страница не найдена — гид по Себежу{% endblock %}
+
+{% block page_h1 %}{{ page_name }}{% endblock %}
+
+{% block more_head %}
+ <link rel="edit" title="Edit this page" href="/wiki/edit?name={{ page_name }}"/>
+ <link rel="alternate" type="application/x-wiki" title="Edit this page" href="/edit?name={{ page_name }}"/>
+{% endblock %}
+
+{% block page_contents %}
+ <p>Статьи «<strong>{{ page_name }}</strong>» в путеводителе нет, но вы можете <a href="/wiki/edit?name={{ page_name }}">создать её</a>.</p>
+
+ {% if search_results %}
+  <hr/>
+  <p>Вот другие статьи, в которых удалось <a href="/search?query={{ page_name }}">найти</a> текст «{{ page_name }}»:</p>
+  {% include "parts/search_results.twig" %}
+ {% endif %}
+{% endblock %}

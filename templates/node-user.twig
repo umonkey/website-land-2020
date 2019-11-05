@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block page_title %}Пользователь — artwall.pro{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>{{ node.name }}</h1>
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    {% include "parts/breadcrumbs.twig" %}
+
+    <table class="table lines">
+        <tbody>
+            <tr>
+                <td>Имя:</td>
+                <td>{{ node.name }}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{ node.email }}</td>
+            </tr>
+            <tr>
+                <td>Телефон:</td>
+                <td>{{ node.phone }}</td>
+            </tr>
+            <tr>
+                <td>Паспорт:</td>
+                <td>{{ node.passport }}</td>
+            </tr>
+            <tr>
+                <td>Реквизиты:</td>
+                <td>{{ node.payout_account }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class='form-actions'>
+        <a class='btn btn-primary async post' data-next='/users' data-confirm='Удалить пользователя, точно?' href='/node/{{ node.id }}/delete'>Удалить</a> или <a href='/users'>вернуться к списку</a>
+    </div>
+{% endblock %}

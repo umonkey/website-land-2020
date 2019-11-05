@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block page_title %}{{ node.name }} — artwall.pro{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>{{ node.name }}</h1>
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    {% include "parts/breadcrumbs.twig" %}
+
+    <div class='markdown'>{{ node.text|markdown }}</div>
+{% endblock %}

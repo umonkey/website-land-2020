@@ -1,0 +1,46 @@
+{% extends "base.twig" %}
+
+{% block page_title %}Модерация — artwall.pro{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>Пользователи сайта</h1>
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    <table class="table lines hover users nodes compact">
+        <thead>
+            <tr>
+                <th/>
+                <th>Имя</th>
+                <th>Email</th>
+                <th>Телефон</th>
+                <th>Паспорт</th>
+                <th>Реквизиты</th>
+                <th><i title='Пользователь допущен' class="fas fa-eye"></i></th>
+                <th><i title='Удалить пользователя' class="fas fa-trash-alt"></i></th>
+                <th/>
+            </tr>
+        </thead>
+        <tbody>
+            {% for node in nodes %}
+                <tr class='{% if node.published %}published{% else %}unpublished{% endif %}{% if request.get.edited == node.id %} edited{% endif %}'>
+                    <td>{% if node.role == 'admin' %}<i class="fas fa-crown" title='Администратор'></i>{% endif %}</td>
+                    <td><a href="/node/{{ node.id }}">{{ node.name }}</a></td>
+                    <td>{{ node.email }}</td>
+                    <td>{{ node.phone }}</td>
+                    <td>{% if node.passport %}+{% else %}-{% endif %}</td>
+                    <td>{% if node.payout_account %}+{% else %}-{% endif %}</td>
+                    <td class='check'>{% if node.id != user.id %}<input class='published' type='checkbox' name='id' value='{{ node.id }}' autocomplete='off'{% if node.published %} checked{% endif %}/>{% endif %}</td>
+                    <td class='check'>{% if node.id != user.id %}<input class='deleted' type='checkbox' name='id' value='{{ node.id }}' autocomplete='off'{% if node.deleted %} checked{% endif %}/>{% endif %}</td>
+                    <td>{% if user.role == 'admin' and node.id != user.id %}<a class='btn btn-default async post' href='/node/{{ node.id }}/sudo' title='Переключиться в пользователя'><i class='fas fa-sign-out-alt'></i></a>{% endif %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class='msgbox'></div>
+
+    <p>Для добавления нового пользователя воспользуйся <a href="/register">страницей регистрации</a>.</p>
+{% endblock %}

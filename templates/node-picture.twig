@@ -1,0 +1,121 @@
+{% extends "base.twig" %}
+
+{% block page_title %}Картина — artwall.pro{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>{{ node.title }}</h1>
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    {% include "parts/breadcrumbs.twig" %}
+
+    <div class="twocol">
+        <div class="col">
+            <a class="picture" href="{{ file_link(node.file) }}" data-fancybox='gallery' data-src='{{ file_link(node.file, 'large') }}'><img src="{{ file_link(node.file, 'medium', '/images/no-thumbnail.png') }}"/></a>
+        </div>
+        <div class="col">
+            <table class="table grid wide">
+                <tfoot>
+                    <tr>
+                        <th/>
+                        <td><a class="btn btn-default" href="/node/{{ node.id }}/edit?back={{ request.uri|url_encode }}" style="margin-left: -10px; margin-top: 10px">Редактировать</a> <a class='btn btn-default' href='{{ file_link(node.file) }}'><i class="fas fa-download"></i></a></td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <th>Название:</th>
+                        <td class="wide">{{ node.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Описание:</th>
+                        <td>{{ node.description }}{% if not node.description %}нет{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Размер:</th>
+                        <td>{{ node.file.width }}×{{ node.file.height }} px</td>
+                    </tr>
+                    <tr>
+                        <th>Комиссия:</th>
+                        <td>{% if node.comission %}{{ node.comission }}{% else %}не указана{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Состояние:</th>
+                        <td>{% include "parts/status.twig" with {"status": node.status} %}</td>
+                    </tr>
+                    {% if node.modmsg %}
+                        <tr>
+                            <th>Сообщение модератора:</th>
+                            <td>{{ node.modmsg }}</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    {% include "parts/comments.twig" %}
+
+    <hr/>
+
+    <form method="post" class="async" action="/node/{{ node.id }}/comment">
+        <input type="hidden" name="next" value="{{ request.get.back }}" />
+
+        <div class="form-group">
+            <label>Текст комментария:</label>
+            <textarea class="form-control" name="comment" autocomplete="off"></textarea>
+            <p class="help-block">Комментарий будет виден автору и администратору.</p>
+        </div>
+
+        {% if user.role == "admin" %}
+            {% if node.status == 0 %}{# черновик #}
+                <div class="form-group">
+                    <label>Состояние работы:</label>
+                    <select class="form-control" name="status" autocomplete="off">
+                        <option value="">оставить как есть</option>
+                        <option value="2">отклонить с концами</option>
+                    </select>
+                </div>
+            {% elseif node.status == 1 %}{# на модерации #}
+                <div class="form-group">
+                    <label>Состояние работы:</label>
+                    <select class="form-control" name="status" autocomplete="off">
+                        <option value="">оставить как есть</option>
+                        <option value="0">вернуть автору на доработку</option>
+                        <option value="2">отклонить с концами</option>
+                        <option value="3">опубликовать</option>
+                    </select>
+                </div>
+            {% elseif node.status == 3 %}{# опубликовано #}
+                <div class="form-group">
+                    <label>Состояние работы:</label>
+                    <select class="form-control" name="status" autocomplete="off">
+                        <option value="">оставить как есть</option>
+                        <option value="0">убрать с сайта</option>
+                    </select>
+                </div>
+            {% endif %}
+        {% else %}
+            {% if node.status == 0 %}
+                <div class="form-group">
+                    <label>Состояние работы:</label>
+                    <select class="form-control" name="status" autocomplete="off">
+                        <option value="">оставить как есть</option>
+                        {% if node.status == 0 %}
+                            <option value="1">отправить модератору</option>
+                        {% endif %}
+                        {% if node.status == 1 %}
+                            <option value="0">убрать в черновики</option>
+                        {% endif %}
+                    </select>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <div class="form-actions">
+            <button class="btn btn-primary">Отправить</button>{% if request.get.back %} или <a href="{{ request.get.back }}">вернуться назад</a>{% endif %}
+        </div>
+    </form>
+{% endblock %}

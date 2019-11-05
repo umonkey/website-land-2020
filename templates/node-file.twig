@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+
+{% block page_title %}Файл — artwall.pro{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>{{ node.name }}</h1>
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    {% include "parts/breadcrumbs.twig" %}
+
+    <table class="table grid">
+        <tbody>
+            {% for part, info in node.files %}
+                <tr>
+                    <td>{{ part }}</td>
+                    <td>{{ info.type }}</td>
+                    {% if info.width %}
+                        <td class='number'>{{ info.width }}×{{ info.height }}</td>
+                    {% else %}
+                        <td/>
+                    {% endif %}
+                    <td>{{ info.storage }}</td>
+                    <td class='number'>{{ info.length }}</td>
+                    <td><a href='{{ info.url }}'>скачать</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class='form-actions'><a class='btn btn-primary' href='/admin/nodes/{{ node.id }}/edit'>Редактировать</a> <a class='btn btn-default' href='/admin/nodes'>Оставить как есть</a></div>
+{% endblock %}

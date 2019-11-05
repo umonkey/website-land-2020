@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block page_title %}artwall.pro{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>Управление картинами</h1>
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    {% if user.role == "admin" %}
+        <p>Здесь можно управлять загруженными картинами и новыми пользователями.</p>
+        <p>Выбери нужный пункт в меню слева.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<table class="table lines nodes">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Автор</th>
+            <th class='number'>Комиссия</th>
+            <th class='number'>Добавлена</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for n in nodes %}
+            <tr class='{% if n.published %}published{% else %}unpublished{% endif %}{% if request.get.edited == n.id %} edited{% endif %}'>
+                <td><a href='/admin/nodes/{{ n.id }}/edit'>{{ n.title }}</a></td>
+                <td>{{ n.author }}</td>
+                <td class='number'>{{ n.comission }}</td>
+                <td class='number'>{{ n.created|date('%d.%m.%Y') }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class='form-actions'>
+    <a href='/admin/nodes'>Вернуться назад</a>
+</div>

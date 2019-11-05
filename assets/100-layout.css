@@ -1,0 +1,126 @@
+body {
+    background-color: #fffff8;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    font: normal 18px/1.25em 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    width: 100%;
+}
+
+
+/**
+ * Заголовок сайта.
+ **/
+header {
+    width: 100%;
+    margin: 0;
+    color: #333;
+}
+header .title {
+    background-color: #fafafa;
+    padding: 32px 0 23px;
+}
+header .wrap {
+    width 100%;
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+header .title a {
+    display: inline-block;
+    line-height: 0;
+}
+header .title img {
+    width: 226px;
+    height: 80px;
+}
+
+
+/**
+ * Меню с навигацией.
+ **/
+header .menu {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+header .menu ul {
+    list-style-type: none;
+    padding: 15px 0;
+    line-height: 40px;
+    width: 100%;
+    font-size: 16px;
+}
+header .menu li {
+    display: inline-block;
+    margin-right: 30px;
+}
+header .menu a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px;
+    color: inherit;
+}
+header .menu .active a {
+    color: #888;
+}
+
+
+/**
+ * Main page contents.
+ **/
+main {
+    background-color: #fff;
+    line-height: 1.5em;
+    border-top: 1px solid #fff;
+}
+main > .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+/**
+ * Contents header.
+ **/
+.page-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.page-header h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    padding-top: 40px;
+}
+.page-header .lead {
+    font-size: 125%;
+    line-height: 150%;
+    margin: 20px 0 0;
+}
+
+
+/**
+ * Page footer.
+ **/
+footer {
+    color: #888;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 20px 0;
+}
+footer p {
+    margin: 5px 0;
+}
+footer a {
+    color: inherit;
+}
+footer > .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}

@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block page_title %}artwall.pro{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1>Настройка профиля</h1>
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    {% include "parts/breadcrumbs.twig" %}
+
+    <section class="block">
+        <form class="async" method="post" action="/node/save">
+            <input type="hidden" name="next" value="/my"/>
+            <input type="hidden" name="node[id]" value="{{ node.id }}"/>
+            <div class="form-group">
+                <label>ФИО:</label>
+                <input class="form-control wide" type="text" name="node[name]" value="{{ node.name }}"/>
+                <p class="help-block">Так оно будет отображено на сайте.</p>
+            </div>
+            <div class="form-group">
+                <label>Телефон:</label>
+                <input class="form-control wide" type="text" name="node[phone]" value="{{ node.phone }}"/>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input class="form-control wide" type="text" readonly data-name="node[email]" value="{{ node.email }}"/>
+                <p class="help-block">Используется для входа и восстановления пароля.</p>
+            </div>
+            <div class="form-group">
+                <label>Паспортные данные:</label>
+                <textarea class="form-control" name="node[passport]">{{ node.passport }}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Реквизиты для выплаты:</label>
+                <textarea class="form-control" name="node[payout_account]">{{ node.payout_account }}</textarea>
+            </div>
+            {% if user.role == "admin" %}
+                <div class="form-group">
+                    <label>Роль:</label>
+                    <input class="form-control" type="text" name="node[role]" value="{{ node.role }}"/>
+                </div>
+            {% endif %}
+            <div class="form-actions">
+                <button class="btn btn-primary">Сохранить</button>
+                <a class='btn btn-default' href='/logout'>Выйти</a>
+            </div>
+            <div class="msgbox"></div>
+        </form>
+    </section>
+{% endblock %}

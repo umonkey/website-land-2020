@@ -1,0 +1,7 @@
+{% if false and breadcrumbs %}
+    <ol class="breadcrumbs">
+        {% for em in breadcrumbs %}
+            <li><a href="{{ em.link }}">{{ em.label }}</a></li>
+        {% endfor %}
+    </ol>
+{% endif %}

@@ -1,0 +1,65 @@
+<div class="page-header">
+    <h1>Редактирование свойств картины</h1>
+</div>
+
+<div class="twocol">
+    <div class="col">
+        <form class="async" action="/node/save" method="post">
+            <input type="hidden" name="next" value="/"/>
+
+            <input type="hidden" name="node[id]" value="{{ node.id }}"/>
+            <div class="form-group">
+                <label>Название работы:</label>
+                <input class="form-control wide" type="text" name="node[title]" value="{{ node.title }}"/>
+            </div>
+            <div class="form-group">
+                <label>Описание работы:</label>
+                <textarea class="form-control" name="node[description]">{{ node.description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Комиссия, руб:</label>
+                <input class="form-control" type="number" min="0" name="node[comission]" value="{{ node.comission }}"/>
+            </div>
+            <div class="form-group">
+                <label>Категория:</label>
+                <select class="form-control" name="node[category]">
+                    {% for k, v in categories %}
+                        <option value="{{ k }}"{% if node.category == k %} selected{% endif %}>{{ v }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Состояние:</label>
+                <select class="form-control" name="node[status]">
+                    {% if node.status == 0 %}
+                        <option value="0" selected>черновик</option>
+                        <option value="1">отправить на модерацию</option>
+                    {% elseif node.status == 1 %}
+                        <option value="0">черновик</option>
+                        <option value="1" selected>на модерации ✓</option>
+                        <option value="2" disabled>отклонено</option>
+                        <option value="3" disabled>в работе</option>
+                    {% elseif node.status == 2 %}
+                        <option value="0" disabled>черновик</option>
+                        <option value="1" disabled>на модерации</option>
+                        <option value="2" selected>отклонено</option>
+                        <option value="3" disabled>в работе</option>
+                    {% else %}
+                        <option value="{{ node.status }}">{% include "parts/status.twig" with {"status": node.status} %}</option>
+                    {% endif %}
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn btn-primary">Сохранить</button>
+                <a class="btn btn-default" href="/">Оставить как есть</a>
+            </div>
+
+            <p class="msgbox"></p>
+        </form>
+    </div>
+    <div class="col">
+        <a href="{{ file_link(node.file) }}" target="_blank"><img src="{{ file_link(node.file, "medium") }}/></a>
+    </div>
+</div>
