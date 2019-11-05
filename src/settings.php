@@ -97,6 +97,7 @@ $config = [
                         'required' => true,
                         'class' => 'markdown',
                         'help' => 'Можно использовать <a href="http://ilfire.ru/kompyutery/shpargalka-po-sintaksisu-markdown-markdaun-so-vsemi-samymi-populyarnymi-tegami/" target="blank">форматирование Markdown</a>.',
+                        'buttons' => ['upload' => 'fas fa-image'],
                     ],
                     'url' => [
                         'label' => 'URL',

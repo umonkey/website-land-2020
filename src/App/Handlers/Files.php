@@ -40,6 +40,33 @@ class Files extends CommonHandler
         ]);
     }
 
+    public function onGetRecentJson(Request $request, Response $response, array $args)
+    {
+        // $files = $this->node->where("`type` = 'file' AND `published` = 1 AND `deleted` = 0 AND `id` IN (SELECT `id` FROM `nodes_file_idx` WHERE `kind` = 'photo') ORDER BY `created` DESC LIMIT 50");
+        $files = $this->node->where("`type` = 'file' AND `published` = 1 AND `deleted` = 0 ORDER BY `created` DESC LIMIT 50");
+
+        $files = array_map(function ($node) {
+            $img = $node['files']['small']['storage'] == 's3'
+                ? $node['files']['small']['url']
+                : "/node/{$node['id']}/download/small";
+
+            $res = [
+                "id" => (int)$node["id"],
+                "name" => $node["name"],
+                'link' => "/node/{$node['id']}",
+                'thumbnail' => $img,
+            ];
+
+            $res["name_html"] = htmlspecialchars($res["name"]);
+
+            return $res;
+        }, $files);
+
+        return $response->withJSON([
+            "files" => $files,
+        ]);
+    }
+
     public function onShowFile(Request $request, Response $response, array $args)
     {
         $file = $this->db->fetch("SELECT `id`, `hash`, `name`, `real_name`, `kind`, `type`, `created`, `uploaded`, `length` FROM `files` WHERE `id` = ?", [$args["id"]]);

@@ -98,7 +98,7 @@
         <div id="block" style="display: none"></div>
 
         <script type="text/javascript" src="/libs.min.js"></script>
-        {% if host == "land.local" %}
+        {% if request.host == "land.local" %}
             <script type="text/javascript" src="/app.js"></script>
         {% else %}
             <script type="text/javascript" src="/app.min.js"></script>
