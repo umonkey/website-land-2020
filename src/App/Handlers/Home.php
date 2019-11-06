@@ -15,13 +15,8 @@ class Home extends CommonHandler
 {
     public function onHome(Request $request, Response $response, array $args)
     {
-        $user = $this->requireUser($request);
-
-        if (@$user["role"] == "admin") {
-            return $response->withRedirect("/queue");
-        } else {
-            return $response->withRedirect("/my");
-        }
+        return $this->render($request, 'home.twig', [
+        ]);
     }
 
     public function onBlog(Request $request, Response $response, array $args)
