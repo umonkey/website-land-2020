@@ -182,6 +182,7 @@ aliases	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $aliases = $this->
 aliases	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        static $aliases = null;$/;"	v
 all	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $all = "html|head|body|header|section|main|footer|aside|nav|div|p|ul|ol|li|input|select|option|label|textarea|button|meta|title|h1|h2|h3|h4|h5|script|style|link|table|thead|tfoot|tbody|tr|th|td|img|form|source|picture";$/;"	v
 anchor	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^            $anchor = mb_strtolower(trim(preg_replace('@\\s+@', '_', $m[2])));$/;"	v
+app	src/bootstrap.php	/^$app = new \\Slim\\App($settings);$/;"	v
 app	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $this->app = $app;$/;"	v
 app	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    protected $app;$/;"	v
 append_index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $append_index = $end_index + 1;$/;"	v
@@ -731,7 +732,7 @@ getNodeConfig	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    protected fu
 getNodeTypes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    protected function getNodeTypes()$/;"	f
 getPageByName	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    public function getPageByName($name)$/;"	f
 getPageImage	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    protected function getPageImage(array $page)$/;"	f
-getPageKey	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function getPageKey($name)$/;"	f
+getPageKey	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    public function getPageKey($name)$/;"	f
 getPageNames	src/App/Handlers/Short.php	/^    protected function getPageNames($name)$/;"	f
 getPageSource	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    public function getPageSource($name, $section = null)$/;"	f
 getPath	src/App/Handlers/Catalog.php	/^    protected function getPath($id)$/;"	f
@@ -1939,6 +1940,7 @@ set_memory_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function
 set_pcre_backtrack_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function set_pcre_backtrack_limit($limit)$/;"	f
 set_pcre_recursion_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function set_pcre_recursion_limit($limit)$/;"	f
 settings	src/App/Handlers/Cron.php	/^        $settings = $this->container->get("settings");$/;"	v
+settings	src/bootstrap.php	/^$settings = require __DIR__ . '\/settings.php';$/;"	v
 settings	src/settings.php	/^$settings = [$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $settings = $this->container->get("settings");$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $settings = $this->container->get("settings")["files"] ?? [];$/;"	v

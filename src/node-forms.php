@@ -14,18 +14,13 @@ return [
                 'type' => 'textline',
                 'required' => true,
             ],
-            'text' => [
+            'source' => [
                 'type' => 'textarea',
                 'rows' => 10,
                 'required' => true,
                 'class' => 'markdown',
                 'help' => 'Можно использовать <a href="http://ilfire.ru/kompyutery/shpargalka-po-sintaksisu-markdown-markdaun-so-vsemi-samymi-populyarnymi-tegami/" target="blank">форматирование Markdown</a>.',
                 'buttons' => ['upload' => 'fas fa-image'],
-            ],
-            'url' => [
-                'label' => 'URL',
-                'type' => 'textline',
-                'required' => false,
             ],
             'published' => [
                 'type' => 'checkbox',

@@ -1,0 +1,16 @@
+body.wiki_edit header .wrap {
+    max-width: 100%;
+}
+
+body.wiki_edit main > .container {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body.wiki_edit footer {
+    display: none;
+}
+
+body.wiki_edit textarea.wiki {
+    height: calc(100vh - 385px);
+}

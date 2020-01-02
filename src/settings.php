@@ -42,6 +42,9 @@ $settings = [
             'author',
             'status',
         ],
+        'wiki' => [
+            'url',
+        ],
     ],
 
     'node_forms' => include __DIR__ . '/node-forms.php',
