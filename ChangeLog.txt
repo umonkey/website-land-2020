@@ -2,3 +2,4 @@
 - Components upgrade.
 - Templates and assets moved to themes/land.
 - Node forms moved to src/node-forms.php.
+- Removed local migrations (moved to ufw1).
