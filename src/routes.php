@@ -3,6 +3,7 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+\App\Handlers\Account::setupRoutes($app);
 \App\Handlers\Admin::setupRoutes($app);
 \App\Handlers\TaskQ::setupRoutes($app);
 
@@ -10,14 +11,10 @@ $app->get ('/', '\App\Handlers\Home:onHome');
 $app->get ('/blog', '\App\Handlers\Home:onBlog');
 $app->get ('/blog/', '\App\Handlers\Home:onStripSlash');
 
-$app->any ('/register', '\App\Handlers\Account:onRegister');
-$app->any ('/profile', '\App\Handlers\Account:onProfile');
 $app->get ('/files', '\App\Handlers\Files:onGetRecent');
 $app->get ('/files/recent.json', '\App\Handlers\Files:onGetRecentJson');
 $app->get ('/files/{id:[0-9]+}', '\App\Handlers\Files:onShowFile');
 $app->get ('/files/{id:[0-9]+}/download', '\App\Handlers\Files:onDownload');
-$app->post('/login', '\App\Handlers\Account:onLogin');
-$app->get ('/logout', '\App\Handlers\Account:onLogout');
 $app->get ('/f/{name}', '\App\Handlers\Storage:onGetItem');
 $app->get ('/search', \App\Handlers\Search::class . ':onGet');
 $app->get ('/search/log', \App\Handlers\Search::class . ':onLog');

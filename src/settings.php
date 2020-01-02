@@ -21,7 +21,10 @@ $settings = [
     ],
 
     'templates' => [
-        'template_path' => __DIR__ . '/../themes/land/templates',
+        'template_path' => [
+            __DIR__ . '/../themes/land/templates',
+            __DIR__ . '/../vendor/umonkey/ufw1/templates',
+        ],
         'defaults' => [
         ]
     ],
