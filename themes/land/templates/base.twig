@@ -34,8 +34,8 @@
         <!-- pinterest -->
         <meta name="p:domain_verify" content="18378c35890598c510b9ec5f63d98b55"/>
 
-        <link rel="stylesheet" type="text/css" href="/libs.min.css"/>
-        <link rel="stylesheet" type="text/css" href="/app.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/libs.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/app.min.css"/>
 
         {% if edit_link %}
             <link rel="edit" title="Редактировать страницу" href="{{ edit_link }}"/>
@@ -97,11 +97,11 @@
 
         <div id="block" style="display: none"></div>
 
-        <script type="text/javascript" src="/libs.min.js"></script>
+        <script type="text/javascript" src="/js/libs.min.js"></script>
         {% if request.host == "land.local" %}
-            <script type="text/javascript" src="/app.js"></script>
+            <script type="text/javascript" src="/js/app.js"></script>
         {% else %}
-            <script type="text/javascript" src="/app.min.js"></script>
+            <script type="text/javascript" src="/js/app.min.js"></script>
         {% endif %}
 
         {% include "parts/counters.twig" %}
