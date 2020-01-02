@@ -194,7 +194,6 @@ b	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $b = $this->round_numb
 b	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $b           = '';$/;"	v
 b1	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $b1 = substr($file["hash"], 0, 1);$/;"	v
 b2	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $b2 = substr($file["hash"], 1, 2);$/;"	v
-back	src/App/Handlers/Account.php	/^        $back = @$_GET["back"];$/;"	v
 back	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $back = $_GET["back"] ?: "\/";$/;"	v
 barcode	src/App/Handlers/Short.php	/^        $barcode = $this->getBarCode($params["link"]);$/;"	v
 barcode	src/App/Handlers/ShortImage.php	/^        $barcode = $this->getBarCode($params["link"]);$/;"	v
@@ -262,7 +261,6 @@ charset	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $charset = '';$/;"	v
 charset_regexp	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $charset_regexp = '\/(@charset)( [^;]+;)\/i';$/;"	v
 check	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected function check($var, $wanted, $got)$/;"	f
 checkFileExists	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    protected function checkFileExists($hash)$/;"	f
-checkRegisterForm	src/App/Handlers/Account.php	/^    protected function checkRegisterForm(array &$form)$/;"	f
 checkRegisterForm	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    protected function checkRegisterForm(array &$form)$/;"	f
 ckey	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $ckey = md5($key);$/;"	v
 clamp_number	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function clamp_number($n, $min, $max)$/;"	f
@@ -327,7 +325,7 @@ config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->config = array($/;"	
 config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->config = array_merge([$/;"	v
 config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected $config;$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^                $this->conn = $this->connect();$/;"	v
-conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^            $this->conn = new \\PDO($this->dsn["name"], @$this->dsn["user"], @$this->dsn["password"]);$/;"	v
+conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^            $this->conn = new \\PDO($this->dsn["name"], $this->dsn["user"] ?? null, $this->dsn["password"] ?? null);$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $this->conn = null;$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    protected $conn;$/;"	v
 connect	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    protected function connect()$/;"	f
@@ -499,9 +497,6 @@ deleted	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $deleted = (in
 desc	vendor/umonkey/ufw1/src/Ufw1/Handlers/Search.php	/^        $desc = $settings["description"] ?? "Поиск по сайту {$host}";$/;"	v
 destroyImage	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^    protected function destroyImage($img)$/;"	f
 destroyImage	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer2.php	/^    protected function destroyImage($img)$/;"	f
-digits	src/App/Handlers/Account.php	/^            $digits = "7" . $digits;$/;"	v
-digits	src/App/Handlers/Account.php	/^            $digits = "7" . substr($digits, 1);$/;"	v
-digits	src/App/Handlers/Account.php	/^        $digits = preg_replace('@[^0-9]+@', '', $form["phone"]);$/;"	v
 dir	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $dir = dirname($path);$/;"	v
 divisor	src/App/Handlers/Files.php	/^        $divisor = array_sum(array_map('array_sum', $sharpenMatrix));$/;"	v
 divisor	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $divisor = array_sum(array_map('array_sum', $sharpenMatrix));$/;"	v
@@ -531,11 +526,9 @@ dur	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $dur = $now - $reqts;$
 dur	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $dur = $now - $reqts;$/;"	v
 e	src/App/Handlers/Error.php	/^        $e = $args["exception"];$/;"	v
 e	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^        $e = $args["exception"];$/;"	v
-em	src/App/Handlers/Account.php	/^                $em = array_pop($data['user_stack']);$/;"	v
 email	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $email = $request->getParam("email");$/;"	v
 emergency	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^    public function emergency($message, array $context = [])$/;"	f
 enName	src/App/Handlers/Short.php	/^        $enName = $this->getEnglishName($ruName);$/;"	v
-enabled	src/App/Handlers/Account.php	/^        $enabled = $request->getParam("enabled");$/;"	v
 end_index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                        $end_index = $this->index_of($css, ')', $end_index);$/;"	v
 end_index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $end_index = $length;$/;"	v
 end_index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $end_index = $this->index_of($css, $terminator, $end_index + 1);$/;"	v
@@ -698,7 +691,6 @@ getAuthorization	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected function ge
 getBarCode	src/App/Handlers/Short.php	/^    protected function getBarCode($link)$/;"	f
 getBarCode	src/App/Handlers/ShortImage.php	/^    protected function getBarCode($link)$/;"	f
 getBody	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^    public function getBody(array $node)$/;"	f
-getBreadcrumbs	src/App/Handlers/Account.php	/^    public function getBreadcrumbs(Request $request, array $data)$/;"	f
 getBreadcrumbs	src/App/Handlers/Node.php	/^    public function getBreadcrumbs(Request $request, array $data)$/;"	f
 getBreadcrumbs	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    public function getBreadcrumbs(Request $request, array $data)$/;"	f
 getByHash	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^    public function getByHash($hash)$/;"	f
@@ -861,7 +853,6 @@ i	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                        $i = $i + 
 i	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $i = $i + 1; \/\/ attn: advancing the loop$/;"	v
 i	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $i = $css_chunk_length; \/\/ save initial iterations$/;"	v
 id	src/App/CommonHandler.php	/^            $id = $node["id"];$/;"	v
-id	src/App/Handlers/Account.php	/^        $id = $request->getParam("id");$/;"	v
 id	src/App/Handlers/Admin.php	/^        $id = (int)$request->getParam('id');$/;"	v
 id	src/App/Handlers/CLI.php	/^        $id = $request->getParam("id");$/;"	v
 id	src/App/Handlers/Catalog.php	/^            $id = $row["parent"];$/;"	v
@@ -1233,7 +1224,6 @@ nh	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $nh = round
 nh	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $nh = round($ih * $scale);$/;"	v
 nid	src/App/Handlers/Node.php	/^        $nid = $args["id"];$/;"	v
 node	src/App/CommonHandler.php	/^        $node = $this->packNode($node);$/;"	v
-node	src/App/Handlers/Account.php	/^            $node = $this->node->get($id);$/;"	v
 node	src/App/Handlers/Admin.php	/^        $node = $this->node->save($node);$/;"	v
 node	src/App/Handlers/CLI.php	/^        $node = $this->node->get($id);$/;"	v
 node	src/App/Handlers/Cron.php	/^            $node = $this->addThumbnails($node);$/;"	v
@@ -1378,7 +1368,6 @@ onEditNode	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function
 onEditRawNode	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onEditRawNode(Request $request, Response $response, array $args)$/;"	f
 onEditSession	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onEditSession(Request $request, Response $response, array $args)$/;"	f
 onEmbedClipboard	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    public function onEmbedClipboard(Request $request, Response $response, array $args)$/;"	f
-onEnableUser	src/App/Handlers/Account.php	/^    public function onEnableUser(Request $request, Response $response, array $args)$/;"	f
 onExportAll	src/App/Handlers/TaskQ.php	/^    protected function onExportAll()$/;"	f
 onFormUpload	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    public function onFormUpload(Request $request, Response $response, array $args)$/;"	f
 onGet	src/App/FileHandler.php	/^    public function onGet(Request $request, Response $response, array $args)$/;"	f
@@ -1400,7 +1389,6 @@ onGetForm	src/App/Handlers/Short.php	/^    public function onGetForm(Request $re
 onGetImage	src/App/Handlers/Short.php	/^    public function onGetImage(Request $request, Response $response, array $args)$/;"	f
 onGetItem	src/App/Handlers/Storage.php	/^    public function onGetItem(Request $request, Response $response, array $args)$/;"	f
 onGetJSON	src/App/Handlers/Export.php	/^    public function onGetJSON(Request $request, Response $response, array $args)$/;"	f
-onGetLoginForm	src/App/Handlers/Account.php	/^    public function onGetLoginForm(Request $request, Response $response, array $args)$/;"	f
 onGetLoginForm	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    public function onGetLoginForm(Request $request, Response $response, array $args)$/;"	f
 onGetPhoto	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    public function onGetPhoto(Request $request, Response $response, array $args)$/;"	f
 onGetPreview	src/App/Handlers/Short.php	/^    public function onGetPreview(Request $request, Response $response, array $args)$/;"	f
@@ -1418,7 +1406,6 @@ onList	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^    public function onL
 onLog	src/App/Handlers/Search.php	/^    public function onLog(Request $request, Response $response, array $args)$/;"	f
 onLog	vendor/umonkey/ufw1/src/Ufw1/Handlers/Search.php	/^    public function onLog(Request $request, Response $response, array $args)$/;"	f
 onLogin	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    public function onLogin(Request $request, Response $response, array $args)$/;"	f
-onLogout	src/App/Handlers/Account.php	/^    public function onLogout(Request $request, Response $response, array $args)$/;"	f
 onManage	src/App/Handlers/Home.php	/^    protected function onManage(Request $request, Response $response, array $user)$/;"	f
 onManagePictures	src/App/Handlers/Home.php	/^    public function onManagePictures(Request $request, Response $response, array $args)$/;"	f
 onMy	src/App/Handlers/Home.php	/^    public function onMy(Request $request, Response $response, array $user)$/;"	f
@@ -1433,7 +1420,6 @@ onPost	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    public function onP
 onPost	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^    public function onPost(Request $request, Response $response)$/;"	f
 onPost	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^    public function onPost(Request $request, Response $response)$/;"	f
 onPreview	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^    public function onPreview(Request $request, Response $response, array $args)$/;"	f
-onProfile	src/App/Handlers/Account.php	/^    public function onProfile(Request $request, Response $response, array $args)$/;"	f
 onPublishNode	src/App/Handlers/Admin.php	/^    public function onPublishNode(Request $request, Response $response, array $args)$/;"	f
 onPublishNode	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onPublishNode(Request $request, Response $response, array $args)$/;"	f
 onPublishPicture	src/App/Handlers/TaskQ.php	/^    protected function onPublishPicture($id)$/;"	f
@@ -1447,7 +1433,6 @@ onRecentFiles	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    public functi
 onRecentRSS	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    public function onRecentRSS(Request $request, Response $response, array $args)$/;"	f
 onRedirect	src/App/Handlers/Short.php	/^    public function onRedirect(Request $request, Response $response, array $args)$/;"	f
 onRedirect	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^    public function onRedirect(Request $request, Response $response, array $args)$/;"	f
-onRegister	src/App/Handlers/Account.php	/^    public function onRegister(Request $request, Response $response, array $args)$/;"	f
 onRegister	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    public function onRegister(Request $request, Response $response, array $args)$/;"	f
 onRegisterNew	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    public function onRegisterNew(Request $request, Response $response, array $args)$/;"	f
 onReindex	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    public function onReindex(Request $request, Response $response, array $args)$/;"	f
@@ -1573,7 +1558,6 @@ parts	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $parts = $this->re
 parts	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $parts = $this->read_sources_min($sources);$/;"	v
 password	src/App/Handlers/Node.php	/^        $password = $request->getParam('password');$/;"	v
 password	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $password = $request->getParam("password");$/;"	v
-path	src/App/Handlers/Account.php	/^        $path = [];$/;"	v
 path	src/App/Handlers/Cron.php	/^                        $path = $folder . "\/" . $file["path"];$/;"	v
 path	src/App/Handlers/Node.php	/^        $path = [];$/;"	v
 path	src/App/Handlers/Short.php	/^        $path = $_SERVER["DOCUMENT_ROOT"] . $request->getUri()->getPath();$/;"	v
@@ -2264,8 +2248,6 @@ urls	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $urls = array_map
 user	src/App/CommonHandler.php	/^        $user = $this->node->get($session["user_id"]);$/;"	v
 user	src/App/CommonHandler.php	/^        $user = $this->requireUser($request);$/;"	v
 user	src/App/CommonHandler.php	/^        $user = array_merge([$/;"	v
-user	src/App/Handlers/Account.php	/^        $user = $this->requireAdmin($request);$/;"	v
-user	src/App/Handlers/Account.php	/^        $user = $this->requireUser($request);$/;"	v
 user	src/App/Handlers/Admin.php	/^        $user = $this->requireUser($request);$/;"	v
 user	src/App/Handlers/Home.php	/^        $user = $this->requireAdmin($request);$/;"	v
 user	src/App/Handlers/Home.php	/^        $user = $this->requireUser($request);$/;"	v
