@@ -83,6 +83,13 @@ $settings = [
             'from' => 'medium',
         ],
     ],
+
+    'wiki' => [
+        'home_page' => 'Введение',
+        'reader_roles' => ['nobody', 'admin'],
+        'editor_roles' => ['admin'],
+        'default_author' => 'Фрунзе Владимир',
+    ],
 ];
 
 // Amend passwords in a non-tracker file.
