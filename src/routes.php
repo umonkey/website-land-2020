@@ -9,7 +9,7 @@ use Slim\Http\Response;
 \App\Handlers\Wiki::setupRoutes($app);
 
 $app->get ('/', '\App\Handlers\Home:onHome');
-$app->get ('/blog', '\App\Handlers\Home:onBlog');
+$app->get ('/blog', '\App\Handlers\Blog:onBlog');
 $app->get ('/blog/', '\App\Handlers\Home:onStripSlash');
 
 $app->get ('/files', '\App\Handlers\Files:onGetRecent');

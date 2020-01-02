@@ -19,24 +19,6 @@ class Home extends CommonHandler
         ]);
     }
 
-    public function onBlog(Request $request, Response $response, array $args)
-    {
-        $entries = $this->node->where('`type` = \'blog\' AND `deleted` = 0 AND `published` = 1 ORDER BY `created` DESC', [], function ($em) {
-            return [
-                'id' => $em['id'],
-                'published' => (bool)(int)$em['published'],
-                'created' => $em['created'],
-                'title' => $em['name'],
-                'summary' => $em['summary'] ?? null,
-                'link' => $em['url'] ?? "/node/{$em['id']}",
-            ];
-        });
-
-        return $this->render($request, 'blog.twig', [
-            'entries' => $entries,
-        ]);
-    }
-
     /**
      * Removes trailing slash from the current request.
      **/

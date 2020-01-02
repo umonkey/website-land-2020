@@ -62,10 +62,10 @@
 
             <div class='menu'>
                 <ul class='wrap'>
-                    <li class='inactive'><a href='/nursery/'>Питомник</a></li>
-                    <li class='active'><a href='/blog/'>Блог</a></li>
+                    <li class='{% if page.url == '/nursery/' %}active{% else %}inactive{% endif %}'><a href='/nursery/'>Питомник</a></li>
+                    <li class='inactive'><a href='/blog/'>Блог</a></li>
                     <li class='inactive'><a href='/volunteer/'>Волонтёрам</a></li>
-                    <li class='inactive'><a href='/about/'>О нас</a></li>
+                    <li class='{% if page.url == '/about/' %}active{% else %}inactive{% endif %}'><a href='/about/'>О нас</a></li>
                 </ul>
             </div>
         </header>
