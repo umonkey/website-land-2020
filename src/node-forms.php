@@ -1,6 +1,43 @@
 <?php
 
 return [
+    'wiki' => [
+        'title' => 'Заметка',
+        'description' => 'запись в блоге, можно комментировать',
+        'new_title' => 'Добавление заметки',
+        'edit_title' => 'Редактирование заметки',
+        'edit_roles' => ['admin'],
+        'order' => 'created DESC',
+        'fields' => [
+            'name' => [
+                'label' => 'Заголовок',
+                'type' => 'textline',
+                'required' => true,
+            ],
+            'text' => [
+                'type' => 'textarea',
+                'rows' => 10,
+                'required' => true,
+                'class' => 'markdown',
+                'help' => 'Можно использовать <a href="http://ilfire.ru/kompyutery/shpargalka-po-sintaksisu-markdown-markdaun-so-vsemi-samymi-populyarnymi-tegami/" target="blank">форматирование Markdown</a>.',
+                'buttons' => ['upload' => 'fas fa-image'],
+            ],
+            'url' => [
+                'label' => 'URL',
+                'type' => 'textline',
+                'required' => false,
+            ],
+            'published' => [
+                'type' => 'checkbox',
+                'label' => 'опубликовать заметку',
+            ],
+            'deleted' => [
+                'type' => 'checkbox',
+                'label' => 'удалить заметку',
+            ],
+        ],
+    ],
+
     'blog' => [
         'title' => 'Заметка',
         'description' => 'запись в блоге, можно комментировать',
@@ -37,6 +74,7 @@ return [
             ],
         ],
     ],
+
     'article' => [
         'title' => 'Статья',
         'description' => 'произвольные текстовые блоки для вывода на сайте',

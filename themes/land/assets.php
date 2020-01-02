@@ -2,13 +2,13 @@
 
 return [
     'public/css/app.css' => [
-        './vendor/umonkey/ufw1/assets/*.css',
+        '/vendor/umonkey/ufw1/assets/*.css',
         'css/*.css',
     ],
 
     'public/js/app.js' => [
-        './vendor/umonkey/ufw1/assets/*.js',
-        'js/js/*.js',
+        '/vendor/umonkey/ufw1/assets/*.js',
+        'js/*.js',
     ],
 
     'public/css/libs.css' => [

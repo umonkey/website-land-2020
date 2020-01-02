@@ -6,6 +6,7 @@ use Slim\Http\Response;
 \App\Handlers\Account::setupRoutes($app);
 \App\Handlers\Admin::setupRoutes($app);
 \App\Handlers\TaskQ::setupRoutes($app);
+\App\Handlers\Wiki::setupRoutes($app);
 
 $app->get ('/', '\App\Handlers\Home:onHome');
 $app->get ('/blog', '\App\Handlers\Home:onBlog');
@@ -28,4 +29,4 @@ $app->get ('/node/{id:[0-9]+}/download/{code:.*}', '\App\Handlers\Node:onDownloa
 $app->post('/node/save', '\App\Handlers\Node:onSave');
 $app->post('/admin/upload', '\Ufw1\Handlers\Wiki:onUpload');
 
-$app->get ('/{url:.*}', '\App\Handlers\Nodes:onDefault');
+$app->get ('/{url:.*}', '\App\Handlers\Wiki:onDefault');

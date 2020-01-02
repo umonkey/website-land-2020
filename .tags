@@ -94,6 +94,7 @@ UploadHandler	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^class UploadHandl
 UserFailure	vendor/umonkey/ufw1/src/Ufw1/Errors/UserFailure.php	/^class UserFailure extends \\RuntimeException { }$/;"	c
 Util	src/App/Util.php	/^class Util extends \\Ufw1\\Util$/;"	c
 Util	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^class Util$/;"	c
+Wiki	src/App/Handlers/Wiki.php	/^class Wiki extends \\Ufw1\\Handlers\\Wiki$/;"	c
 Wiki	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^class Wiki extends CommonHandler$/;"	c
 Wiki	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^class Wiki$/;"	c
 __construct	src/App/Handlers.php	/^    public function __construct($container)$/;"	f
@@ -864,6 +865,7 @@ id	src/App/Handlers/Maps.php	/^            $id = $form["id"];$/;"	v
 id	src/App/Handlers/Maps.php	/^        $id = $request->getParam("id");$/;"	v
 id	src/App/Handlers/Node.php	/^                $id = (int)$tmp['parent'];$/;"	v
 id	src/App/Handlers/TaskQ.php	/^        $id = $this->taskq->add("test");$/;"	v
+id	src/App/Handlers/Wiki.php	/^        $id = $this->db->fetchcell('SELECT `id` FROM `nodes_wiki_idx` WHERE `url` = ?', [$url]);$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $id = $this->sessionGetId($request);$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $id = $args["id"];$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $id = $args['id'];$/;"	v
@@ -1176,6 +1178,7 @@ name	src/App/Handlers/Short.php	/^        $name = $this->db->shortGetName($code)
 name	src/App/Handlers/ShortImage.php	/^        $name = $this->db->shortGetName($code);$/;"	v
 name	src/App/Handlers/ShortRedirect.php	/^        $name = $this->db->shortGetName($args["code"]);$/;"	v
 name	src/App/Handlers/Upload.php	/^        $name = $files["file"]->getClientFilename();$/;"	v
+name	src/App/Handlers/Wiki.php	/^        $name = $node['name'];$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^                $name = substr($em['key'], 5);$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $name = substr($hash, 0, 1) . '\/' . substr($hash, 1, 2) . '\/' . $hash;$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^                $name = $this->fetchcell("SELECT DATABASE()");$/;"	v
@@ -1243,6 +1246,7 @@ node	src/App/Handlers/Nodes.php	/^        $node = $this->node->getByKey($key);$/
 node	src/App/Handlers/TaskQ.php	/^        $node = $s3->uploadNodeFiles($node);$/;"	v
 node	src/App/Handlers/TaskQ.php	/^        $node = $this->node->get($id);$/;"	v
 node	src/App/Handlers/Upload.php	/^        $node = $this->file->add($name, $type, $body, [$/;"	v
+node	src/App/Handlers/Wiki.php	/^        $node = $this->node->get($id);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $node = $nodes->save($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $node = $old;$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $node = array_merge($props, [$/;"	v
@@ -1301,7 +1305,7 @@ nodes	src/App/Handlers/Home.php	/^        $nodes = $this->node->where("`type` = 
 nodes	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $nodes = $this->container->get("node");$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $nodes = $this->node->where("`type` = 'user' AND `deleted` = 0 AND `id` IN (SELECT `id` FROM `nodes_user_idx` WHERE `email` = ?) ORDER BY `id`", [$email]);$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $nodes = $this->node->where("`type` = 'user' AND `key` = ?", [$form["email"]]);$/;"	v
-nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $nodes = $this->node->where("`deleted` = 0 AND `type` IN ({$types}) ORDER BY `id` DESC LIMIT 100");$/;"	v
+nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $nodes = $this->node->where("`deleted` = 0 AND `type` IN ({$types}) ORDER BY `created` DESC LIMIT 1000");$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $nodes = $this->node->where('`type` = \\'file\\' AND `deleted` = 0 ORDER BY `updated`');$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $nodes = array_filter($nodes, function ($node) {$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $nodes = $this->node->where("`type` = 'file' ORDER BY `created` DESC");$/;"	v
@@ -1352,6 +1356,7 @@ onDatabaseStatus	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public fu
 onDefault	src/App/Handlers/CLI.php	/^    public function onDefault(Request $request, Response $response, array $args)$/;"	f
 onDefault	src/App/Handlers/Cron.php	/^    public function onDefault(Request $request, Response $response)$/;"	f
 onDefault	src/App/Handlers/Nodes.php	/^    public function onDefault(Request $request, Response $response, array $args)$/;"	f
+onDefault	src/App/Handlers/Wiki.php	/^    public function onDefault(Request $request, Response $response, array $args)$/;"	f
 onDelete	src/App/Handlers/Node.php	/^    public function onDelete(Request $request, Response $response, array $args)$/;"	f
 onDeleteNode	src/App/Handlers/Admin.php	/^    public function onDeleteNode(Request $request, Response $response, array $args)$/;"	f
 onDeleteNode	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onDeleteNode(Request $request, Response $response, array $args)$/;"	f
@@ -1571,6 +1576,7 @@ path	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^                $path = $thi
 pattern	src/App/Handlers/Catalog.php	/^        $pattern = '%' . $query . '%';$/;"	v
 pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                    $pattern = '\/'; \/\/ keep entire pattern in case we need to report it in the exception$/;"	v
 pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $pattern = dirname($this->mapPath) . '\/' . $pattern;$/;"	v
+pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $pattern = substr($pattern, 1);$/;"	v
 pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $pattern = '\/(\\=\\s*?["\\']?)?#([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])(\\}|[^0-9a-f{][^{]*?\\})\/iS';$/;"	v
 pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $pattern = '\/url\\(\\s*(["\\']?)data\\:\/i';$/;"	v
 patterns	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $patterns = [$/;"	v
@@ -2233,6 +2239,7 @@ url	src/App/Handlers/Nodes.php	/^        $url = '\/' . $args['url'];$/;"	v
 url	src/App/Handlers/Nodes.php	/^        $url = rtrim($url, ' \/');$/;"	v
 url	src/App/Handlers/TaskQ.php	/^        $url = "https:\/\/www.artwall.ru\/artman\/pull";$/;"	v
 url	src/App/Handlers/TaskQ.php	/^        $url = "https:\/\/www.artwall.ru\/artman\/pull\/{$id}";$/;"	v
+url	src/App/Handlers/Wiki.php	/^        $url = '\/' . $args['path'];$/;"	v
 url	src/App/NodeFactory.php	/^        $url = rtrim($url, ' \/');$/;"	v
 url	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $url = "{$base}\/admin\/nodes\/{$node['id']}\/edit";$/;"	v
 url	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^        $url = parse_url($link);$/;"	v
