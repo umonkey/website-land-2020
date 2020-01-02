@@ -21,4 +21,20 @@ return [
         'lib/jquery/jquery-3.3.1.min.js',
         'lib/fancybox/jquery.fancybox.min.js',
     ],
+
+    'public/css/maps.css' => [
+        'lib/leaflet/leaflet.css',
+        'lib/leaflet/Control.FullScreen.css',
+        'lib/leaflet/Control.Loading.css',
+        'lib/leaflet/MarkerCluster.Default.css',
+        'lib/leaflet/MarkerCluster.css',
+    ],
+
+    'public/js/maps.js' => [
+        'lib/leaflet/leaflet.min.js',
+        'lib/leaflet/leaflet.markercluster.min.js',
+        'lib/leaflet/Control.FullScreen.js',
+        'lib/leaflet/Control.Loading.js',
+        'lib/leaflet/ufw_map.js',
+    ],
 ];
