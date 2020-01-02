@@ -620,7 +620,7 @@ files	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $files = $th
 files	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $files = $request->getUploadedFiles();$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $files = $this->db->fetch("SELECT `id`, name, mime_type, kind, length, created, uploaded, hash FROM `files`");$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $files = $this->dbGetFilesByFolder($folder);$/;"	v
-files	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $files = $this->node->where("`type` = 'file' AND `published` = 1 AND `deleted` = 0 AND `id` IN (SELECT `id` FROM `nodes_file_idx` WHERE `kind` = 'photo') ORDER BY `created` DESC LIMIT 50");$/;"	v
+files	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $files = $this->node->where("`type` = 'file' AND `published` = 1 AND `deleted` = 0 ORDER BY `created` DESC LIMIT 50");$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $files = array_map(function ($node) {$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^            $files = array_map(function ($em) use ($endpoint, $bucket) {$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $files = [];$/;"	v
@@ -2241,7 +2241,7 @@ url	src/App/Handlers/Nodes.php	/^        $url = '\/' . $args['url'];$/;"	v
 url	src/App/Handlers/Nodes.php	/^        $url = rtrim($url, ' \/');$/;"	v
 url	src/App/Handlers/TaskQ.php	/^        $url = "https:\/\/www.artwall.ru\/artman\/pull";$/;"	v
 url	src/App/Handlers/TaskQ.php	/^        $url = "https:\/\/www.artwall.ru\/artman\/pull\/{$id}";$/;"	v
-url	src/App/Handlers/Wiki.php	/^        $url = '\/' . $args['path'];$/;"	v
+url	src/App/Handlers/Wiki.php	/^        $url = '\/' . $args['url'];$/;"	v
 url	src/App/NodeFactory.php	/^        $url = rtrim($url, ' \/');$/;"	v
 url	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $url = "{$base}\/admin\/nodes\/{$node['id']}\/edit";$/;"	v
 url	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^        $url = parse_url($link);$/;"	v

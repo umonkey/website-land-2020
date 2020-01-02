@@ -1,0 +1,13 @@
+.wikimeta {
+    color: #888;
+    font-size: 14px;
+}
+.wikimeta a {
+    color: inherit;
+    box-shadow: none;
+    text-decoration: underline;
+}
+.wikimeta a:hover {
+    background-color: inherit;
+    color: inherit;
+}
