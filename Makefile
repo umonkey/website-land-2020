@@ -6,10 +6,10 @@ all: assets tags
 assets:
 	php -f vendor/bin/build-assets themes/land/assets.php
 
-db:
-	mysql
+sql:
+	sqlite3 -header data/database.sqlite3
 
-db-remote:
+sql-remote:
 	ssh -t $(REMOTE) mysql
 
 log:
