@@ -4,7 +4,7 @@ FOLDER=hosts/land.umonkey.net
 all: assets tags
 
 assets:
-	php -f vendor/bin/build-assets
+	php -f vendor/bin/build-assets themes/land/assets.php
 
 db:
 	mysql

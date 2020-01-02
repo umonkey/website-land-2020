@@ -3,3 +3,4 @@
 ^src/settings-local\.php$
 ^(data|tmp|images)$
 ^public/(app|libs)(\.min)?\.(css|js)$
+^local-settings\.php$

@@ -8,6 +8,7 @@ Account	src/App/Handlers/Account.php	/^class Account extends \\Ufw1\\Handlers\\A
 Account	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^class Account extends CommonHandler$/;"	c
 Admin	src/App/Handlers/Admin.php	/^class Admin extends \\Ufw1\\Handlers\\Admin$/;"	c
 Admin	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^class Admin extends CommonHandler$/;"	c
+Base	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^class Base extends TestCase$/;"	c
 CLI	src/App/Handlers/CLI.php	/^class CLI extends CommonHandler$/;"	c
 CSSmin	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^class CSSmin$/;"	c
 CanonicalHeaders	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $CanonicalHeaders = "";$/;"	v
@@ -102,7 +103,7 @@ __construct	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^    public function _
 __construct	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^    public function __construct(array $config)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^    public function __construct($c)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    public function __construct($container)$/;"	f
-__construct	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    public function __construct($database, $logger)$/;"	f
+__construct	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    public function __construct($c)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Ufw1/TaskQ.php	/^    public function __construct($c)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Ufw1/Telega.php	/^    public function __construct($container)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^    public function __construct($container)$/;"	f
@@ -110,7 +111,7 @@ __construct	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^    public function _
 __construct	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    public function __construct($c)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function __construct($input)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function __construct($raise_php_limits = TRUE)$/;"	f
-__construct	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function __construct(array $map)$/;"	f
+__construct	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function __construct($src)$/;"	f
 __get	src/App/Handlers.php	/^    public function __get($key)$/;"	f
 __get	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    public function __get($key)$/;"	f
 __invoke	src/App/Handlers/Error.php	/^    public function __invoke(Request $request, Response $response, array $args)$/;"	f
@@ -118,7 +119,9 @@ __invoke	src/App/Handlers/NotFound.php	/^    public function __invoke(Request $r
 __invoke	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    public function __invoke(Request $request, Response $response, array $args)$/;"	f
 __invoke	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^    public function __invoke(Request $request, Response $response, array $args)$/;"	f
 _a	src/App/Handlers/Home.php	/^            $_a = mb_strtolower($a['title']);$/;"	v
+_a	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^                $_a = mb_strtolower($a['name']);$/;"	v
 _b	src/App/Handlers/Home.php	/^            $_b = mb_strtolower($b['title']);$/;"	v
+_b	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^                $_b = mb_strtolower($b['name']);$/;"	v
 _fields	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $_fields = [];$/;"	v
 _fields	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $_fields = implode(", ", $_fields);$/;"	v
 _index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $_index = $offset = $last_index - strlen($m[8]);$/;"	v
@@ -128,8 +131,9 @@ _marks	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $_marks = [];$/;"	v
 _marks	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $_marks = implode(", ", $_marks);$/;"	v
 _params	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $_params = [];$/;"	v
 _parts	vendor/umonkey/ufw1/src/Ufw1/Handlers/Database.php	/^                $_parts = [];$/;"	v
+_q	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $_q = "+" . str_replace(" ", " +", $this->normalizeText($query) . '*');$/;"	v
+_q	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $_q = $query . '*';$/;"	v
 _query	vendor/umonkey/ufw1/src/Ufw1/Handlers/Database.php	/^                $_query = "SELECT COUNT(1) AS `rows`, {$_sum} AS `bytes` FROM `{$row["name"]}`";$/;"	v
-_res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $_res = [];$/;"	v
 _row	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^            $_row = $row;$/;"	v
 _set	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $_set = [];$/;"	v
 _set	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $_set = implode(", ", $_set);$/;"	v
@@ -175,8 +179,10 @@ album	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $album = [];$/;"	v
 alert	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^    public function alert($message, array $context = [])$/;"	f
 aliases	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $aliases = $this->db->fetchkv("SELECT `src`, `dst` FROM `odict` LIMIT 10000");$/;"	v
 aliases	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        static $aliases = null;$/;"	v
-all	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $all = "html|head|body|header|section|main|footer|aside|nav|div|p|ul|ol|li|input|select|option|label|textarea|button|meta|title|h1|h2|h3|h4|h5|script|style|link|table|thead|tfoot|tbody|tr|th|td|img|form";$/;"	v
+all	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $all = "html|head|body|header|section|main|footer|aside|nav|div|p|ul|ol|li|input|select|option|label|textarea|button|meta|title|h1|h2|h3|h4|h5|script|style|link|table|thead|tfoot|tbody|tr|th|td|img|form|source|picture";$/;"	v
 anchor	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^            $anchor = mb_strtolower(trim(preg_replace('@\\s+@', '_', $m[2])));$/;"	v
+app	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $this->app = $app;$/;"	v
+app	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    protected $app;$/;"	v
 append_index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $append_index = $end_index + 1;$/;"	v
 append_index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $append_index = $last_index;$/;"	v
 append_index	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $append_index = $index = $last_index = $offset = 0;$/;"	v
@@ -189,7 +195,7 @@ b	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $b           = '';$/
 b1	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $b1 = substr($file["hash"], 0, 1);$/;"	v
 b2	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $b2 = substr($file["hash"], 1, 2);$/;"	v
 back	src/App/Handlers/Account.php	/^        $back = @$_GET["back"];$/;"	v
-back	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $back = $_GET["back"] ?? "\/";$/;"	v
+back	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $back = $_GET["back"] ?: "\/";$/;"	v
 barcode	src/App/Handlers/Short.php	/^        $barcode = $this->getBarCode($params["link"]);$/;"	v
 barcode	src/App/Handlers/ShortImage.php	/^        $barcode = $this->getBarCode($params["link"]);$/;"	v
 base	src/App/Handlers/Export.php	/^                $base = $uri->getScheme() . ":\/\/" . $uri->getHost();$/;"	v
@@ -218,6 +224,7 @@ body	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^                $body = $
 body	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $body = $file["data"];$/;"	v
 body	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $body = file_get_contents($tmp);$/;"	v
 body	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $body = $this->normalizeText($body);$/;"	v
+body	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^            $body = http_build_query($body);$/;"	v
 body	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $body = file_get_contents($fpath);$/;"	v
 bucket	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $bucket = $this->config["bucket"];$/;"	v
 bw	src/App/Handlers/Short.php	/^        $bw = imagesx($barcode);$/;"	v
@@ -270,8 +277,9 @@ className	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $className = "imag
 cleanHtml	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function cleanHtml($html)$/;"	f
 cls	src/App/CommonHandler.php	/^                $cls = "broken";$/;"	v
 cls	src/App/CommonHandler.php	/^            $cls = "good";$/;"	v
-cls	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $cls = "broken";$/;"	v
-cls	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $cls = "good";$/;"	v
+cls	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $cls = "wiki broken";$/;"	v
+cls	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $cls = 'external';$/;"	v
+cls	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $cls = "wiki good";$/;"	v
 code	src/App/Handlers/Short.php	/^            $code = rand(1001, 9999);$/;"	v
 code	src/App/Handlers/Short.php	/^        $code = $args["code"];$/;"	v
 code	src/App/Handlers/Short.php	/^        $code = $this->db->shortAdd($params["russian"], $params["english"], $params["link"]);$/;"	v
@@ -284,6 +292,8 @@ code	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^            $code = sprintf("<h%u
 code	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $code = $request->getParam('session');$/;"	v
 code	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $code = json_encode($node, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);$/;"	v
 code	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $code = str_replace('\\r', '\\n', $code);$/;"	v
+code	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $code = $this->addFile($name, $type, $body, $comment);$/;"	v
+code	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $code = [];$/;"	v
 code	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^                $code = "<a class='image' href='\/files\/{$info["name"]}' data-fancybox='gallery' data-caption='No description'><img src='\/thumbnail\/{$tn}' alt='{$info["real_name"]}'\/><\/a>";$/;"	v
 code	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                        $code = "<div class='photoalbum'>";$/;"	v
 code	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $code = "<div class='photoalbum'>";$/;"	v
@@ -308,7 +318,6 @@ compress_hex_colors	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private func
 compression	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^            $compression = null;$/;"	v
 compression	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^        $compression = $st['compression'] ?? null;$/;"	v
 config	src/App/Handlers/Admin.php	/^        $config = $this->getNodeConfig($node['type']);$/;"	v
-config	src/settings.php	/^$config = [$/;"	v
 config	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $config = $this->container->get("settings")["S3"];$/;"	v
 config	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $config = $this->getNodeConfig($node['type']);$/;"	v
 config	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^        $this->config = $config;$/;"	v
@@ -318,7 +327,7 @@ config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->config = array($/;"	
 config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->config = array_merge([$/;"	v
 config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected $config;$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^                $this->conn = $this->connect();$/;"	v
-conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^            $this->conn = new \\PDO($this->dsn["name"], $this->dsn["user"] ?? null, $this->dsn["password"] ?? null);$/;"	v
+conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^            $this->conn = new \\PDO($this->dsn["name"], @$this->dsn["user"], @$this->dsn["password"]);$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $this->conn = null;$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    protected $conn;$/;"	v
 connect	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    protected function connect()$/;"	f
@@ -335,12 +344,16 @@ container	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^        $this->containe
 container	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^    protected $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->container = $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected $container;$/;"	v
+container	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $this->container = $c;$/;"	v
+container	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    protected $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/TaskQ.php	/^        $this->container = $c;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/TaskQ.php	/^    protected $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Telega.php	/^        $this->container = $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Telega.php	/^    protected $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $this->container = $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^    protected $container;$/;"	v
+container	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $this->container = $app->getContainer();$/;"	v
+container	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    protected $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $this->container = $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^    protected $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $this->container = $c;$/;"	v
@@ -436,7 +449,6 @@ data	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $data = $
 data	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $data = $file->getStream()->getContents();$/;"	v
 data	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $data = $file->getStream()->getContents();$/;"	v
 data	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $data = json_decode(json_encode($xml), true);$/;"	v
-data	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $data = array_merge($defaults, $data);$/;"	v
 data	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $data = $this->addDefaults($data);$/;"	v
 data	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $data = array_merge($this->defaults, $data);$/;"	v
 data	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^            $data = @file_get_contents($url);$/;"	v
@@ -457,13 +469,16 @@ date	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $date = strftime("%Y%m%d");$/
 date	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $date = substr($this->getDate($headers), 0, 8);$/;"	v
 date	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                    $date = sprintf("%u %s %u", $m["day"], $months[$m["month"] - 1], $m["year"]);$/;"	v
 date	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                    $date = sprintf("%u %s", $m["day"], $months[$m["month"] - 1]);$/;"	v
+date	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                $date = sprintf("%u %s %u", $day, $months[$month - 1], $year);$/;"	v
+date	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                $date = sprintf("%u %s", $day, $months[$month - 1]);$/;"	v
 dates	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $dates = [];$/;"	v
+day	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $day = strftime('%d', $ts);$/;"	v
 db	src/App/Handlers.php	/^        $this->db = $container->get("database");$/;"	v
 db	src/App/Handlers.php	/^    protected $db;$/;"	v
 db	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^            $db = $this->connect();$/;"	v
 db	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $db = $this->connect();$/;"	v
 db	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^        $db = $this->container->get("database");$/;"	v
-db	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $this->db = $database;$/;"	v
+db	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $this->db = $c->get('database');$/;"	v
 db	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    protected $db;$/;"	v
 db	vendor/umonkey/ufw1/src/Ufw1/TaskQ.php	/^        $db = $this->container->get('database');$/;"	v
 dbGetFile	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    protected function dbGetFile($id)$/;"	f
@@ -476,7 +491,6 @@ debug	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function debug($
 def	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $def = $this->container->get("settings")["templates"];$/;"	v
 defaults	src/App/CommonHandler.php	/^        $defaults = [$/;"	v
 defaults	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $defaults = [$/;"	v
-defaults	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $defaults = $settings["template_{$lang}"];$/;"	v
 defaults	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $this->defaults = isset($settings["defaults"])$/;"	v
 defaults	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^    protected $defaults;$/;"	v
 delay	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^            $delay = ((int)$task["attempts"] + 1) * 5;$/;"	v
@@ -493,6 +507,7 @@ divisor	src/App/Handlers/Files.php	/^        $divisor = array_sum(array_map('arr
 divisor	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $divisor = array_sum(array_map('array_sum', $sharpenMatrix));$/;"	v
 divisor	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $divisor = array_sum(array_map('array_sum', $sharpenMatrix));$/;"	v
 dmode	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $dmode = $settings["dmode"] ?? 0777;$/;"	v
+doPOST	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    protected function doPOST($path, $body = null, $options = []): Response$/;"	f
 doRequest	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected function doRequest($method, $url, array $headers = [], $payload = "")$/;"	f
 doRequestCurl	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected function doRequestCurl($method, $url, $payload, array $headers)$/;"	f
 doRequestStream	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected function doRequestStream($method, $url, $payload, array $headers)$/;"	f
@@ -506,6 +521,7 @@ dst	src/App/Handlers/Files.php	/^                $dst = imagecreatetruecolor($nw
 dst	src/App/Handlers/ShortImage.php	/^        $dst = $_SERVER["DOCUMENT_ROOT"] . $request->getUri()->getPath();$/;"	v
 dst	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $dst = imagecreatetruecolor($nw, $nh);$/;"	v
 dst	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $dst = $_SERVER["DOCUMENT_ROOT"] . $request->getUri()->getPath();$/;"	v
+dst	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $dst = $request->getUri()->getBaseUrl() . $this->shorten($src);$/;"	v
 dst	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $dst = $this->fixUnicodeTarget($dst);$/;"	v
 dst	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^                $dst = $this->container->get('file')->fsgetpath($node['files'][$key]['path']);$/;"	v
 dst	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $dst = imagecreatetruecolor($nw, $nh);$/;"	v
@@ -533,6 +549,9 @@ english	src/App/Handlers/Short.php	/^                    $english = $page["title
 english	src/App/Handlers/Short.php	/^            $english = $page["title"];$/;"	v
 english	src/App/Handlers/Short.php	/^        $english = null;$/;"	v
 entries	src/App/Handlers/Home.php	/^        $entries = $this->node->where('`type` = \\'blog\\' AND `deleted` = 0 AND `published` = 1 ORDER BY `created` DESC', [], function ($em) {$/;"	v
+env	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $env = Environment::mock($env);$/;"	v
+env	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $env = Environment::mock([$/;"	v
+env	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $env = [$/;"	v
 environment	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^        $environment = \\League\\CommonMark\\Environment::createCommonMarkEnvironment();$/;"	v
 environment	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^            $environment = \\Slim\\Http\\Environment::mock([$/;"	v
 error	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^    public function error($message, array $context = [])$/;"	f
@@ -551,7 +570,6 @@ extract_data_urls	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private functi
 f	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $f = \\Ufw1\\Util::fetchFile($link);$/;"	v
 f	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $f = $file['files'][$key];$/;"	v
 fail	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function fail($message)$/;"	f
-fallback	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $fallback = __DIR__ . '\/..\/..\/templates';$/;"	v
 fdir	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $fdir = dirname($fpath);$/;"	v
 fetch	src/App/Util.php	/^    public static function fetch($url)$/;"	f
 fetch	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^    public static function fetch($url)$/;"	f
@@ -588,8 +606,8 @@ file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $file = $this->db
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $file = $this->file->get($id);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $file = $this->node->get($id);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^            $file = \\Ufw1\\Common::fetch($link);$/;"	v
+file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                            $file = $tn->updateNode($file);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                        $file = $this->file->add($name, $type, $doc["data"]);$/;"	v
-file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $file = $this->addFile($name, $type, $body, $comment);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $file = $this->node->save($file);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $file = $tn->updateNode($file);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $file = \\Ufw1\\Common::fetch($link);$/;"	v
@@ -613,6 +631,8 @@ files	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^            $files = array_map(funct
 files	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $files = [];$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^        $files = $request->getUploadedFiles();$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $files = $this->container->get('file');$/;"	v
+files	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $files = $this->unroll($pattern);$/;"	v
+files	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $files = [$pattern];$/;"	v
 files	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $files = glob($pattern);$/;"	v
 fillNodes	src/App/CommonHandler.php	/^    protected function fillNodes(array $nodes)$/;"	f
 filter	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer2.php	/^            $filter = \\Imagick::FILTER_CATROM;$/;"	v
@@ -630,7 +650,6 @@ fn	src/App/Handlers/Short.php	/^        $fn = __DIR__ . "\/..\/..\/..\/data\/pla
 fn	src/App/Handlers/ShortImage.php	/^        $fn = __DIR__ . "\/..\/..\/..\/data\/plate.png";$/;"	v
 fn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^                    $fn = substr($this->dsn["name"], 7);$/;"	v
 fn	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^        $fn = strtr($fn, [$/;"	v
-fn	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $fn = $_SERVER["DOCUMENT_ROOT"] . "\/settings.php";$/;"	v
 fname	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $fname = $this->fsput($body);$/;"	v
 fname	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $fname = substr($hash, 0, 1) . '\/' . substr($hash, 1, 2) . '\/' . $hash;$/;"	v
 fname	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $fname = $b1 . "\/" . $b2 . "\/" . $file["hash"];$/;"	v
@@ -643,7 +662,7 @@ folders	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $folders = $th
 forbidden	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function forbidden()$/;"	f
 form	src/App/Handlers/Maps.php	/^        $form = $request->getParam("form");$/;"	v
 form	src/App/Handlers/Node.php	/^        $form = $request->getParam("node");$/;"	v
-form	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $form = array_merge([$/;"	v
+form	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $form = array_merge([$/;"	v
 form	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $form = $this->container->get('settings')['node_forms'][$args['type']] ?? null;$/;"	v
 form	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $form = $request->getParam('node');$/;"	v
 form	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $form = $st['node_forms'][$node['type']] ?? null;$/;"	v
@@ -730,6 +749,7 @@ getSQLiteStats	vendor/umonkey/ufw1/src/Ufw1/Handlers/Database.php	/^    protecte
 getSettings	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^    protected function getSettings()$/;"	f
 getSettings	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^    protected function getSettings(Request $request)$/;"	f
 getSigningKey	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected function getSigningKey(array $headers)$/;"	f
+getSnippet	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function getSnippet($html)$/;"	f
 getSource	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^    protected function getSource(array $file)$/;"	f
 getSourcePath	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^    protected function getSourcePath(array $file, $key)$/;"	f
 getStats	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    public function getStats()$/;"	f
@@ -741,6 +761,7 @@ getThumbnail	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    public function get
 getUser	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function getUser(Request $request)$/;"	f
 getUserStats	src/App/CommonHandler.php	/^    protected function getUserStats(array $user)$/;"	f
 getWarnings	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    protected function getWarnings()$/;"	f
+getWikiLink	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function getWikiLink($link)$/;"	f
 getWordBase	vendor/umonkey/ufw1/src/Ufw1/Stemmer.php	/^    public static function getWordBase($word)$/;"	f
 guessType	src/App/Handlers/Storage.php	/^    protected function guessType($name)$/;"	f
 h	src/App/Handlers/Home.php	/^                $h = $node["file"]["height"];$/;"	v
@@ -805,29 +826,31 @@ html	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $html = preg_repla
 html	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $html = $page["html"];$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $html = preg_replace('@<script.*?<\/script>@', '', $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $html = str_replace("><", "> <", $html);$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $html = $page['html'];$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $html = preg_replace('@<script.*?<\/script>@', '', $html);$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $html = str_replace("><", "> <", $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $html = \\Ufw1\\Common::renderMarkdown($src);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $html = $template->render($data);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $html = $this->fixHTML($html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $html = $this->renderFile($fileName, $data);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $html = \\Ufw1\\Util::cleanHtml($html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace($re = '@\\s*<(' . $all . '|!--)([^>]*>)\\s*@', '<\\1\\2', $html);$/;"	v
-html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@ (а|В|в|Для|и|из|на|о|от|с)\\s+@u', ' \\1&nbsp;', $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@<\/a>\\s+@', '<\/a> ', $html);$/;"	v
-html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@\\.  @', '.&nbsp; ', $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@\\s*<\/(' . $all . ')>\\s*@ms', '<\/\\1>', $html);$/;"	v
-html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@\\s+(году|год)([.,])@u', '&nbsp;\\1\\2', $html);$/;"	v
-html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@\\s+--\\s+@', '&nbsp;— ', $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@\\s+<\/([a-z0-9]+)>@', '<\/\\1>', $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@\\s+<\/a>@', ' <\/a>', $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $html = "<div id='map_{$id}' class='map' data-src='\/map\/points.json?tag=" . $tag . "'><\/div>";$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $html = '<p>' . $em['title'] . '<\/p>';$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $html = sprintf('<p><a href="%s">%s<\/a><\/p>', $em['link'], $em['title']);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $html = "<a class='{$className}' href='{$page}' data-src='{$large}' data-fancybox='gallery' title='{$title}'>";$/;"	v
-html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $html = sprintf("<a href='\/wiki?name=%s' class='wiki %s' title='%s'>%s<\/a>", urlencode($link), $cls, htmlspecialchars($title), htmlspecialchars($label));$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $html = sprintf("<a href='%s' class='%s' title='%s'>%s<\/a>", $link, $cls, htmlspecialchars($title), htmlspecialchars($label));$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = $this->processHeader($html, $res);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = $this->processImages($html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = $this->processSummary($html, $res);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = \\Ufw1\\Common::renderMarkdown($source);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = \\Ufw1\\Common::renderTOC($html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = \\Ufw1\\Util::cleanHtml($html);$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = preg_replace('@<script.*?<\/script>@', '', $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = preg_replace_callback('@<h1>(.+)<\/h1>@', function ($m) use (&$res) {$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $html = preg_replace_callback('@\\[\\[image:([^]]+)\\]\\]@', function ($m) use ($nodes, &$res) {$/;"	v
 https	vendor/umonkey/ufw1/src/Ufw1/Handlers/Search.php	/^        $https = $request->getServerParam("HTTPS") == "on";$/;"	v
@@ -864,10 +887,10 @@ id	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $id = intval($l
 id	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $id = $args["id"];$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^        $id = $this->db->saveFile($res);$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                        $id = $file["id"];$/;"	v
-id	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $id = (int)$args["id"];$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^            $id = $_row["id"];$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/TaskQ.php	/^        $id = $db->insert('taskq', [$/;"	v
 id	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $id = mt_rand(1111, 9999);$/;"	v
+idx	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $idx = 0;$/;"	v
 ih	src/App/Handlers/Files.php	/^        $ih = imagesy($img);$/;"	v
 ih	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $ih = imagesy($img);$/;"	v
 ih	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $ih = $m[1] . "px";$/;"	v
@@ -923,10 +946,12 @@ inputIndex	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $inputIndex
 inputLength	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $this->inputLength = strlen($this->input);$/;"	v
 inputLength	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $inputLength = 0;$/;"	v
 insert	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    public function insert($tableName, array $fields)$/;"	f
+interwiki	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $interwiki = $this->container->get('settings')['interwiki'] ?: [];$/;"	v
 isAdmin	src/App/CommonHandler.php	/^    protected function isAdmin(Request $request)$/;"	f
 isAdmin	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function isAdmin(Request $request)$/;"	f
 isAlphaNum	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function isAlphaNum($c)$/;"	f
 isEOF	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function isEOF($a)$/;"	f
+isPattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function isPattern($str)$/;"	f
 isRegexpLiteral	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function isRegexpLiteral()$/;"	f
 isVowel	vendor/umonkey/ufw1/src/Ufw1/Stemmer.php	/^    private static function isVowel($char)$/;"	f
 is_css	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function is_css($fn)$/;"	f
@@ -942,6 +967,9 @@ items	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $items = 
 items	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $items = [];$/;"	v
 items	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $items = $this->node->where("`type` = 'wiki' AND `published` = 1 ORDER BY `created` DESC LIMIT 100", [], function ($node) {$/;"	v
 items	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $items = array_map(function ($item) {$/;"	v
+items	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $items = $this->parseMapItems($m[1]);$/;"	v
+items	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $items = [];$/;"	v
+items	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $items = array_map(function (array $em) {$/;"	v
 iw	src/App/Handlers/Files.php	/^        $iw = imagesx($img);$/;"	v
 iw	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $iw = imagesx($img);$/;"	v
 iw	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $iw = $m[1] . "px";$/;"	v
@@ -949,10 +977,12 @@ iw	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $iw = round($m[1]
 iw	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $iw = round(150 * $rate) . "px";$/;"	v
 iw	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $iw = "auto";$/;"	v
 jsmin	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $jsmin = new JSMin($js);$/;"	v
+json	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $json = json_encode($items);$/;"	v
 k	src/App/Util.php	/^                    $k = strtolower(trim($parts[0]));$/;"	v
 k	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^                    $k = strtolower(trim($parts[0]));$/;"	v
 k	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^            $k = '{' . $k . '}';$/;"	v
 k	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $k = strtolower($parts[0]);$/;"	v
+k	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $k = trim($parts[0]);$/;"	v
 kDate	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $kDate = $this->hmac("AWS4" . $kSecret, $Date);$/;"	v
 kRegion	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $kRegion = $this->hmac($kDate, $Region);$/;"	v
 kSecret	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $kSecret = $this->config["secret_key"];$/;"	v
@@ -985,13 +1015,16 @@ l	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $l = floatval($values[2]);
 l	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $l = strlen($css);$/;"	v
 label	src/App/CommonHandler.php	/^                $label = $parts[1];$/;"	v
 label	src/App/CommonHandler.php	/^            $label = $m[1];$/;"	v
+label	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $label = $m[1];$/;"	v
 label	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $label = $parts[1];$/;"	v
 label	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $label = $m[1];$/;"	v
 lang	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $lang = $data["language"];$/;"	v
-lang	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $lang = $settings["default_language"];$/;"	v
+lang	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $lang = $data['language'] ?? 'en';$/;"	v
 large	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $large = "\/i\/photos\/{$fileId}.jpg";$/;"	v
 large	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $large = $info['files']['original']['url'];$/;"	v
 last	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^            $last = (int)$db->fetchcell("SELECT MAX(`rb`) FROM `nodes`");$/;"	v
+last	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $last = [];$/;"	v
+last	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $last = [];$/;"	v
 lastByteOut	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                            $this->lastByteOut = $this->a;$/;"	v
 lastByteOut	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                        $this->lastByteOut = $this->a;$/;"	v
 lastByteOut	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $this->lastByteOut = $this->a;$/;"	v
@@ -1031,19 +1064,24 @@ link	src/App/Handlers/Short.php	/^        $link = null;$/;"	v
 link	src/App/Handlers/ShortRedirect.php	/^        $link = "\/wiki?name=" . urlencode($name);$/;"	v
 link	src/App/Handlers/Sitemap.php	/^            $link = $base . "\/wiki?name=" . urlencode($page["name"]);$/;"	v
 link	src/App/Parser.php	/^            $link = sprintf("<a class=\\"wiki\\" href=\\"\/wiki?name=%s\\" title=\\"%s\\">%s<\/a>", urlencode($target), htmlspecialchars($title), htmlspecialchars($title));$/;"	v
-link	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^                $link = "\/wiki?name=" . urlencode($name);$/;"	v
+link	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^                $link = '\/wiki?name=' . urlencode($name);$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $link = $args['link'];$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $link = $request->getParam('target');$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Handlers/Sitemap.php	/^                        $link = "\/wiki?name=" . urlencode($node["name"]);$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Handlers/Sitemap.php	/^                        $link = null;$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^        $link = $request->getParam("link");$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $link = $request->getParam("link");$/;"	v
+link	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $link = $this->getWikiLink($link);$/;"	v
+link	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                    $link = $tmp['url'];$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $link = $parts[0];$/;"	v
+link	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $link = sprintf($format, $m[1]);$/;"	v
 link	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $link = $m[1];$/;"	v
+link	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $link = '\/wiki?name=' . $link;$/;"	v
+link	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $link = implode('#', $parts);$/;"	v
 ll	src/App/Handlers/Maps.php	/^            $ll = explode(",", $em["ll"]);$/;"	v
 lng	src/App/Handlers/Maps.php	/^            $lng = array_sum($lng) \/ count($lng);$/;"	v
 loadFiles	src/App/CommonHandler.php	/^    protected function loadFiles(array $nodes)$/;"	f
-loader	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $loader = new \\Twig\\Loader\\FilesystemLoader([$root, $fallback]);$/;"	v
+loader	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $loader = new \\Twig\\Loader\\FilesystemLoader($templates);$/;"	v
 log	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^            $log = false;$/;"	v
 log	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^        $log = true;$/;"	v
 log	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^    public function log($level, $message, array $context = [])$/;"	f
@@ -1055,7 +1093,7 @@ logger	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $logger = $this
 logger	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^        $logger = $this->container->get("logger");$/;"	v
 logger	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->logger = $container->get("logger");$/;"	v
 logger	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected $logger;$/;"	v
-logger	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $this->logger = $logger;$/;"	v
+logger	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $this->logger = $c->get('logger');$/;"	v
 logger	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    protected $logger;$/;"	v
 logger	vendor/umonkey/ufw1/src/Ufw1/TaskQ.php	/^        $logger = $this->container->get('logger');$/;"	v
 logger	vendor/umonkey/ufw1/src/Ufw1/Telega.php	/^        $logger = $this->container->get('logger');$/;"	v
@@ -1073,8 +1111,10 @@ lowercase_pseudo_elements	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    privat
 lowercase_pseudo_first	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function lowercase_pseudo_first($matches)$/;"	f
 lpath	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $lpath = $file['files'][$size]['path'];$/;"	v
 lstorage	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $lstorage = $this->container->get("settings")["files"]["path"] ?? $_SERVER['DOCUMENT_ROOT'] . '\/..\/data\/files';$/;"	v
-map	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $this->map = $map;$/;"	v
+map	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $this->map = include $src;$/;"	v
 map	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $map;$/;"	v
+mapPath	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $this->mapPath = $src;$/;"	v
+mapPath	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $mapPath;$/;"	v
 markers	src/App/Handlers/Maps.php	/^        $markers = array_map(function ($row) {$/;"	v
 match	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $match = preg_replace('\/' . self::COMMENT . $i . '___\/', $this->comments[$i], $match, 1);$/;"	v
 match	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $match = $matches[0];$/;"	v
@@ -1111,7 +1151,8 @@ message	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $message =
 message	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $message = 'Пользователь удалён.';$/;"	v
 message	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^            $message = "Ошибка {$data["e"]["class"]}: {$data["e"]["message"]}";$/;"	v
 message	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^        $message = strtr($message, $repl);$/;"	v
-meta	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $meta = [$/;"	v
+meta	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $meta = [$/;"	v
+meta	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $meta = [];$/;"	v
 meta	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $meta = $meta ? serialize($meta) : null;$/;"	v
 method	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $method = $request->getMethod();$/;"	v
 min	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                        $min = new CSSmin;$/;"	v
@@ -1121,7 +1162,9 @@ minify	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public static function mi
 missing	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^                    $missing = true;$/;"	v
 missing	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^            $missing = empty($node['files'][$key]);$/;"	v
 mode	src/App/Handlers/Maps.php	/^        $mode = $request->getParam("mode");$/;"	v
+month	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $month = strftime('%m', $ts);$/;"	v
 months	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                $months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];$/;"	v
+months	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];$/;"	v
 more	src/App/CommonHandler.php	/^                $more = json_decode($row["more"], true);$/;"	v
 more	src/App/CommonHandler.php	/^                $more = unserialize($row["more"]);$/;"	v
 more	src/App/CommonHandler.php	/^        $more = [];$/;"	v
@@ -1142,7 +1185,7 @@ name	src/App/Handlers/Short.php	/^        $name = $this->db->shortGetName($code)
 name	src/App/Handlers/ShortImage.php	/^        $name = $this->db->shortGetName($code);$/;"	v
 name	src/App/Handlers/ShortRedirect.php	/^        $name = $this->db->shortGetName($args["code"]);$/;"	v
 name	src/App/Handlers/Upload.php	/^        $name = $files["file"]->getClientFilename();$/;"	v
-name	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^                $name = substr($em["key"], 5);$/;"	v
+name	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^                $name = substr($em['key'], 5);$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $name = substr($hash, 0, 1) . '\/' . substr($hash, 1, 2) . '\/' . $hash;$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^                $name = $this->fetchcell("SELECT DATABASE()");$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Database.php	/^                $name = $this->db->fetchcell("SELECT DATABASE()");$/;"	v
@@ -1159,9 +1202,11 @@ name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $name = $i
 name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $name = basename(explode("?", $link)[0]);$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $name = "File:" . $id;$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $name = $node["name"];$/;"	v
-name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $name = $page["name"];$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $name = $request->getParam("page_name");$/;"	v
 name	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $name = $request->getQueryParam("name");$/;"	v
+name	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $name = $page['name'];$/;"	v
+name	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $name = $parts[0] . ' ' . mb_substr($parts[1], 0, 1) . '.';$/;"	v
+name	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $name = explode('#', $name)[0];$/;"	v
 nameEn	src/App/Handlers/ShortImage.php	/^        $nameEn = $this->getEnglishName($code);$/;"	v
 nameRu	src/App/Handlers/ShortImage.php	/^        $nameRu = $this->getRussianName($code);$/;"	v
 new_hash	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $new_hash = md5($data);$/;"	v
@@ -1178,6 +1223,7 @@ next	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $next = "\/ad
 next	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $next = $request->getParam('next');$/;"	v
 next	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $next = $request->getParam('next');$/;"	v
 next	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $next = $file["folder_id"] ? "\/admin\/files?folder={$file["folder_id"]}" : "\/admin\/files";$/;"	v
+next	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $next = '\/wiki?name=' . urlencode($res['redirect']);$/;"	v
 next	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $next = '\/wiki?name=' . urlencode($st);$/;"	v
 next	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $next = isset($node['url'])$/;"	v
 next	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function next()$/;"	f
@@ -1212,8 +1258,8 @@ node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $node = $old;$/;
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $node = array_merge($props, [$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $node = $nodes->get($id);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $node = $nodes->getByKey($hash);$/;"	v
-node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $node = $this->node->save($node);$/;"	v
-node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $node = array_merge($form, [$/;"	v
+node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $node = $this->node->save($node);$/;"	v
+node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $node = array_merge($form, [$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^                $node = $this->node->save($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^                $node = $tn->updateNode($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $node = $this->node->get($form['id']);$/;"	v
@@ -1230,6 +1276,7 @@ node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $node = $this->no
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $node = $this->node->get($id);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $node = $this->node->getByKey($key);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $node = $this->node->save($node);$/;"	v
+node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $node = array_merge($node ?? [], [$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $node = array_merge($node, [$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Sitemap.php	/^                $node = $this->node->unpack($row);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $node = $s3->uploadNodeFiles($node);$/;"	v
@@ -1238,9 +1285,12 @@ node	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $node = $this
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $node = $tn->updateNode($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $node = $this->node->save($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $node = $tn->updateNode($node);$/;"	v
+node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $node = null;$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $node = $this->node->getByKey($key);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $node = $this->node->save($node);$/;"	v
+node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $node = $wiki->getPageByName($name);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $node = $wiki->updatePage($name, $source, $user, $section);$/;"	v
+node	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $node = $this->container->get('node')->get($args['id']);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $node = [$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $node = array_merge($node, $props);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $node = $this->container->get('node')->where('`type` = \\'wiki\\' AND `key` = ? ORDER BY `id` LIMIT 1', [$key]);$/;"	v
@@ -1260,7 +1310,7 @@ nodes	src/App/Handlers/Home.php	/^        $nodes = $this->node->where("`type` = 
 nodes	src/App/Handlers/Home.php	/^        $nodes = $this->node->where("`type` = 'user' AND `deleted` = 0 ORDER BY `published` DESC, `id`", [], function ($node) {$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $nodes = $this->container->get("node");$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $nodes = $this->node->where("`type` = 'user' AND `deleted` = 0 AND `id` IN (SELECT `id` FROM `nodes_user_idx` WHERE `email` = ?) ORDER BY `id`", [$email]);$/;"	v
-nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $nodes = $this->node->where("`type` = 'user' AND `key` = ?", [$form["email"]]);$/;"	v
+nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $nodes = $this->node->where("`type` = 'user' AND `key` = ?", [$form["email"]]);$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $nodes = $this->node->where("`deleted` = 0 AND `type` IN ({$types}) ORDER BY `id` DESC LIMIT 100");$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $nodes = $this->node->where('`type` = \\'file\\' AND `deleted` = 0 ORDER BY `updated`');$/;"	v
 nodes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $nodes = array_filter($nodes, function ($node) {$/;"	v
@@ -1285,9 +1335,11 @@ now	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^        $now = strftime("%Y-%
 now	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^            $now = microtime(true);$/;"	v
 now	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $now = microtime(true);$/;"	v
 now	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                $now = strftime("%Y");$/;"	v
+now	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $now = strftime("%Y");$/;"	v
 nw	src/App/Handlers/Files.php	/^                $nw = $options["width"];$/;"	v
 nw	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $nw = $options["width"];$/;"	v
 nw	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $nw = round($iw * $scale);$/;"	v
+obj	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^                $obj = $this->container->get($parts[0]);$/;"	v
 offset	src/App/Handlers/Files.php	/^        $offset = 0;$/;"	v
 offset	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $offset = 0;$/;"	v
 offset	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $offset = 0;$/;"	v
@@ -1380,6 +1432,7 @@ onPost	src/App/Handlers/EditPage.php	/^    public function onPost(Request $reque
 onPost	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    public function onPost(Request $request, Response $response, array $args)$/;"	f
 onPost	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^    public function onPost(Request $request, Response $response)$/;"	f
 onPost	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^    public function onPost(Request $request, Response $response)$/;"	f
+onPreview	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^    public function onPreview(Request $request, Response $response, array $args)$/;"	f
 onProfile	src/App/Handlers/Account.php	/^    public function onProfile(Request $request, Response $response, array $args)$/;"	f
 onPublishNode	src/App/Handlers/Admin.php	/^    public function onPublishNode(Request $request, Response $response, array $args)$/;"	f
 onPublishNode	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onPublishNode(Request $request, Response $response, array $args)$/;"	f
@@ -1396,8 +1449,8 @@ onRedirect	src/App/Handlers/Short.php	/^    public function onRedirect(Request $
 onRedirect	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^    public function onRedirect(Request $request, Response $response, array $args)$/;"	f
 onRegister	src/App/Handlers/Account.php	/^    public function onRegister(Request $request, Response $response, array $args)$/;"	f
 onRegister	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    public function onRegister(Request $request, Response $response, array $args)$/;"	f
+onRegisterNew	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    public function onRegisterNew(Request $request, Response $response, array $args)$/;"	f
 onReindex	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    public function onReindex(Request $request, Response $response, array $args)$/;"	f
-onReindexPage	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    public function onReindexPage(Request $request, Response $response, array $args)$/;"	f
 onRejected	src/App/Handlers/Home.php	/^    public function onRejected(Request $request, Response $response, array $args)$/;"	f
 onRun	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^    public function onRun(Request $request, Response $response, array $args)$/;"	f
 onRunAll	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^    public function onRunAll(Request $request, Response $response, array $args)$/;"	f
@@ -1464,7 +1517,7 @@ page	src/App/Handlers/ShortImage.php	/^        $page = $this->db->getPageByName(
 page	src/App/Handlers/ShortImage.php	/^        $page = \\App\\Util::parsePage($page);$/;"	v
 page	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $page = $this->db->fetchOne("SELECT * FROM `pages` WHERE `name` = ?", [$name]);$/;"	v
 page	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $page = $this->pageProcess($node);$/;"	v
-page	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $page = $this->pageProcess($node);$/;"	v
+page	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $page = $this->container->get('wiki')->renderPage($node);$/;"	v
 page	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $page = "\/wiki?name=File:{$fileId}";$/;"	v
 page	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $page = $this->getPageByName($name);$/;"	v
 pageGet	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    protected function pageGet($name)$/;"	f
@@ -1474,21 +1527,21 @@ pageGetText	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    protected funct
 pageName	src/App/Handlers.php	/^        $pageName = $request->getQueryParam("name");$/;"	v
 pageName	src/App/Handlers/EditPage.php	/^        $pageName = $request->getQueryParam("name");$/;"	v
 pageName	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $pageName = $request->getQueryParam("name");$/;"	v
-pageReindex	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    protected function pageReindex(array $node)$/;"	f
 pages	src/App/Handlers/Sitemap.php	/^        $pages = $this->db->listPages();$/;"	v
-pages	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $pages = $this->node->fetch("`type` = 'wiki' AND `updated` >= ? AND `published` = 1", [$since], function ($node) {$/;"	v
+pages	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $pages = $this->node->where("`type` = 'wiki' AND `updated` >= ? AND `published` = 1 ORDER BY `updated` DESC", [$since], function ($node) {$/;"	v
+pages	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $pages = array_filter($pages);$/;"	v
 pages	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $pages = array_filter($this->node->where("`type` = 'wiki'", [], function ($node) {$/;"	v
 params	src/App/Handlers/Short.php	/^        $params = [$/;"	v
 params	src/App/Handlers/Short.php	/^        $params = array_merge([$/;"	v
 params	src/App/Handlers/ShortImage.php	/^        $params = [$/;"	v
 params	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $params = [":query" => $query];$/;"	v
 params	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $params = [$/;"	v
-params	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $params = [$query, $query2];$/;"	v
 parent	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $parent = [$/;"	v
 parent	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $parent = $request->getParam("parent");$/;"	v
 parse	src/App/Parser.php	/^    public static function parse($name, $source)$/;"	f
 parseHtmlAttrs	src/App/Util.php	/^    public static function parseHtmlAttrs($tag)$/;"	f
 parseHtmlAttrs	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function parseHtmlAttrs($tag)$/;"	f
+parseMapItems	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function parseMapItems($source)$/;"	f
 parsePage	src/App/Util.php	/^    public static function parsePage(array $page)$/;"	f
 parseTimestamp	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^    protected function parseTimestamp($value)$/;"	f
 part1	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^        $part1 = substr(sha1($_SERVER["DOCUMENT_ROOT"]), 0, 10);$/;"	v
@@ -1503,15 +1556,19 @@ parts	src/App/Util.php	/^                    $parts = explode(":", $h, 2);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^                    $parts = explode(":", $h, 2);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Handlers/Database.php	/^                    $parts = explode(" ", mb_strtolower(trim($field)));$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $parts = explode("\/", $type);$/;"	v
+parts	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $parts = explode('.', $action);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $parts = explode(": ", $line, 2);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $parts = explode(" ", $h);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $parts = explode(":", $h, 2);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $parts = explode("\/", $dst);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $parts = explode("\/", $url, 4);$/;"	v
+parts	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $parts = explode(' ', $name, 2);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $parts = explode(":", $m[1]);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $parts = $this->findSection($node['source'] ?? '', $section);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $parts = $this->findSection($source, $section);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $parts = explode(":", $m[1]);$/;"	v
+parts	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $parts = explode(':', $line, 2);$/;"	v
+parts	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $parts = explode('#', $link);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $parts = $this->read_sources($sources);$/;"	v
 parts	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $parts = $this->read_sources_min($sources);$/;"	v
 password	src/App/Handlers/Node.php	/^        $password = $request->getParam('password');$/;"	v
@@ -1529,8 +1586,10 @@ path	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $path = $file
 path	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^                $path = $this->container->get('file')->fsput($res);$/;"	v
 pattern	src/App/Handlers/Catalog.php	/^        $pattern = '%' . $query . '%';$/;"	v
 pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                    $pattern = '\/'; \/\/ keep entire pattern in case we need to report it in the exception$/;"	v
+pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $pattern = dirname($this->mapPath) . '\/' . $pattern;$/;"	v
 pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $pattern = '\/(\\=\\s*?["\\']?)?#([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])(\\}|[^0-9a-f{][^{]*?\\})\/iS';$/;"	v
 pattern	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $pattern = '\/url\\(\\s*(["\\']?)data\\:\/i';$/;"	v
+patterns	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $patterns = [$/;"	v
 payload	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $payload = unserialize($row["payload"]);$/;"	v
 payload	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^                $payload = unserialize($task["payload"]);$/;"	v
 payload	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $payload = unserialize($row["payload"]);$/;"	v
@@ -1542,6 +1601,7 @@ pcre_recursion_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $this->
 pcre_recursion_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private $pcre_recursion_limit;$/;"	v
 peek	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function peek()$/;"	f
 percent	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $percent = $ult ? $ul * 100 \/ $ult : 0;$/;"	v
+phone	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                $phone = '+7 (' . substr($value, 1, 3);$/;"	v
 php_limits	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $php_limits = array($/;"	v
 pictures	src/App/Handlers/Home.php	/^        $pictures = $this->getPictures($user["id"], 1);$/;"	v
 pictures	src/App/Handlers/Home.php	/^        $pictures = $this->getPictures($user["id"], 2);$/;"	v
@@ -1561,6 +1621,7 @@ poi	src/App/Handlers/Maps.php	/^        $poi = $this->db->fetch("SELECT id, crea
 poi	src/App/Handlers/Maps.php	/^        $poi = $this->db->fetchOne("SELECT * FROM `map_poi` WHERE `id` = ?", [$id]);$/;"	v
 poi	src/App/Handlers/Maps.php	/^        $poi = array_map(function ($em) {$/;"	v
 postEdit	src/App/Handlers.php	/^    public function postEdit(Request $request, Response $response)$/;"	f
+postUpdate	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function postUpdate()$/;"	f
 prefix	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^        $prefix = sprintf("%s %06.2f %04u %s%s: ", strftime("%Y-%m-%d %H:%M:%S"), microtime(true) - $this->startup, ++$this->count, $uuid, $level);$/;"	v
 prefix	vendor/umonkey/ufw1/src/Ufw1/Stemmer.php	/^        $prefix = mb_substr($word, 0, $region, 'UTF-8');$/;"	v
 prepare	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    public function prepare($query)$/;"	f
@@ -1572,8 +1633,12 @@ preserver	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $preserver
 prevChar	vendor/umonkey/ufw1/src/Ufw1/Stemmer.php	/^            $prevChar = mb_substr($word, $i - 1, 1, 'UTF-8');$/;"	v
 processHeader	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function processHeader($html, array &$res)$/;"	f
 processImages	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function processImages($html)$/;"	f
+processInterwiki	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function processInterwiki(&$link, &$label, array $interwiki)$/;"	f
+processMaps	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function processMaps($source)$/;"	f
 processPhotoAlbums	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function processPhotoAlbums($source)$/;"	f
 processSummary	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function processSummary($html, array &$res)$/;"	f
+processTypography	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^    protected function processTypography($text)$/;"	f
+processTypography	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function processTypography($text)$/;"	f
 processWikiLinks	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    protected function processWikiLinks($source)$/;"	f
 props	src/App/Parser.php	/^        $props = array($/;"	v
 props	src/App/Util.php	/^        $props = [$/;"	v
@@ -1632,6 +1697,8 @@ refresh	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    protected function 
 regex	vendor/umonkey/ufw1/src/Ufw1/Stemmer.php	/^            $regex = $regex[1];$/;"	v
 reindexAll	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    public function reindexAll(array $items)$/;"	f
 reindexDocument	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    public function reindexDocument($key, $title, $body, array $meta = [])$/;"	f
+reindexNode	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    public function reindexNode(array $args)$/;"	f
+reindexWikiNode	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    protected function reindexWikiNode(array $node)$/;"	f
 removeEndings	vendor/umonkey/ufw1/src/Ufw1/Stemmer.php	/^    public static function removeEndings(&$word, $regex, $region)$/;"	f
 render	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function render(Request $request, $templateName, array $data = [])$/;"	f
 render	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^    public function render($fileName, array $data = array())$/;"	f
@@ -1652,8 +1719,10 @@ replace_colon	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function r
 replace_keyframe_zero	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^	private function replace_keyframe_zero($matches)$/;"	f
 replace_string	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function replace_string($matches)$/;"	f
 reps	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                            $reps = [];$/;"	v
+req	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $req = Request::createFromEnvironment($env);$/;"	v
 reqts	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $reqts = microtime(true);$/;"	v
 request	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^            $request = Request::createFromEnvironment($environment);$/;"	v
+request	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    protected function request($method, $path, $options = []): Response$/;"	f
 require	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $require = [$/;"	v
 requireAdmin	src/App/CommonHandler.php	/^    protected function requireAdmin(Request $request)$/;"	f
 requireAdmin	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function requireAdmin(Request $request)$/;"	f
@@ -1695,7 +1764,6 @@ res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^                $res = $ro
 res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^                $res = $this->handle($task);$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^                $res = [$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^        $res = array($/;"	v
-res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                    $res = [[$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $res = $wiki->renderPage($node);$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $res = [$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $res = [];$/;"	v
@@ -1713,6 +1781,7 @@ res	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $res = @file_get_contents($url
 res	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $res = array();$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $res = curl_exec($ch);$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Telega.php	/^        $res = curl_exec($ch);$/;"	v
+res	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $res = mb_strtoupper(mb_substr($text, 0, 1)) . mb_substr($text, 1);$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^                    $res = $this->getImageJPEG($img);$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^                    $res = $this->getImagePNG($img);$/;"	v
 res	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $res = imagecopyresampled($dst, $img, 0, 0, 0, 0, $nw, $nh, $iw, $ih);$/;"	v
@@ -1751,6 +1820,7 @@ response	vendor/umonkey/ufw1/src/Ufw1/Handlers/File.php	/^        $response = $r
 response	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $response = $response->withHeader("Content-Type", $file["mime_type"])$/;"	v
 response	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^                $response = $response->withHeader("Content-Type", "text\/plain; charset=utf-8");$/;"	v
 response	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^                $response = new Response(200);$/;"	v
+response	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $response = $this->app->run(true);$/;"	v
 results	src/App/Handlers/Search.php	/^        $results = $this->search($query);$/;"	v
 results	vendor/umonkey/ufw1/src/Ufw1/Handlers/Search.php	/^            $results = $this->search($query);$/;"	v
 rgb_to_hex	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function rgb_to_hex($matches)$/;"	f
@@ -1761,13 +1831,12 @@ role	src/App/Handlers/CLI.php	/^                    $role = "user";$/;"	v
 role	src/App/Handlers/Node.php	/^            $role = "user";$/;"	v
 role	src/App/Handlers/Nodes.php	/^        $role = $user['role'] ?? 'nobody';$/;"	v
 role	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $role = $user['role'] ?? 'nobody';$/;"	v
-roles	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $roles = $this->container->get('settings')['wiki']['editor_roles'];$/;"	v
-roles	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $roles = $this->container->get('settings')['wiki']['reader_roles'] ?? [];$/;"	v
+roles	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $roles = $this->container->get('settings')['wiki']['editor_roles'] ?? null;$/;"	v
+roles	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $roles = $this->container->get('settings')['wiki']['reader_roles'] ?? null;$/;"	v
 rollback	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    public function rollback()$/;"	f
 root	src/App/Handlers/Error.php	/^        $root = dirname($_SERVER["DOCUMENT_ROOT"]);$/;"	v
 root	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $root = $request->getServerParam("DOCUMENT_ROOT");$/;"	v
 root	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^        $root = dirname($_SERVER["DOCUMENT_ROOT"]);$/;"	v
-root	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $root = $settings["template_path"];$/;"	v
 round_number	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function round_number($n)$/;"	f
 route	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^                $route = $router->lookupRoute($routeInfo[1]);$/;"	v
 routeArguments	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^                $routeArguments = $routeInfo[2];$/;"	v
@@ -1809,6 +1878,13 @@ rows	vendor/umonkey/ufw1/src/Ufw1/Handlers/Search.php	/^        $rows = $this->d
 rows	vendor/umonkey/ufw1/src/Ufw1/Handlers/Search.php	/^        $rows = $this->fts->suggest($query . '*');$/;"	v
 rows	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $rows = $this->db->fetch("SELECT `id` FROM `taskq` ORDER BY `priority` DESC, `id`");$/;"	v
 rows	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $rows = $this->db->fetch($sql, $params, function ($em) {$/;"	v
+rows	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $rows = array_map(function ($em) {$/;"	v
+rows	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $rows = array_merge($rows1, $rows2);$/;"	v
+rows	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $rows = array_slice($rows, 0, 10);$/;"	v
+rows1	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $rows1 = $this->db->fetch("SELECT `key`, `title`, `meta` FROM `search` WHERE `search` MATCH ? OR `search` MATCH ? ORDER BY bm25(`search`, 0, 0, 50) LIMIT {$limit}", [$query, $query2]);$/;"	v
+rows1	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $rows1 = $this->db->fetch("SELECT `key`, `title`, `meta`, MATCH(`title`) AGAINST (:query IN BOOLEAN MODE) * 10 AS `trel` FROM `search` HAVING `trel` > 0 ORDER BY `trel` DESC LIMIT {$limit}", [':query' => $_q]);$/;"	v
+rows2	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $rows2 = $this->db->fetch("SELECT `key`, `title`, `meta`, MATCH(`title`) AGAINST (:query IN BOOLEAN MODE) * 10 AS `trel`, MATCH(`body`) AGAINST (:query IN BOOLEAN MODE) AS `brel` FROM `search` HAVING `trel` > 0 OR `brel` > 0 ORDER BY `trel` DESC, `brel` DESC LIMIT {$limit}", [':query' => $_q]);$/;"	v
+rows2	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $rows2 = [];$/;"	v
 rpath	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $rpath = "\/" . $file["path"];$/;"	v
 ruName	src/App/Handlers/Short.php	/^        $ruName = $this->getRussianName($code);$/;"	v
 rufont	src/App/Handlers/Short.php	/^        $rufont = __DIR__ . "\/..\/..\/..\/data\/Oswald-Bold.ttf";$/;"	v
@@ -1852,7 +1928,7 @@ section	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $section = $req
 sectionName	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $sectionName = $request->getQueryParam("section");$/;"	v
 sel	vendor/umonkey/ufw1/src/Ufw1/Handlers/Database.php	/^                    $sel = $this->db->fetchOne($_query);$/;"	v
 sel	vendor/umonkey/ufw1/src/Ufw1/Handlers/Sitemap.php	/^            $sel = $this->db->query("SELECT * FROM `nodes` WHERE `published` = 1 ORDER BY `created`");$/;"	v
-sel	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $sel = $this->db->query("SELECT `id` FROM `nodes` WHERE `type` = 'wiki' AND `published` = 1 ORDER BY `updated` DESC");$/;"	v
+sel	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $sel = $this->db->query("SELECT `id` FROM `nodes` WHERE `type` = 'wiki' ORDER BY `updated` DESC");$/;"	v
 sendCached	src/App/Handlers/Files.php	/^    protected function sendCached(Request $request, $body, $hash, $type, $name = null)$/;"	f
 sendCached	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function sendCached(Request $request, $body, $type, $lastmod)$/;"	f
 sendFromCache	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function sendFromCache(Request $request, $callback, $key = null)$/;"	f
@@ -1866,11 +1942,14 @@ sessionEdit	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected funct
 sessionGet	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    public function sessionGet(Request $request)$/;"	f
 sessionGetId	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function sessionGetId(Request $request)$/;"	f
 sessionSave	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function sessionSave(Request $request, array $data)$/;"	f
+setUp	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    public function setUp(): void$/;"	f
+setUserId	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    protected function setUserId($id)$/;"	f
 set_max_execution_time	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function set_max_execution_time($seconds)$/;"	f
 set_memory_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function set_memory_limit($limit)$/;"	f
 set_pcre_backtrack_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function set_pcre_backtrack_limit($limit)$/;"	f
 set_pcre_recursion_limit	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    public function set_pcre_recursion_limit($limit)$/;"	f
 settings	src/App/Handlers/Cron.php	/^        $settings = $this->container->get("settings");$/;"	v
+settings	src/settings.php	/^$settings = [$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $settings = $this->container->get("settings");$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $settings = $this->container->get("settings")["files"] ?? [];$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $settings = array_merge([$/;"	v
@@ -1884,10 +1963,9 @@ settings	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $settings = $
 settings	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $settings = $this->getSettings($request);$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^        $settings = $this->container->get("settings");$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/TaskQ.php	/^            $settings = $this->container->get('settings');$/;"	v
-settings	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $settings = include $fn;$/;"	v
 settings	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $settings = $container->get("settings")["templates"];$/;"	v
-settings	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^            $settings = $c->get("settings")["templates"];$/;"	v
-settings	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^            $settings = (array)$c->get("settings")["logger"];$/;"	v
+settings	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^            $settings = $c->get('settings')['templates'];$/;"	v
+settings	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^            $settings = (array)$c->get('settings')['logger'];$/;"	v
 setupRoutes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^    public static function setupRoutes(&$app)$/;"	f
 setupRoutes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public static function setupRoutes(&$app)$/;"	f
 setupRoutes	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    public static function setupRoutes(&$app)$/;"	f
@@ -1904,6 +1982,8 @@ sharpenMatrix	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $sharpen
 sharpenMatrix	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $sharpenMatrix = array($/;"	v
 short	src/App/Handlers/Search.php	/^        $short = $this->db->shortsGetByCode($query);$/;"	v
 short_safe	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $short_safe = array($/;"	v
+shorten	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^    protected function shorten($link)$/;"	f
+showPageByName	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    protected function showPageByName($request, $response, $name)$/;"	f
 sid	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^            $sid = md5(microtime(true) . $_SERVER["REMOTE_ADDR"] . $_SERVER["REMOTE_PORT"]);$/;"	v
 sid	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $sid = $this->sessionGetId($request);$/;"	v
 since	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $since = strftime("%Y-%m-%d %H:%M:%S", time() - 86400 * 30);$/;"	v
@@ -1911,28 +1991,31 @@ size	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $size = $args['si
 slice	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $slice = ($end === FALSE) ? substr($str, $start) : substr($str, $start, $end - $start);$/;"	v
 small	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $small = "\/node\/{$fileId}\/download\/small";$/;"	v
 small	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $small = $info['files']['medium']['url'];$/;"	v
-snippet	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $snippet = $this->pageGetSnippet($page);$/;"	v
+snippet	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^            $snippet = Util::processTypography($em['meta']['snippet'] ?? '');$/;"	v
+snippet	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^            $snippet = str_replace('&nbsp;', ' ', $snippet);$/;"	v
+snippet	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $snippet = $page['snippet'];  \/\/ TODO$/;"	v
 source	src/App/CommonHandler.php	/^        $source = preg_replace_callback('@\\[\\[([^]]+)\\]\\]@', function ($m) {$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $source = "# {$title}\\n\\n";$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $source = $request->getParam("page_source");$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $source = $wiki->getPageSource($pageName, $sectionName);$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $source = $node["source"];$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $source = implode("\\n", $lines);$/;"	v
-source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $source = $parts['before'] . PHP_EOL . PHP_EOL . trim($parts['wanted']) . PHP_EOL . PHP_EOL . $parts['after'];$/;"	v
+source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $source = $parts['before'] . trim($parts['wanted']) . PHP_EOL . PHP_EOL . $parts['after'];$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $source = $parts['wanted'] ?? null;$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $source = trim($source);$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = "";$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = $page['source'];$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = $this->processImages($source);$/;"	v
+source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = $this->processMaps($source);$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = $this->processPhotoAlbums($source);$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = $this->processWikiLinks($source);$/;"	v
 source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = implode(PHP_EOL, $out);$/;"	v
-source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = preg_replace_callback('@\\[\\[([^]]+)\\]\\]@', function ($m) {$/;"	v
+source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = preg_replace_callback('@\\[\\[([^]]+)\\]\\]@', function ($m) use ($interwiki) {$/;"	v
+source	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $source = preg_replace_callback('@```map(.+?)```@ms', function (array $m) use (&$idx) {$/;"	v
 splitWords	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    protected function splitWords($text)$/;"	f
 sql	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $sql = "SELECT `key`, `meta` FROM `search` WHERE `search` MATCH :query ORDER BY bm25(`search`, 0, 0, 50) * CASE WHEN `title` = :query THEN 100 ELSE 1 END LIMIT {$limit}";$/;"	v
 sql	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $sql = "SELECT `key`, `meta`, MATCH(`title`) AGAINST (:query IN BOOLEAN MODE) * 10 AS `trel`, MATCH(`body`) AGAINST (:query IN BOOLEAN MODE) AS `brel` FROM `search` WHERE `key` NOT LIKE 'page:File:%' HAVING `trel` > 0 OR `brel` > 0 ORDER BY `trel` DESC, `brel` DESC LIMIT {$limit}";$/;"	v
-sql	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $sql = "SELECT `key`, `title`, `meta` FROM `search` WHERE `search` MATCH ? OR `search` MATCH ? ORDER BY bm25(`search`, 0, 0, 50) LIMIT {$limit}";$/;"	v
-sql	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^                $sql = "SELECT `key`, `title`, `meta`, MATCH(`title`) AGAINST (:query IN BOOLEAN MODE) * 10 AS `trel`, MATCH(`body`) AGAINST (:query IN BOOLEAN MODE) AS `brel` FROM `search` WHERE `key` NOT LIKE 'page:File:%' HAVING `trel` > 0 OR `brel` > 0 ORDER BY `trel` DESC, `brel` DESC LIMIT {$limit}";$/;"	v
+src	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $src = $request->getParam('url');$/;"	v
 src	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                            $src = str_replace(array_keys($reps), array_values($reps), $src);$/;"	v
 src	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $src = $lstorage . "\/" . $file["path"];$/;"	v
 src	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^                $src = $this->getSourcePath($node, $srckey);$/;"	v
@@ -1950,7 +2033,7 @@ st	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $st = $this->contai
 st	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $st = $this->container->get('settings')['node_forms'];$/;"	v
 st	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $st = $this->container->get('settings')['node_forms'][$type] ?? null;$/;"	v
 st	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $st = $this->container->get('settings')['taskq'];$/;"	v
-st	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $st = $this->container->get('settings')['wiki']['homePage'] ?? 'Welcome';$/;"	v
+st	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $st = $this->container->get('settings')['wiki']['home_page'] ?: 'Welcome';$/;"	v
 st	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^        $st = $this->container->get('settings')['node_history'] ?? [];$/;"	v
 st	vendor/umonkey/ufw1/src/Ufw1/Telega.php	/^        $st = $this->container->get('settings');$/;"	v
 stack	src/App/Handlers/Error.php	/^        $stack = $e->getTraceAsString();$/;"	v
@@ -1987,6 +2070,7 @@ stopWords	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    static private $stopWord
 storage	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $storage = $st['files']['path'] ?? $_SERVER['DOCUMENT_ROOT'] . '\/..\/data\/files';$/;"	v
 str	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                    $str = $this->a; \/\/ in case needed for exception$/;"	v
 str_slice	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function str_slice($str, $start = 0, $end = FALSE)$/;"	f
+strings	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $strings = $this->container->get('settings')['templates']['strings'][$lang] ?? [];$/;"	v
 sts	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $sts = "AWS4-HMAC-SHA256\\n"$/;"	v
 subject	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $subject = $this->output . trim($this->a);$/;"	v
 suggest	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^    public function suggest($query, $limit = 10)$/;"	f
@@ -2019,6 +2103,7 @@ tasks	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^        $tasks = $this->
 template	src/App/Handlers/Node.php	/^        $template = "node-{$node["type"]}.twig";$/;"	v
 template	src/App/Handlers/Nodes.php	/^        $template = "node-{$node['type']}.twig";$/;"	v
 template	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $template = $this->twig->load($fileName);$/;"	v
+templates	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $templates = $settings["template_path"];$/;"	v
 terminator	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $terminator = ')';$/;"	v
 terminator	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $terminator = $m[1]; \/\/ ', " or empty (not quoted)$/;"	v
 test	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    public function test()$/;"	f
@@ -2037,19 +2122,26 @@ text	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^            $text = "DONE
 text	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^            $text = "EMPTY";$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^        $text = "# Файл {$info["name"]}\\n\\n";$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $text = "# {$name}\\n\\n";$/;"	v
-text	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $text = $this->pageGetText($page);$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $text = trim(strip_tags($html));$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^            $text = $_SERVER["REMOTE_ADDR"];$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^        $text = "";$/;"	v
+text	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $text = trim(strip_tags($html));$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^        $text = mb_strtolower($text);$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                $text = implode("\\r\\n", $lines);$/;"	v
+text	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $text = preg_replace_callback($pattern, function ($m) {$/;"	v
+text	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $text = preg_replace('@ (а|В|в|Для|и|из|на|о|от|с)\\s+@u', ' \\1&nbsp;', $text);$/;"	v
+text	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $text = preg_replace('@\\.  @', '.&nbsp; ', $text);$/;"	v
+text	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $text = preg_replace('@\\s+(году|год)([.,])@u', '&nbsp;\\1\\2', $text);$/;"	v
+text	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $text = preg_replace('@\\s+--\\s+@', '&nbsp;— ', $text);$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $text = preg_replace_callback('@[а-я]+@ui', function ($m) use ($len) {$/;"	v
+text	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $text = "# {$name}\\n\\n";$/;"	v
 text	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^        $text = str_replace("\\r\\n", "\\n", $text);$/;"	v
 time	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $time = time();$/;"	v
 title	src/App/Parser.php	/^                $title = $parts[0];$/;"	v
 title	src/App/Parser.php	/^                $title = $parts[1];$/;"	v
 title	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $title = $request->getParam("title");$/;"	v
-title	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $title = $page["title"];$/;"	v
+title	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $title = $page['title'];$/;"	v
+title	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $title = $text = null;$/;"	v
 title	vendor/umonkey/ufw1/src/Ufw1/Search.php	/^            $title = $this->normalizeText($title);$/;"	v
 title	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $title = "Нет такой страницы";$/;"	v
 title	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^            $title = $info['title'] ?? $info['name'];$/;"	v
@@ -2077,6 +2169,7 @@ tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^                $tn = $this
 tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $tn = $this->container->get('thumbnailer');$/;"	v
 tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $tn = $this->container->get('thumbnailer');$/;"	v
 tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $tn = $this->container->get('thumbnailer');$/;"	v
+tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                            $tn = $this->container->get('thumbnailer');$/;"	v
 tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $tn = $this->container->get('thumbnailer');$/;"	v
 tn	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^                $tn = $fi["filename"] . "_small." . $fi["extension"];$/;"	v
 toc	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^        $toc = "<h2>Содержание<\/h2>";$/;"	v
@@ -2091,6 +2184,7 @@ tpl	src/App/Handlers/Error.php	/^            $tpl = "notfound.twig";$/;"	v
 tpl	src/App/Handlers/Error.php	/^            $tpl = "unauthorized.twig";$/;"	v
 tpl	src/App/Handlers/Error.php	/^        $tpl = "error.twig";$/;"	v
 tpl	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^            $tpl = "notfound.twig";$/;"	v
+tpl	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^            $tpl = "unauthorized.twig";$/;"	v
 tpl	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^        $tpl = "error.twig";$/;"	v
 tpl	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^            $tpl = new \\Ufw1\\Template($c);$/;"	v
 tq	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^        $tq = $this->container->get('taskq');$/;"	v
@@ -2103,6 +2197,7 @@ ts	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $ts = strftime("%Y-
 ts	vendor/umonkey/ufw1/src/Ufw1/Handlers/Sitemap.php	/^                        $ts = strtotime($ts);$/;"	v
 ts	vendor/umonkey/ufw1/src/Ufw1/Handlers/Sitemap.php	/^                    $ts = $node["updated"];$/;"	v
 ts	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $ts = strtotime($row["added"]);$/;"	v
+ts	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $ts = $this->parseTimestamp($dt);$/;"	v
 ts	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $ts = $this->parseTimestamp($ts);$/;"	v
 twig	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^        $this->twig = new \\Twig\\Environment($loader);$/;"	v
 twig	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^    protected $twig;$/;"	v
@@ -2139,6 +2234,7 @@ unavailable	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected funct
 unlink	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $unlink = [];$/;"	v
 unpack	src/App/CommonHandler.php	/^    protected function unpack(array $row)$/;"	f
 unpack	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^    public function unpack(array $row)$/;"	f
+unroll	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function unroll($pattern)$/;"	f
 update	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    public function update($tableName, array $fields, array $where)$/;"	f
 update	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $update = json_decode($code, true);$/;"	v
 updateCount	vendor/umonkey/ufw1/src/Ufw1/Thumbnailer.php	/^        $updateCount = 0;$/;"	v
@@ -2188,10 +2284,11 @@ user	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $user = $this->
 user	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $user = $this->requireAdmin($request);$/;"	v
 user	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^        $user = $this->requireUser($request);$/;"	v
 user	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $user = $this->requireAdmin($request);$/;"	v
+user	vendor/umonkey/ufw1/src/Ufw1/Handlers/Shortener.php	/^        $user = $this->requireUser($request);$/;"	v
 user	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $user = $this->requireAdmin($request);$/;"	v
 user	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $user = $this->getUser($request);$/;"	v
 user	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $user = $this->requireUser($request);$/;"	v
-userCount	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^            $userCount = (int)$this->db->fetchcell("SELECT COUNT(*) FROM `nodes` WHERE `type` = 'user'");$/;"	v
+userCount	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $userCount = (int)$this->db->fetchcell("SELECT COUNT(*) FROM `nodes` WHERE `type` = 'user'");$/;"	v
 uuid	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^        $uuid = sprintf("%s_%s_%s", $part1, $part2, $part3);$/;"	v
 uuid	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^    public static function uuid($body = null)$/;"	f
 uuid	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^            $this->uuid = substr($hash, 0, 10);$/;"	v
@@ -2203,12 +2300,16 @@ v	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^                    $v = trim($parts
 v	vendor/umonkey/ufw1/src/Ufw1/Logger.php	/^                $v = json_encode($v, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);$/;"	v
 v	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^                $v = null;$/;"	v
 v	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^                $v = trim($parts[1]);$/;"	v
+v	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                        $v = [floatval($parts[0]), floatval($parts[1])];$/;"	v
+v	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^                $v = trim($parts[1]);$/;"	v
 v1	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $v1 = (2 * $l) - $v2;$/;"	v
 v2	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $v2 = $l < 0.5 ? $l * (1 + $s) : ($l + $s) - ($s * $l);$/;"	v
 val	src/App/CommonHandler.php	/^        $val = $this->db->fetchcell("SELECT COUNT(1) FROM `nodes` WHERE `type` = 'picture' AND `published` = 1");$/;"	v
 val	src/App/CommonHandler.php	/^        $val = $this->db->fetchcell("SELECT COUNT(1) FROM `nodes` WHERE `type` = 'user' AND `published` = 1");$/;"	v
 val	src/App/CommonHandler.php	/^        $val = $this->db->fetchcell("SELECT COUNT(1) FROM `nodes` WHERE `type` IN ('user', 'picture') AND `published` = 0");$/;"	v
 value	vendor/umonkey/ufw1/src/Ufw1/NodeFactory.php	/^                $value = $node[$field] ?? null;$/;"	v
+value	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^                $value = $phone;$/;"	v
+value	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $value = preg_replace('@[^0-9]+@', '', $value);$/;"	v
 values	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $values = explode(',', str_replace('%', '', $matches[1]));$/;"	v
 ver	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $ver = array_merge([$/;"	v
 vh	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $vh = $vh < 0 ? $vh + 1 : ($vh > 1 ? $vh - 1 : $vh);$/;"	v
@@ -2256,4 +2357,5 @@ xml	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $xml = new \\SimpleXMLIterator
 xrw	vendor/umonkey/ufw1/src/Ufw1/Handlers/Error.php	/^        $xrw = $_SERVER['HTTP_X_REQUESTED_WITH'] ?? null;$/;"	v
 xxfont	src/App/Handlers/Short.php	/^        $xxfont = __DIR__ . "\/..\/..\/..\/data\/Lato-Regular.ttf";$/;"	v
 xxfont	src/App/Handlers/ShortImage.php	/^        $xxfont = __DIR__ . "\/..\/..\/..\/data\/Lato-Regular.ttf";$/;"	v
+year	vendor/umonkey/ufw1/src/Ufw1/Template.php	/^            $year = strftime('%Y', $ts);$/;"	v
 ymd	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $ymd = substr($date, 0, 8);$/;"	v
