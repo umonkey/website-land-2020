@@ -318,7 +318,7 @@ config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->config = array($/;"	
 config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $this->config = array_merge([$/;"	v
 config	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    protected $config;$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^                $this->conn = $this->connect();$/;"	v
-conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^            $this->conn = new \\PDO($this->dsn["name"], @$this->dsn["user"], @$this->dsn["password"]);$/;"	v
+conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^            $this->conn = new \\PDO($this->dsn["name"], $this->dsn["user"] ?? null, $this->dsn["password"] ?? null);$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^        $this->conn = null;$/;"	v
 conn	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    protected $conn;$/;"	v
 connect	vendor/umonkey/ufw1/src/Ufw1/Database.php	/^    protected function connect()$/;"	f
@@ -590,6 +590,8 @@ file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $file = $this->no
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^            $file = \\Ufw1\\Common::fetch($link);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                        $file = $this->file->add($name, $type, $doc["data"]);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^                $file = $this->addFile($name, $type, $body, $comment);$/;"	v
+file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $file = $this->node->save($file);$/;"	v
+file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $file = $tn->updateNode($file);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $file = \\Ufw1\\Common::fetch($link);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $file = $this->container->get('file')->get($fileId);$/;"	v
 file	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $file = $this->file->add($name, $type, $body);$/;"	v
@@ -2075,6 +2077,7 @@ tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^                $tn = $this
 tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $tn = $this->container->get('thumbnailer');$/;"	v
 tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^            $tn = $this->container->get('thumbnailer');$/;"	v
 tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^        $tn = $this->container->get('thumbnailer');$/;"	v
+tn	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^            $tn = $this->container->get('thumbnailer');$/;"	v
 tn	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^                $tn = $fi["filename"] . "_small." . $fi["extension"];$/;"	v
 toc	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^        $toc = "<h2>Содержание<\/h2>";$/;"	v
 token	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $token = $this->str_slice($css, $start_index, $end_index);$/;"	v

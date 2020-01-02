@@ -85,6 +85,7 @@ $config = [
                 'new_title' => 'Добавление заметки',
                 'edit_title' => 'Редактирование заметки',
                 'edit_roles' => ['admin'],
+                'order' => 'created DESC',
                 'fields' => [
                     'name' => [
                         'label' => 'Заголовок',
