@@ -20,15 +20,6 @@ $settings = [
         'fmode' => 0660,
     ],
 
-    'templates' => [
-        'template_path' => [
-            __DIR__ . '/../themes/land/templates',
-            __DIR__ . '/../vendor/umonkey/ufw1/templates',
-        ],
-        'defaults' => [
-        ]
-    ],
-
     'logger' => [
         'path' => __DIR__ . '/../tmp/php.log.%Y%m%d',
         'symlink' => __DIR__ . '/../tmp/php.log',
@@ -57,6 +48,7 @@ $settings = [
         'secret_key' => null,
         'endpoint' => 'storage.yandexcloud.net',
         'console' => 'https://console.cloud.yandex.ru/folders/b1gbtbv153es58sd3u6c/storage/bucket/umonkey-land',
+        'auto_upload' => false,
     ],
 
     'taskq' => [
@@ -68,6 +60,14 @@ $settings = [
         'bot_id' => null,
         'chat_id' => null,
         'proxy' => null,
+    ],
+
+    'templates' => [
+        'template_path' => [
+            __DIR__ . '/../themes/land/templates',
+            __DIR__ . '/../vendor/umonkey/ufw1/templates',
+        ],
+        'strings' => include __DIR__ . '/strings.php',
     ],
 
     'thumbnails' => [
