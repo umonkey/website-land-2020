@@ -107,6 +107,9 @@ return [
     'file' => [
         'edit_title' => 'Редактирование файла',
         'fields' => [
+            'preview' => [
+                'type' => 'thumbnail',
+            ],
             'name' => [
                 'label' => 'Название файла',
                 'type' => 'textline',
