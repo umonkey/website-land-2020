@@ -1,9 +1,9 @@
 <div class='admin_files'>
     {% for f in nodes %}
         <div class='file'>
-            <a class='thumbnail' data-fancybox='list' data-src='{% if f.files.medium %}{{ f.files.medium.url }}{% else %}{{ f.files.original.url }}{% endif %}' href='/admin/nodes/{{ f.id }}/edit'>
+            <a class='thumbnail' data-fancybox='list' data-src='{% if f.files.large.url %}{{ f.files.large.url }}{% else %}/node/{{ f.id }}/download/large{% endif %}' href='/admin/nodes/{{ f.id }}/edit'>
                 {% if f.files.small %}
-                    <img src='{{ f.files.small.url }}'/>
+                    <img src='{% if f.files.small.url %}{{ f.files.small.url }}{% else %}/node/{{ f.id }}/download/small{% endif %}'/>
                 {% else %}
                     <img src='/images/no-thumbnail.png'/>
                 {% endif %}
