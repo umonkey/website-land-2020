@@ -30,3 +30,21 @@ article h2 {
 article .meta {
     color: #888;
 }
+
+.photoalbum {
+    line-height: 0;
+}
+.photoalbum a.image {
+    margin: 0 1px 1px 0;
+}
+a.image,
+figure > a {
+    box-shadow: none;
+    display: inline-block;
+    line-height: 0;
+}
+a.image:hover,
+figure > a:hover {
+    background-color: inherit;
+    color: inherit;
+}

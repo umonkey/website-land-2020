@@ -395,10 +395,6 @@ class Node extends CommonHandler
         $node = $tn->updateNode($node);
         $this->node->save($node);
 
-        $this->taskq("node-s3-upload", [
-            "id" => $node["id"],
-        ], -10);
-
         $this->db->commit();
 
         debug($node['files']);

@@ -7,6 +7,7 @@ use Slim\Http\Response;
 \App\Handlers\Admin::setupRoutes($app);
 \App\Handlers\TaskQ::setupRoutes($app);
 \App\Handlers\Wiki::setupRoutes($app);
+\Ufw1\Handlers\Files::setupRoutes($app);
 
 $app->get ('/', '\App\Handlers\Home:onHome');
 $app->get ('/blog', '\App\Handlers\Blog:onBlog');
@@ -25,7 +26,6 @@ $app->get ('/node/{id:[0-9]+}', '\App\Handlers\Node:onShow');
 $app->post('/node/{id:[0-9]+}', '\App\Handlers\Node:onSave');
 $app->get ('/node/{id:[0-9]+}/update-thumbnail', '\App\Handlers\Node:onUpdateThumbnail');
 $app->get ('/node/{id:[0-9]+}/upload-s3', '\App\Handlers\Node:onUploadS3');
-$app->get ('/node/{id:[0-9]+}/download/{code:.*}', '\App\Handlers\Node:onDownload');
 $app->post('/node/save', '\App\Handlers\Node:onSave');
 $app->post('/admin/upload', '\Ufw1\Handlers\Wiki:onUpload');
 

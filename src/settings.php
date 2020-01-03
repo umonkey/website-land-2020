@@ -75,15 +75,32 @@ $settings = [
             'width' => 1000,
             'height' => 1000,
         ],
+        'large_webp' => [
+            'width' => 1000,
+            'height' => 1000,
+            'format' => 'webp',
+        ],
         'medium' => [
             'width' => 500,
             'sharpen' => true,
             'from' => 'large',
         ],
+        'medium_webp' => [
+            'width' => 500,
+            'sharpen' => true,
+            'from' => 'large',
+            'format' => 'webp',
+        ],
         'small' => [
             'width' => 200,
             'sharpen' => true,
             'from' => 'medium',
+        ],
+        'small_webp' => [
+            'width' => 200,
+            'sharpen' => true,
+            'from' => 'medium',
+            'format' => 'webp',
         ],
     ],
 

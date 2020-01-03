@@ -103,6 +103,7 @@ return [
             ],
         ],
     ],  // article
+
     'file' => [
         'edit_title' => 'Редактирование файла',
         'fields' => [
@@ -110,6 +111,10 @@ return [
                 'label' => 'Название файла',
                 'type' => 'textline',
                 'required' => true,
+            ],
+            'caption' => [
+                'label' => 'Подпись для встраивания',
+                'type' => 'textarea',
             ],
             'kind' => [
                 'label' => 'Тип содержимого',
@@ -139,6 +144,7 @@ return [
             ],
         ],
     ],
+
     'user' => [
         'new_title' => 'Добавление пользователя',
         'edit_title' => 'Редактирование профиля пользователя',
