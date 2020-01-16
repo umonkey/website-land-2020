@@ -1276,6 +1276,7 @@ node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $node = $old;$/;
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^            $node = array_merge($props, [$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $node = $nodes->get($id);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $node = $nodes->getByKey($hash);$/;"	v
+node	vendor/umonkey/ufw1/src/Ufw1/FileFactory.php	/^        $node = $nodes->save($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $node = $this->node->save($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $node = array_merge($form, [$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^            $node = $this->node->get($form['id']);$/;"	v
