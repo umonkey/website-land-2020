@@ -2,7 +2,7 @@
 
 return [
     'wiki' => [
-        'title' => 'Заметка',
+        'title' => 'Вики',
         'description' => 'запись в блоге, можно комментировать',
         'new_title' => 'Добавление заметки',
         'edit_title' => 'Редактирование заметки',
@@ -46,7 +46,7 @@ return [
                 'type' => 'textline',
                 'required' => true,
             ],
-            'text' => [
+            'source' => [
                 'type' => 'textarea',
                 'rows' => 10,
                 'required' => true,
@@ -55,7 +55,7 @@ return [
                 'buttons' => ['upload' => 'fas fa-image'],
             ],
             'url' => [
-                'label' => 'URL',
+                'label' => 'Старый URL',
                 'type' => 'textline',
                 'required' => false,
             ],
@@ -80,16 +80,20 @@ return [
                 'type' => 'textline',
                 'required' => true,
             ],
-            'text' => [
+            'source' => [
                 'label' => 'Текст',
                 'type' => 'textarea',
                 'rows' => 10,
                 'required' => true,
                 'class' => 'markdown',
                 'help' => 'Можно использовать <a href="http://ilfire.ru/kompyutery/shpargalka-po-sintaksisu-markdown-markdaun-so-vsemi-samymi-populyarnymi-tegami/" target="blank">форматирование Markdown</a>.',
+                'buttons' => [
+                    'upload' => 'fas fa-image',
+                    'fullscreen' => 'fas fa-expand',
+                ],
             ],
             'url' => [
-                'label' => 'URL',
+                'label' => 'Старый URL',
                 'type' => 'textline',
                 'required' => false,
             ],

@@ -145,50 +145,81 @@ class Node extends CommonHandler
         }
     }
 
+    /**
+     * Display single node.
+     **/
     public function onShow(Request $request, Response $response, array $args)
     {
-       $user = $this->requireUser($request);
-
-       if (!($role = @$user["role"]))
-            $role = "user";
-
         $node = $this->node->get($args["id"]);
-        if (empty($node) or $node['deleted'])
+
+        if (empty($node) or $node['deleted']) {
             $this->notfound();
-
-        if (!$this->canView($user, $node))
-            $this->forbidden();
-
-        if ($node["type"] == "picture" and !empty($node["file"])) {
-            $node["file"] = $this->file->get($node["file"]);
         }
 
-        if ($node['type'] == 'user' and $role != 'admin')
-            return $response->withRedirect('/profile');
+        if ($node['published'] == 0) {
+            $this->forbidden();
+        }
+
+        if ($node['type'] == 'blog') {
+            return $this->onShowBlog($request, $node);
+        } elseif ($node['type'] == 'article') {
+            return $this->onShowArticle($request, $node);
+        }
 
         $template = "node-{$node["type"]}.twig";
-        // $template = "node.twig";
-
-        $tab = "node";
-
-        if ($node["type"] == "picture") {
-            if ($node["status"] == 2)
-                $tab = "accepted";
-            elseif ($node["status"] == 1)
-                $tab = "waiting";
-        }
-
-        $comments = $this->node->where("`type` = 'comment' AND `parent` = ? ORDER BY `id`", [$node["id"]]);
-        $comments = $this->fillNodes($comments);
 
         return $this->render($request, $template, [
-            "tab" => $tab,
-            "user" => $user,
             "node" => $node,
-            "comments" => $comments,
-            'breadcrumbs' => $this->getBreadCrumbs($request, $node),
-            'edit_link' => $role == 'admin' ? "/admin/nodes/{$node['id']}/edit" : null,
+            'edit_link' => "/admin/nodes/{$node['id']}/edit",
         ]);
+    }
+
+    protected function onShowArticle(Request $request, array $node)
+    {
+        $node['type'] = 'wiki';  // FIXME: fake
+        $page = $this->container->get('wiki')->renderPage($node);
+
+        $jsdata = [];
+        $jsdata = $this->addDisqus($jsdata, $node);
+
+        $url = $node['url'] ?? "/node/{$node['id']}";
+
+        return $this->render($request, 'node-article.twig', [
+            'page' => $page,
+            'edit_link' => "/admin/nodes/{$node['id']}/edit?back=" . urlencode($url),
+            'breadcrumbs' => [
+                ['link' => '/', 'label' => 'Главная'],
+                ['link' => "/node/{$node['id']}.html", 'label' => 'Вы здесь'],
+            ],
+            'jsdata' => json_encode($jsdata),
+        ]);
+    }
+
+    protected function onShowBlog(Request $request, array $node)
+    {
+        $node['type'] = 'wiki';  // FIXME: fake
+        $page = $this->container->get('wiki')->renderPage($node);
+
+        $jsdata = [];
+        $jsdata = $this->addDisqus($jsdata, $node);
+
+        $url = $node['url'] ?? "/node/{$node['id']}";
+
+        return $this->render($request, 'node-blog.twig', [
+            'page' => $page,
+            'edit_link' => "/admin/nodes/{$node['id']}/edit?back=" . urlencode($url),
+            'breadcrumbs' => [
+                ['link' => '/', 'label' => 'Главная'],
+                ['link' => '/blog/', 'label' => 'Блог'],
+                ['link' => "/node/{$node['id']}.html", 'label' => 'Вы здесь'],
+            ],
+            'jsdata' => json_encode($jsdata),
+        ]);
+    }
+
+    public function onShowCached(Request $request, Response $response, array $args)
+    {
+        return $this->onShow($request, $response, $args);
     }
 
     /**
@@ -544,5 +575,23 @@ class Node extends CommonHandler
         });
 
         return $categories;
+    }
+
+    protected function addDisqus(array $jsdata, array $node)
+    {
+        $path = substr($node['url'] ?? "/node/{$node['id']}", 1);
+
+        $disqus_url = 'https://land.umonkey.net/' . $path;
+        $disqus_id = $path;
+
+        if (substr($disqus_id, -1) == '/') {
+            $disqus_id .= 'index.html';
+        }
+
+        $jsdata['disqus_url'] = $disqus_url;
+        $jsdata['disqus_id'] = $disqus_id;
+        $jsdata['disqus_title'] = $node['name'];
+
+        return $jsdata;
     }
 }

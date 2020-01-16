@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 
-{% block page_title %}Файл — artwall.pro{% endblock %}
+{% block page_title %}Файл{% endblock %}
 
 {% block page_header %}
     <div class="page-header">
@@ -11,6 +11,9 @@
 {% block page_contents %}
     {% include "parts/breadcrumbs.twig" %}
 
+    <div><img src='{{ file_link(node, 'large') }}'/></div>
+
+    <h2>Варианты этого файла</h2>
     <table class="table grid">
         <tbody>
             {% for part, info in node.files %}
@@ -30,5 +33,7 @@
         </tbody>
     </table>
 
-    <div class='form-actions'><a class='btn btn-primary' href='/admin/nodes/{{ node.id }}/edit'>Редактировать</a> <a class='btn btn-default' href='/admin/nodes'>Оставить как есть</a></div>
+    {% if edit_link %}
+        <div class='form-actions'><a class='btn btn-primary' href='/admin/nodes/{{ node.id }}/edit'>Редактировать</a> <a class='btn btn-default' href='/admin/nodes'>Оставить как есть</a></div>
+    {% endif %}
 {% endblock %}

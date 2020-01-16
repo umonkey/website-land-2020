@@ -11,3 +11,10 @@
     background-color: inherit;
     color: inherit;
 }
+
+/**
+ * Отключение ссылок на редактирование раздела.
+ **/
+.wiki-section-edit {
+    display: none;
+}

@@ -70,6 +70,8 @@
             </div>
         </header>
 
+        {% block splash %}{% endblock %}
+
         <main>
             <div class='container'>
                 {% include 'parts/breadcrumbs.twig' %}
@@ -97,12 +99,14 @@
 
         <div id="block" style="display: none"></div>
 
+        {% if jsdata %}<script>window.jsdata = {{ jsdata|raw }};</script>{% endif %}
         <script type="text/javascript" src="/js/libs.min.js"></script>
         {% if request.host == "land.local" %}
             <script type="text/javascript" src="/js/app.js"></script>
         {% else %}
             <script type="text/javascript" src="/js/app.min.js"></script>
         {% endif %}
+        {% block disqus %}{% endblock %}
 
         {% include "parts/counters.twig" %}
     </body>

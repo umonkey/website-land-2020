@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog home page.
+ * List all articles.
  **/
 
 namespace App\Handlers;
@@ -11,11 +11,11 @@ use Slim\Http\UploadedFile;
 use App\CommonHandler;
 
 
-class Blog extends CommonHandler
+class Articles extends CommonHandler
 {
-    public function onBlog(Request $request, Response $response, array $args)
+    public function onList(Request $request, Response $response, array $args)
     {
-        $entries = $this->node->where("`type` = 'blog' AND `deleted` = 0 AND `published` = 1 ORDER BY `created` DESC", [], function ($node) {
+        $entries = $this->node->where("`type` = 'article' AND `deleted` = 0 AND `published` = 1", [], function ($node) {
             $url = $node['url'] ?? '';
 
             return [
@@ -30,7 +30,13 @@ class Blog extends CommonHandler
 
         $entries = array_filter($entries);
 
-        return $this->render($request, 'blog.twig', [
+        usort($entries, function ($a, $b) {
+            $_a = mb_strtolower($a['title']);
+            $_b = mb_strtolower($b['title']);
+            return strcasecmp($_a, $_b);
+        });
+
+        return $this->render($request, 'articles.twig', [
             'entries' => $entries,
         ]);
     }

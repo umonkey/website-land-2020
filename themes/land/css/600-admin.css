@@ -10,3 +10,18 @@ table.table .rowid {
 table.hover tr:hover {
     background-color: #eee;
 }
+
+.fg-source:fullscreen {
+    background-color: #fff;
+    padding: 10px;
+}
+.fg-source:fullscreen label {
+    display: none;
+}
+.fg-source:fullscreen textarea {
+    height: calc(100vh - 80px);
+}
+
+.edit-buttons .btn {
+    margin-right: 5px;
+}
