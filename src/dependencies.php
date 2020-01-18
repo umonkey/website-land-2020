@@ -26,11 +26,17 @@ function debug()
 }
 
 
-/*
-set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+set_error_handler(function ($errno, $errstr, $errfile, $errline) use ($container) {
     if (!(error_reporting() & $errno))
         return false;
 
-    debug($errno, $errstr, $errfile, $errline);
+    $logger = $container->get('logger');
+
+    $logger->error('Unhandled error: {str}, file {file} line {line}', [
+        'str' => $errstr,
+        'file' => $errfile,
+        'line' => $errline,
+    ]);
+
+    throw new \RuntimeException($errstr);
 });
-*/

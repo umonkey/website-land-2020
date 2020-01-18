@@ -1,17 +1,22 @@
 jQuery(function ($) {
     var w = window;
 
-    if ('jsdata' in w && 'disqus_url' in w.jsdata) {
+    if ($('#disqus_thread').length > 0) {
         w.disqus_shortname = 'umonkey-land';
-        w.disqus_url = w.jsdata.disqus_url;
-        w.disqus_identifier = w.jsdata.disqus_id;
 
-        if (w.disqus_identifier.substr(-1) == '') {
-            w.disqus_identifier += 'index.html';
+        var did = w.jsdata.disqus_id || null;
+        var durl = w.jsdata.disqus_url || null;
+
+        if (did) {
+            w.disqus_identifier = did;
+        } else if (durl) {
+            w.disqus_url = durl;
         }
 
         $.getScript('https://umonkey-land.disqus.com/embed.js', function () {
             console && console.log('disqus comments loaded');
         });
+    } else {
+        console && console.log('disqus comments disabled ');
     }
 });

@@ -544,6 +544,34 @@ class Node extends CommonHandler
     }
 
     /**
+     * Генератор картинки для шаринга страницы.
+     *
+     * Использует шаблон из файла public/images/kdpv-template.png
+     **/
+    public function onKDPV(Request $request, Response $response, array $args)
+    {
+        $nid = $args['id'];
+
+        $node = $this->node->get($nid);
+        if (empty($node)) {
+            $this->notfound();
+        }
+
+        $text = $node['kdpv_text'] ?? $node['title'] ?? $node['name'] ?? $node['subtitle'];
+        if (empty($text)) {
+            $this->notfound();
+        }
+
+        $template = $_SERVER['DOCUMENT_ROOT'] . '/images/kdpv-template.png';
+
+        $kdpv = new \App\NodePicture();
+        $image = $kdpv->render($template, $text);
+
+        $response->getBody()->write($image);
+        return $response->withHeader('Content-Type', 'image/png');
+    }
+
+    /**
      * Возвращает список категорий по идентификаторам.
      *
      * @param array $ids Идентификаторы категорий.

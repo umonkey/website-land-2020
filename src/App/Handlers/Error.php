@@ -77,6 +77,10 @@ class Error extends CommonHandler
             $tpl = "notfound.twig";
             $status = 404;
             $notify = false;
+
+            if ($url = $this->getRedirect($request->getUri()->getPath())) {
+                return $response->withRedirect($url);
+            }
         }
 
         if ($notify) {
@@ -89,5 +93,14 @@ class Error extends CommonHandler
 
         $response = $this->render($request, $tpl, $data);
         return $response->withStatus($status);
+    }
+
+    protected function getRedirect($url)
+    {
+        $node = $this->node->where("type = 'wiki' AND deleted = 0 AND id IN (SELECT id FROM nodes_wiki_idx WHERE url = ?)", [$url]);
+
+        if (!empty($node)) {
+            return "/wiki?name=" . urlencode($node[0]['name']);
+        }
     }
 }

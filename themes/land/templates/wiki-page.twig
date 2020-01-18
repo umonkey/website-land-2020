@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block more_head %}
+    <meta property="og:url" content="https://{{ host }}/wiki?name={{ page.name|url_encode }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="{{ page.title }}"/>
+
+    {% if node.id %}
+        <meta property="og:image" content="{{ request.base }}/node/{{ node.id }}/kdpv"/>
+        <meta property="og:image:width" content="960"/>
+        <meta property="og:image:height" content="504"/>
+    {% endif %}
+
+    {% if "File:" in page.name %}
+        <meta name="robots" content="noindex"/>
+    {% endif %}
+{% endblock %}
+
+{% block page_title %}{{ page.title }}{% if strings.site_name %} — {{ strings.site_name }}{% endif %}{% endblock %}
+
+{% block page_header %}
+    <div class="page-header">
+        <h1 itemprop="name">{{ page.title }}</h1>
+        {% if page.subtitle %}
+            <p class='lead'>{{ page.subtitle }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block page_contents %}
+    {% if page.meta != 'off' %}
+        <div class='wikimeta'>{{ node.created|date('%d.%m.%Y') }}, <a href='/wiki?name={{ page.author }}'>{{ page.author }}</a>{% if edit_link %} &middot; <a href='{{ edit_link }}'>редактировать</a>{% endif %}</div>
+    {% endif %}
+
+    <div class="formatted" itemprop="articleBody">
+        {% if page.en %}
+            <p><i>You can read this page in English: <a href="/wiki?name={{ page.en }}">{{ page.en }}</a>.</i></p>
+        {% elseif page.ru %}
+            <p><i>Эта страница есть на русском языке: <a href="/wiki?name={{ page.ru }}">{{ page.ru }}</a>.</i></p>
+        {% endif %}
+
+        {% if "wiki:" in page.name %}
+            <pre>{{ page.text }}</pre>
+        {% else %}
+            {{ page.html|typo|raw }}
+        {% endif %}
+    </div>
+
+    {% if page.prev or page.next %}
+        <div class='wikinav'>
+            <div class='wrap'>
+                <div class='prev'>
+                    {% if page.prev %}
+                        <i class="fas fa-arrow-circle-left"></i> Ранее: <a href='/wiki?name={{ page.prev }}'>{{ page.prev }}</a>
+                    {% endif %}
+                </div>
+                <div class='next'>
+                    {% if page.next %}
+                        Дальше: <a href='/wiki?name={{ page.next }}'>{{ page.next }}</a> <i class="fas fa-arrow-circle-right"></i>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if page.comments != 'off' %}
+        <div id="disqus_thread"></div>
+    {% endif %}
+{% endblock %}

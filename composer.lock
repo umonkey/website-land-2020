@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a659e3575fb34aac8b885f3d8b48ef63",
+    "content-hash": "25995b9753c8627af432fcb23b4cb5ce",
     "packages": [
         {
             "name": "cakephp/cache",
@@ -476,6 +476,63 @@
                 "table"
             ],
             "time": "2019-09-26T13:28:33+00:00"
+        },
+        {
+            "name": "league/commonmark-ext-task-list",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark-ext-task-list.git",
+                "reference": "9fe28f3527ab913b60d44bdc8d66829733cad7c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark-ext-task-list/zipball/9fe28f3527ab913b60d44bdc8d66829733cad7c6",
+                "reference": "9fe28f3527ab913b60d44bdc8d66829733cad7c6",
+                "shasum": ""
+            },
+            "require": {
+                "league/commonmark": "^0.19|^1.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "commonmark-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\CommonMark\\Ext\\TaskList\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Extension for league/commonmark which supports GFM-style task lists",
+            "homepage": "https://github.com/thephpleague/commonmark-ext-task-list",
+            "keywords": [
+                "Lists",
+                "commonmark",
+                "extension",
+                "gfm",
+                "github",
+                "markdown",
+                "task"
+            ],
+            "time": "2019-07-11T00:35:13+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1595,7 +1652,7 @@
             "source": {
                 "type": "hg",
                 "url": "/home/hex/src/ufw1",
-                "reference": "6524aca37baa"
+                "reference": "98db1f0841eb"
             },
             "require": {
                 "league/commonmark": "1.0.0",
@@ -1631,7 +1688,7 @@
                 }
             ],
             "description": "slim based website framework for pet projects",
-            "time": "2020-01-16T15:34:00+00:00"
+            "time": "2020-01-17T13:42:19+00:00"
         }
     ],
     "packages-dev": [],

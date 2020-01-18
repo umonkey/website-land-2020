@@ -18,3 +18,16 @@
 .wiki-section-edit {
     display: none;
 }
+
+.wikinav {
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+.wikinav > div > div {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+.wikinav .next {
+    text-align: right;
+}

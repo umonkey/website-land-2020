@@ -47,6 +47,7 @@ $app->get ('/stats', '\App\Handlers\Home:onStats');
 $app->get ('/node/{id:[0-9]+}', '\App\Handlers\Node:onShow');
 $app->get ('/node/{id:[0-9]+}.html', '\App\Handlers\Node:onShow');
 $app->post('/node/{id:[0-9]+}', '\App\Handlers\Node:onSave');
+$app->get ('/node/{id:[0-9]+}/kdpv', '\App\Handlers\Node:onKDPV');
 $app->get ('/node/{id:[0-9]+}/update-thumbnail', '\App\Handlers\Node:onUpdateThumbnail');
 $app->get ('/node/{id:[0-9]+}/upload-s3', '\App\Handlers\Node:onUploadS3');
 $app->post('/node/save', '\App\Handlers\Node:onSave');

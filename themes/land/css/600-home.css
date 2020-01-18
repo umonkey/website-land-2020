@@ -13,13 +13,15 @@ body.home header .title {
 }
 body.home a.scrolldown {
     position: absolute;
-    left: calc(50% - 50px);
+    left: calc(50% - 60px);
     bottom: 10px;
     color: #fff;
     font-size: 100px;
     width: 100px;
     height: 100px;
     text-align: center;
-    opacity: 0.75;
     outline: none;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #000;
 }
