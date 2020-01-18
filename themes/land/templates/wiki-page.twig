@@ -14,6 +14,14 @@
     {% if "File:" in page.name %}
         <meta name="robots" content="noindex"/>
     {% endif %}
+
+    {% if page.prev %}
+        <link rel='prev' href='/wiki?name={{ page.prev|url_encode }}'/>
+    {% endif %}
+    {% if page.next %}
+        <link rel='next' href='/wiki?name={{ page.next|url_encode }}'/>
+    {% endif %}
+    <link rel='canonical' href='/wiki?name={{ page.name|url_encode }}'/>
 {% endblock %}
 
 {% block page_title %}{{ page.title }}{% if strings.site_name %} — {{ strings.site_name }}{% endif %}{% endblock %}
@@ -28,8 +36,8 @@
 {% endblock %}
 
 {% block page_contents %}
-    {% if page.meta != 'off' %}
-        <div class='wikimeta'>{{ node.created|date('%d.%m.%Y') }}, <a href='/wiki?name={{ page.author }}'>{{ page.author }}</a>{% if edit_link %} &middot; <a href='{{ edit_link }}'>редактировать</a>{% endif %}</div>
+    {% if page.meta != 'off' and page.date %}
+        <div class='wikimeta'>{{ node.date|date_human }}, <a href='/wiki?name=Блог'>Блог о жизни в деревне</a></div>
     {% endif %}
 
     <div class="formatted" itemprop="articleBody">
