@@ -1,9 +1,11 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-
 $_ENV['APP_ENV'] = getenv('APP_ENV') ?: 'dev';
 $_ENV['APP_DEBUG'] = $_ENV['APP_ENV'] == 'dev';
+
+require __DIR__ . '/../vendor/autoload.php';
+
+require __DIR__ . '/functions.php';
 
 // Instantiate the app
 $settings = require __DIR__ . '/settings.php';

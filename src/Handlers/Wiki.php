@@ -17,7 +17,6 @@ class Wiki extends \Ufw1\Handlers\Wiki
     public function onDefault(Request $request, Response $response, array $args)
     {
         $url = '/' . $args['url'];
-        debug($url);
 
         $id = $this->db->fetchcell('SELECT `id` FROM `nodes_wiki_idx` WHERE `url` = ?', [$url]);
         if (empty($id)) {
