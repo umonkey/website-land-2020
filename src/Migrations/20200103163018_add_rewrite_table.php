@@ -37,6 +37,5 @@ class AddRewriteTable extends AbstractMigration
              ->addForeignKey('node_id', 'nodes', 'id', ['delete' => 'CASCADE'])
              ->addIndex(['node_id'])
              ->save();
-
     }
 }
