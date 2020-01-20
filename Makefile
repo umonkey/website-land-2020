@@ -7,7 +7,7 @@ assets:
 	php -f vendor/bin/build-assets themes/land/assets.php
 
 sql:
-	sqlite3 -header data/database.sqlite3
+	sqlite3 -header var/database/database.sqlite3
 
 sql-remote:
 	ssh -t $(REMOTE) mysql
@@ -18,15 +18,6 @@ log:
 pull-db:
 	ssh $(REMOTE) mysqldump u468297_pro | pv | mysql
 	echo "DELETE FROM sessions;" | mysql
-
-reset:
-	echo "DELETE FROM nodes WHERE type IN ('file', 'picture'); vacuum;" | sqlite3 data/database.sqlite
-
-schema:
-	mysql < src/schema_mysql.sql
-
-schema-sqlite:
-	sqlite3 data/database.sqlite < src/schema_sqlite.sql
 
 shell:
 	ssh -t $(REMOTE) cd $(FOLDER) \; bash -l
