@@ -1,5 +1,5 @@
 ^.$
 ^vendor$
-^(data|tmp|images)$
+^(var|images)$
 ^public/(css|js)$
 ^local-settings\.php$

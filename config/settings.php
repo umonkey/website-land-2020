@@ -11,18 +11,18 @@ $settings = [
     ],
 
     'dsn' => [
-        'name' => 'sqlite:' . __DIR__ . '/../data/database.sqlite3',
+        'name' => 'sqlite:' . __DIR__ . '/../var/database/database.sqlite3',
     ],
 
     'files' => [
-        'path' => __DIR__ . "/../data/files",
+        'path' => __DIR__ . "/../var/files",
         'dmode' => 0770,
         'fmode' => 0660,
     ],
 
     'logger' => [
-        'path' => __DIR__ . '/../tmp/php.log.%Y%m%d',
-        'symlink' => __DIR__ . '/../tmp/php.log',
+        'path' => __DIR__ . '/../var/logs/php.log.%Y%m%d',
+        'symlink' => __DIR__ . '/../var/logs/php.log',
     ],
 
     'nodes_idx' => [

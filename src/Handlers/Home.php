@@ -258,7 +258,7 @@ class Home extends CommonHandler
         $type = null;
         $body = null;
 
-        $tmp = realpath($_SERVER["DOCUMENT_ROOT"] . "/../data/tmp");
+        $tmp = realpath($_SERVER["DOCUMENT_ROOT"] . "/../var/tmp");
         if (!$tmp or !is_writable($tmp)) {
             $this->logger->error("upload: folder {tmp} is not writable.", [
                 "tmp" => $tmp,
