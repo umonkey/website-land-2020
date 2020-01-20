@@ -20,6 +20,11 @@ $settings = [
         'fmode' => 0660,
     ],
 
+    'kdpv' => [
+        'font' => __DIR__ . '/../themes/land/lib/kdpv/pt-sans.ttf',
+        'template' => __DIR__ . '/../themes/land/lib/kdpv/template.png',
+    ],
+
     'logger' => [
         'path' => __DIR__ . '/../var/logs/php.log.%Y%m%d',
         'symlink' => __DIR__ . '/../var/logs/php.log',
