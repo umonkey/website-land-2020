@@ -19,20 +19,6 @@ class Home extends CommonHandler
         ]);
     }
 
-    /**
-     * Removes trailing slash from the current request.
-     **/
-    public function onStripSlash(Request $request, Response $response, array $args)
-    {
-        $url = $request->getUri();
-
-        $next = rtrim($url->getPath(), '/');
-        if ($tmp = $url->getQuery())
-            $next .= '?' . $tmp;
-
-        return $response->withRedirect($next);
-    }
-
     public function onAdminHome(Request $request, Response $response, array $user)
     {
         return $response->withRedirect("/queue");

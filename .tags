@@ -10,7 +10,6 @@ AddRewriteTable	src/migrations/20200103163018_add_rewrite_table.php	/^class AddR
 Admin	src/Handlers/Admin.php	/^class Admin extends \\Ufw1\\Handlers\\Admin$/;"	c
 Admin	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^class Admin extends CommonHandler$/;"	c
 Base	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^class Base extends TestCase$/;"	c
-Blog	src/Handlers/Blog.php	/^class Blog extends CommonHandler$/;"	c
 CLI	src/Handlers/CLI.php	/^class CLI extends CommonHandler$/;"	c
 CSSmin	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^class CSSmin$/;"	c
 CanonicalHeaders	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^        $CanonicalHeaders = "";$/;"	v
@@ -571,8 +570,6 @@ enfont	src/Handlers/ShortImage.php	/^        $enfont = __DIR__ . "\/..\/..\/..\/
 english	src/Handlers/Short.php	/^                    $english = $page["title"];$/;"	v
 english	src/Handlers/Short.php	/^            $english = $page["title"];$/;"	v
 english	src/Handlers/Short.php	/^        $english = null;$/;"	v
-entries	src/Handlers/Blog.php	/^        $entries = $this->node->where("`type` = 'blog' AND `deleted` = 0 AND `published` = 1 ORDER BY `created` DESC", [], function ($node) {$/;"	v
-entries	src/Handlers/Blog.php	/^        $entries = array_filter($entries);$/;"	v
 env	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $env = Environment::mock($env);$/;"	v
 env	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $env = Environment::mock([$/;"	v
 env	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $env = [$/;"	v
@@ -1278,7 +1275,6 @@ new_hash	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $new_hash = md5($da
 news	src/Handlers/Home.php	/^        $news = $this->node->where("`published` = 1 AND `type` = 'picture' ORDER BY `updated` DESC");$/;"	v
 news	src/Handlers/Home.php	/^        $news = array_map(function ($node) {$/;"	v
 news	src/Handlers/Node.php	/^            $news = json_decode($text, true);$/;"	v
-next	src/Handlers/Home.php	/^        $next = rtrim($url->getPath(), '\/');$/;"	v
 next	src/Handlers/Node.php	/^        $next = $request->getParam("next");$/;"	v
 next	src/Handlers/Node.php	/^        $next = $request->getParam('next');$/;"	v
 next	src/Handlers/Search.php	/^            $next = "\/wiki?name=" . urlencode($short["link"]);$/;"	v
@@ -1419,7 +1415,6 @@ onAdd	src/Handlers/Maps.php	/^    public function onAdd(Request $request, Respon
 onAddFolder	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    protected function onAddFolder(Request $request, Response $response, array $args)$/;"	f
 onAdminHome	src/Handlers/Home.php	/^    public function onAdminHome(Request $request, Response $response, array $user)$/;"	f
 onAllJSON	src/Handlers/Maps.php	/^    public function onAllJSON(Request $request, Response $response, array $args)$/;"	f
-onBlog	src/Handlers/Blog.php	/^    public function onBlog(Request $request, Response $response, array $args)$/;"	f
 onComment	src/Handlers/Node.php	/^    public function onComment(Request $request, Response $response, array $args)$/;"	f
 onCreate	src/Handlers/Short.php	/^    public function onCreate(Request $request, Response $response, array $args)$/;"	f
 onDashboard	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onDashboard(Request $request, Response $response, array $args)$/;"	f
@@ -1536,7 +1531,6 @@ onShowFile	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^    public function
 onShowItem	src/Handlers/Short.php	/^    public function onShowItem(Request $request, Response $response, array $args)$/;"	f
 onStats	src/Handlers/Home.php	/^    public function onStats(Request $request, Response $response, array $args)$/;"	f
 onStatus	vendor/umonkey/ufw1/src/Ufw1/Handlers/Database.php	/^    public function onStatus(Request $request, Response $response, array $args)$/;"	f
-onStripSlash	src/Handlers/Home.php	/^    public function onStripSlash(Request $request, Response $response, array $args)$/;"	f
 onSubmit	src/Handlers/Submit.php	/^    public function onSubmit(Request $request, Response $response)$/;"	f
 onSubmit	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onSubmit(Request $request, Response $response, array $args)$/;"	f
 onSubmitList	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^    public function onSubmitList(Request $request, Response $response, array $args)$/;"	f
@@ -2329,9 +2323,7 @@ updatePage	vendor/umonkey/ufw1/src/Ufw1/Wiki.php	/^    public function updatePag
 uploadNodeFiles	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    public function uploadNodeFiles(array $node)$/;"	f
 uploadNodeTask	vendor/umonkey/ufw1/src/Ufw1/S3.php	/^    public function uploadNodeTask(array $payload)$/;"	f
 uri	src/Handlers/Export.php	/^                $uri = $request->getUri();$/;"	v
-url	src/Handlers/Blog.php	/^            $url = $node['url'] ?? '';$/;"	v
 url	src/Handlers/Catalog.php	/^        $url = "https:\/\/www.artwall.ru\/catalog.json";$/;"	v
-url	src/Handlers/Home.php	/^        $url = $request->getUri();$/;"	v
 url	src/Handlers/Node.php	/^        $url = $node['url'] ?? "\/node\/{$node['id']}";$/;"	v
 url	src/Handlers/Node.php	/^        $url = SALES_JSON;$/;"	v
 url	src/Handlers/Nodes.php	/^        $url = '\/' . $args['url'];$/;"	v

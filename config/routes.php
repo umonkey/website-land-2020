@@ -10,8 +10,6 @@ use Slim\Http\Response;
 \Ufw1\Handlers\Files::setupRoutes($app);
 
 $app->get ('/', '\App\Controllers\Home:index');
-$app->get ('/blog', '\App\Handlers\Blog:onBlog');
-$app->get ('/blog/', '\App\Handlers\Home:onStripSlash');
 
 $app->get ('/files', '\App\Handlers\Files:onGetRecent');
 $app->get ('/files/recent.json', '\App\Handlers\Files:onGetRecentJson');
