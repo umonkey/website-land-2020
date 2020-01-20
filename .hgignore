@@ -2,4 +2,4 @@
 ^vendor$
 ^(var|images)$
 ^public/(css|js)$
-^local-settings\.php$
+^settings\..*\.php$

@@ -112,9 +112,17 @@ $settings = [
     ],
 ];
 
+$files = [
+    __DIR__ . '/../settings.php',
+    __DIR__ . '/../settings.' . $_ENV['APP_ENV'] . '.php',
+    __DIR__ . '/../settings.local.php',
+];
+
 // Amend passwords in a non-tracker file.
-if (file_exists($fn = __DIR__ . '/../local-settings.php')) {
-    include $fn;
+foreach ($files as $fn) {
+    if (file_exists($fn)) {
+        include $fn;
+    }
 }
 
 return ['settings' => $settings];
