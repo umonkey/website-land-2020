@@ -10,7 +10,6 @@ use Slim\Http\Response;
 \Ufw1\Handlers\Files::setupRoutes($app);
 
 $app->get ('/', '\App\Controllers\Home:index');
-$app->get ('/articles', '\App\Handlers\Articles:onList');
 $app->get ('/blog', '\App\Handlers\Blog:onBlog');
 $app->get ('/blog/', '\App\Handlers\Home:onStripSlash');
 
