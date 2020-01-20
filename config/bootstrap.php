@@ -14,3 +14,5 @@ require __DIR__ . '/middleware.php';
 
 // Register routes
 require __DIR__ . '/routes.php';
+
+return $app;
