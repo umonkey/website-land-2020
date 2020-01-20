@@ -1,3 +1,6 @@
+2020-01-20:
+- Reorder dirs: data => var, tmp => var/tmp, src/App => src.
+
 2020-01-02:
 - Components upgrade.
 - Templates and assets moved to themes/land.
