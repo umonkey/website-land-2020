@@ -88,4 +88,14 @@ class Util extends \Ufw1\Util
 
         return $res;
     }
+
+    public static function installErrorHandler($container)
+    {
+        $container['errorHandler'] = function ($c) {
+            return function ($request, $response, $e) use ($c) {
+                $h = new Controllers\ErrorController($c);
+                return $h($request, $response, ['exception' => $e]);
+            };
+        };
+    }
 }

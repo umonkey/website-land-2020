@@ -13,7 +13,7 @@ use Slim\Http\Response;
 use App\Controller;
 
 
-class Home extends Controller
+class HomeController extends Controller
 {
     public function index(Request $request, Response $response, array $args): Response
     {

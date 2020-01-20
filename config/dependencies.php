@@ -3,9 +3,12 @@
  * Dependency container setup.
  **/
 
+use App\Util;
+
 $container = $app->getContainer();
 
-\Ufw1\Util::containerSetup($container);
+Util::containerSetup($container);
+Util::installErrorHandler($container);
 
 $container['kdpv'] = function ($c) {
     return new \App\Services\NodePictureService($c);

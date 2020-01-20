@@ -3,6 +3,12 @@
 $_ENV['APP_ENV'] = getenv('APP_ENV') ?: 'dev';
 $_ENV['APP_DEBUG'] = $_ENV['APP_ENV'] == 'dev';
 
+if ((bool)$_ENV['APP_DEBUG']) {
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+    ini_set('error_log', __DIR__ . '/../var/logs/php.log');
+}
+
 require __DIR__ . '/../vendor/autoload.php';
 
 require __DIR__ . '/functions.php';

@@ -1,17 +1,19 @@
 <?php
+ini_set('display_errors', 1);
 
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-\App\Handlers\Account::setupRoutes($app);
-\App\Handlers\Admin::setupRoutes($app);
-\App\Handlers\TaskQ::setupRoutes($app);
-\App\Handlers\Wiki::setupRoutes($app);
-\Ufw1\Handlers\Files::setupRoutes($app);
-\Ufw1\Util::installSearch($app);
+use App\Util;
 
-$app->get ('/',                      '\App\Controllers\Home:index');
+// TODO: move to $app->installThisAndThat().
+Util::installAccount($app);
+Util::installAdmin($app);
+Util::installFiles($app);
+Util::installSearch($app);
+Util::installTaskQ($app);
+Util::installWiki($app);
+
+$app->get ('/',                      '\App\Controllers\HomeController:index');
+$app->post('/admin/upload',          '\Ufw1\Handlers\Wiki:onUpload');
 $app->get ('/node/{id:[0-9]+}/kdpv', '\App\Controllers\NodePictureController:index');
-
-$app->get ('/sitemap.xml', '\App\Handlers\Sitemap');
-$app->post('/admin/upload', '\Ufw1\Handlers\Wiki:onUpload');
