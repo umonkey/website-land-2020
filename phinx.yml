@@ -1,6 +1,6 @@
 paths:
     migrations:
-        - '%%PHINX_CONFIG_DIR%%/src/migrations'
+        - '%%PHINX_CONFIG_DIR%%/src/Migrations'
         - 'vendor/umonkey/ufw1/database/migrations'
     seeds: '%%PHINX_CONFIG_DIR%%/src/seeds'
 
