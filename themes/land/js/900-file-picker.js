@@ -1,6 +1,9 @@
 /**
  * Call this to display the file picker dialog.
  **/
+
+/* global sfmt, ufw_filepicker_callback, handle_ajax */
+
 window.ufw_filepicker = function (callback) {
     window.ufw_filepicker_callback = callback;
 
@@ -10,7 +13,7 @@ window.ufw_filepicker = function (callback) {
     };
 
     var dlg = $('#node-upload');
-    if (dlg.length == 0) {
+    if (dlg.length === 0) {
         var html = '<form id="node-upload" class="async filepicker dialog" action="/admin/upload" method="post" style="display: none">';
 
         html += '<div class="form-group">';
@@ -39,8 +42,9 @@ window.ufw_filepicker = function (callback) {
         dlg = $('#node-upload');
     }
 
-    if ($("#block").length == 0)
-        $("body").append("<div id='block'></div>");
+    if ($('#block').length === 0) {
+        $('body').append('<div id="block"></div>');
+    }
 
     dlg.find('.recent').html('');
     dlg.find('.msgbox').hide();
@@ -49,16 +53,16 @@ window.ufw_filepicker = function (callback) {
     $('#node-upload, #block').show();
 
     $.ajax({
-        url: "/files/recent.json",
-        type: "GET",
-        dataType: "json"
+        url: '/files/recent.json',
+        type: 'GET',
+        dataType: 'json'
     }).done(function (res) {
         if ('files' in res) {
             var items = res.files.map(function (f) {
                 return sfmt("<a data-id='{0}' data-thumbnail='{2}' href='{3}' title='{1}' target='_blank'><img src='{2}'/></a>", f.id, f.name_html, f.thumbnail, f.link);
             });
 
-            $("#node-upload .recent").html(items.join(""));
+            $('#node-upload .recent').html(items.join(''));
         } else {
             handle_ajax(res);
         }

@@ -3,6 +3,9 @@
  *
  * Loads maps specific scripts if there's a map on the page.
  **/
+
+/* global ufw_map */
+
 jQuery(function ($) {
     var maps = $('div.map[data-items]');
     if (maps.length > 0) {
