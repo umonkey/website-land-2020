@@ -4,6 +4,12 @@
 
 Собран на основе [Slim Framework][2] и [ufw1][3] (набор собственных заготовок для Slim).  Всё максимально простое и быстое.
 
+База данных -- SQLite: публичных функций редактирования нет, работает в целом в режиме read-only, отлично себя показывает в этой роли.  Комментарии внешние, через Disqus.
+
+Файлы хранятся в [Яндекс.Облаке][4], выгрузка по [протоколу S3][5].  Выгрузка отложенная, фоновая, через примитивную самодельную очередь задач.
+
 [1]: https://land.umonkey.net/
 [2]: https://www.slimframework.com/
 [3]: https://github.com/umonkey/ufw1
+[4]: https://cloud.yandex.ru/services/storage "Yandex Object Storage"
+[5]: https://cloud.yandex.ru/docs/storage/s3/
