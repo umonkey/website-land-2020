@@ -51,53 +51,55 @@
         <title>{% block page_title %}{% if title %}{{ title }}{% else %}Wiki{% endif %} — {{ strings.site_name }}{% endblock %}</title>
     </head>
     <body class="{% block body_class %}{{ body_class }}{% endblock %}">
-        <header>
-            <div class='title'>
-                <div class='wrap'>
-                    <a href='/'>
-                        <img src='/images/logo-trees.png' alt='Ясный лес'/>
-                    </a>
-                </div>
-            </div>
-
-            <div class='menu'>
-                <ul class='wrap'>
-                    <li class='{% if page.name == 'Блог' or page.section == 'blog' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Блог'>Блог</a></li>
-                    <li class='{% if page.name == 'Питомник' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Питомник'>Питомник</a></li>
-                    <li class='{% if page.name == 'Лагерь' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Лагерь'>Волонтёрам</a></li>
-                    <li class='{% if page.name == 'О нас' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=О нас'>О нас</a></li>
-                </ul>
-            </div>
-        </header>
-
-        {% block splash %}{% endblock %}
-
-        <main>
-            <div class='container'>
-                {% include 'parts/breadcrumbs.twig' %}
-
-                {% block page_header %}
-                    <div class='page-header'>
-                        <h1>It Works!</h1>
+        <div class='spa-container'>
+            <header>
+                <div class='title'>
+                    <div class='wrap'>
+                        <a href='/'>
+                            <img src='/images/logo-trees.png' alt='Ясный лес'/>
+                        </a>
                     </div>
-                {% endblock %}
+                </div>
 
-                <article>
-                    {% block page_contents %}
-                        <p>На этой странице пока пусто.</p>
+                <div class='menu'>
+                    <ul class='wrap'>
+                        <li class='{% if page.name == 'Блог' or page.section == 'blog' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Блог'>Блог</a></li>
+                        <li class='{% if page.name == 'Питомник' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Питомник'>Питомник</a></li>
+                        <li class='{% if page.name == 'Лагерь' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Лагерь'>Волонтёрам</a></li>
+                        <li class='{% if page.name == 'О нас' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=О нас'>О нас</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            {% block splash %}{% endblock %}
+
+            <main>
+                <div class='container'>
+                    {% include 'parts/breadcrumbs.twig' %}
+
+                    {% block page_header %}
+                        <div class='page-header'>
+                            <h1>It Works!</h1>
+                        </div>
                     {% endblock %}
-                </article>
-            </div>
-        </main>
 
-        <footer>
-            <div class='container'>
-                <p><a href="/">Главная</a> &middot; <a href="/wiki?name=Питомник">питомник</a> &middot; <a href="/wiki?name=Блог">блог</a> &middot; <a href="/wiki?name=Лагерь">волонтёрам</a> &middot; <a href="/wiki?name=Карта сайта">карта сайта</a></p>
-                <p>&copy; 2012–2019 <a href="/wiki?name=О нас">Владимир и&nbsp;Юлия Фрунзе</a> &middot; <a href="/wiki?name=Связаться с нами">написать письмо</a> &middot; <a href="https://vk.com/umonkey.land" target="_blank" title="Жизнь в&nbsp;деревьях">vk.com</a> &middot; <a href="https://twitter.com/umonkey" target="_blank">twitter</a> &middot; <a href="https://www.youtube.com/user/umonkey/videos" target="_blank">youtube</a> &middot; <a href="https://www.instagram.com/nebo_eco_village/" target="_blank">instagram</a></p>
-            </div>
-        </footer>
+                    <article>
+                        {% block page_contents %}
+                            <p>На этой странице пока пусто.</p>
+                        {% endblock %}
+                    </article>
+                </div>
+            </main>
 
-        <div id="block" style="display: none"></div>
+            <footer>
+                <div class='container'>
+                    <p><a href="/">Главная</a> &middot; <a href="/wiki?name=Питомник">питомник</a> &middot; <a href="/wiki?name=Блог">блог</a> &middot; <a href="/wiki?name=Лагерь">волонтёрам</a> &middot; <a href="/wiki?name=Карта сайта">карта сайта</a></p>
+                    <p>&copy; 2012–2019 <a href="/wiki?name=О нас">Владимир и&nbsp;Юлия Фрунзе</a> &middot; <a href="/wiki?name=Связаться с нами">написать письмо</a> &middot; <a href="https://vk.com/umonkey.land" target="_blank" title="Жизнь в&nbsp;деревьях">vk.com</a> &middot; <a href="https://twitter.com/umonkey" target="_blank">twitter</a> &middot; <a href="https://www.youtube.com/user/umonkey/videos" target="_blank">youtube</a> &middot; <a href="https://www.instagram.com/nebo_eco_village/" target="_blank">instagram</a></p>
+                </div>
+            </footer>
+
+            <div id="block" style="display: none"></div>
+        </div>{# .spa-container #}
 
         {% if jsdata %}<script>window.jsdata = {{ jsdata|raw }};</script>{% endif %}
         <script type="text/javascript" src="/js/libs.min.js"></script>
