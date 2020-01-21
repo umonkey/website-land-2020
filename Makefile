@@ -19,6 +19,10 @@ pull-db:
 	ssh $(REMOTE) mysqldump u468297_pro | pv | mysql
 	echo "DELETE FROM sessions;" | mysql
 
+push:
+	hg push
+	hg push github
+
 shell:
 	ssh -t $(REMOTE) cd $(FOLDER) \; bash -l
 
