@@ -3,3 +3,4 @@
 ^(tmp|var|images)$
 ^public/(css|js)$
 ^settings\..*\.php$
+^node_modules$
