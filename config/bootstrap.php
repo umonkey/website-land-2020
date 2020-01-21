@@ -28,8 +28,9 @@ require __DIR__ . '/routes.php';
 
 // TODO: move to app!
 set_error_handler(function ($errno, $errstr, $errfile, $errline) use ($container) {
-    if (!(error_reporting() & $errno))
+    if (!(error_reporting() & $errno)) {
         return false;
+    }
 
     $logger = $container->get('logger');
 

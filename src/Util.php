@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App;
+
+use Psr\Container\ContainerInterface;
 
 class Util extends \Ufw1\Util
 {
-    public static function fetch($url)
+    public static function fetch(string $url): array
     {
         $context = stream_context_create(array(
             "http" => array(
@@ -34,8 +38,9 @@ class Util extends \Ufw1\Util
             }
         }
 
-        if (false === $res["data"])
+        if (false === $res["data"]) {
             $res["error"] = error_get_last();
+        }
 
         return $res;
     }
@@ -48,7 +53,7 @@ class Util extends \Ufw1\Util
      * @param array $page Запись из таблицы pages.
      * @return array Описание страницы.
      **/
-    public static function parsePage(array $page)
+    public static function parsePage(array $page): array
     {
         $props = [
             "name" => $page["name"],
@@ -72,24 +77,26 @@ class Util extends \Ufw1\Util
         return $props;
     }
 
-    public static function parseHtmlAttrs($tag)
+    public static function parseHtmlAttrs(string $tag): array
     {
         $res = [];
 
         if (preg_match_all('@([a-z-]+)="([^"]+)"@', $tag, $m)) {
-            foreach ($m[1] as $idx => $key)
+            foreach ($m[1] as $idx => $key) {
                 $res[$key] = trim($m[2][$idx]);
+            }
         }
 
         if (preg_match_all("@([a-z-]+)='([^']+)'@", $tag, $m)) {
-            foreach ($m[1] as $idx => $key)
+            foreach ($m[1] as $idx => $key) {
                 $res[$key] = trim($m[2][$idx]);
+            }
         }
 
         return $res;
     }
 
-    public static function installErrorHandler($container)
+    public static function installErrorHandler(ContainerInterface $container): void
     {
         $container['errorHandler'] = function ($c) {
             return function ($request, $response, $e) use ($c) {

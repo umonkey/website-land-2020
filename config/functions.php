@@ -1,9 +1,12 @@
 <?php
 
-function debug()
+declare(strict_types=1);
+
+function debug(): void
 {
-    while (ob_get_level())
+    while (ob_get_level()) {
         ob_end_clean();
+    }
 
     header("HTTP/1.0 503 Debug");
     header("Content-Type: text/plain; charset=utf-8");

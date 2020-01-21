@@ -7,6 +7,7 @@
 Account	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^class Account extends CommonHandler$/;"	c
 AddRewriteTable	src/Migrations/20200103163018_add_rewrite_table.php	/^class AddRewriteTable extends AbstractMigration$/;"	c
 Admin	vendor/umonkey/ufw1/src/Ufw1/Handlers/Admin.php	/^class Admin extends CommonHandler$/;"	c
+App	vendor/umonkey/ufw1/src/Ufw1/App.php	/^class App extends \\Slim\\App$/;"	c
 Base	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^class Base extends TestCase$/;"	c
 CSSmin	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^class CSSmin$/;"	c
 CanonicalHeaders	vendor/umonkey/ufw1/src/Ufw1/Services/S3.php	/^        $CanonicalHeaders = "";$/;"	v
@@ -60,7 +61,7 @@ Telega	vendor/umonkey/ufw1/src/Ufw1/Services/Telega.php	/^class Telega extends \
 Template	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^class Template extends \\Ufw1\\Service$/;"	c
 Thumbnailer	vendor/umonkey/ufw1/src/Ufw1/Services/Thumbnailer.php	/^class Thumbnailer extends \\Ufw1\\Service$/;"	c
 Thumbnailer2	vendor/umonkey/ufw1/src/Ufw1/Services/Thumbnailer2.php	/^class Thumbnailer2 extends Thumbnailer$/;"	c
-Unauthorized	src/Errors/Unauthorized.php	/^class Unauthorized extends \\RuntimeException { }$/;"	c
+Unauthorized	src/Errors/Unauthorized.php	/^class Unauthorized extends \\RuntimeException$/;"	c
 Unauthorized	vendor/umonkey/ufw1/src/Ufw1/Errors/Unauthorized.php	/^class Unauthorized extends \\RuntimeException { }$/;"	c
 Unavailable	vendor/umonkey/ufw1/src/Ufw1/Errors/Unavailable.php	/^class Unavailable extends \\RuntimeException { }$/;"	c
 Upload	vendor/umonkey/ufw1/src/Ufw1/Handlers/Upload.php	/^class Upload extends CommonHandler$/;"	c
@@ -461,7 +462,7 @@ f	vendor/umonkey/ufw1/src/Ufw1/Services/Thumbnailer.php	/^        $f = $file['fi
 fail	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function fail($message)$/;"	f
 fail	vendor/umonkey/ufw1/src/Ufw1/Controller.php	/^    protected function fail($message)$/;"	f
 fdir	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $fdir = dirname($fpath);$/;"	v
-fetch	src/Util.php	/^    public static function fetch($url)$/;"	f
+fetch	src/Util.php	/^    public static function fetch(string $url): array$/;"	f
 fetch	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^    public static function fetch($url)$/;"	f
 fetch	vendor/umonkey/ufw1/src/Ufw1/Services/Database.php	/^    public function fetch($query, array $params = array(), $callback = null)$/;"	f
 fetchOne	vendor/umonkey/ufw1/src/Ufw1/Services/Database.php	/^    public function fetchOne($query, array $params = array())$/;"	f
@@ -619,7 +620,6 @@ h	vendor/umonkey/ufw1/src/Ufw1/Services/Thumbnailer.php	/^        $h = imagesy($
 h	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^                    $h = imagesy($img);$/;"	v
 h	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^            $h = $info['height'];$/;"	v
 h	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^                $h = new Handlers\\Error($c);$/;"	v
-h	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^                $h = new \\Ufw1\\Handlers\\Error($c);$/;"	v
 h	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $h = ((($h % 360) + 360) % 360) \/ 360;$/;"	v
 h	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $h = floatval($values[0]);$/;"	v
 handle	vendor/umonkey/ufw1/src/Ufw1/Handlers/Tasks.php	/^    protected function handle(array $task)$/;"	f
@@ -667,7 +667,7 @@ html	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^            $html = \\
 html	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^        $html = $template->render($data);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^        $html = $this->fixHTML($html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^        $html = $this->renderFile($fileName, $data);$/;"	v
-html	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^        $html = \\Ufw1\\Util::cleanHtml($html);$/;"	v
+html	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^        $html = Util::cleanHtml($html);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^                $html = '<p>' . $em['title'] . '<\/p>';$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^                $html = sprintf('<p><a href="%s">%s<\/a><\/p>', $em['link'], $em['title']);$/;"	v
 html	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^            $html = "<a href='{$info['link']}' data-src='{$info['large']}' data-fancybox='gallery' title='{$info['title']}'>{$html}<\/a>";$/;"	v
@@ -760,10 +760,12 @@ inputLength	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $inputLeng
 insert	vendor/umonkey/ufw1/src/Ufw1/Services/Database.php	/^    public function insert($tableName, array $fields)$/;"	f
 installAccount	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installAccount($app)$/;"	f
 installAdmin	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installAdmin($app)$/;"	f
-installErrorHandler	src/Util.php	/^    public static function installErrorHandler($container)$/;"	f
+installErrorHandler	src/Util.php	/^    public static function installErrorHandler(ContainerInterface $container): void$/;"	f
+installErrorHandler	vendor/umonkey/ufw1/src/Ufw1/App.php	/^    public function installErrorHandler()$/;"	f
 installErrorHandler	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installErrorHandler($container)$/;"	f
 installFiles	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installFiles($app)$/;"	f
 installSearch	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installSearch($app)$/;"	f
+installServices	vendor/umonkey/ufw1/src/Ufw1/App.php	/^    public function installServices()$/;"	f
 installTaskQ	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installTaskQ($app)$/;"	f
 installWiki	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installWiki($app)$/;"	f
 interwiki	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^        $interwiki = $this->settings['interwiki'] ?: [];$/;"	v
@@ -990,7 +992,7 @@ next_chunk	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                    $next
 nh	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^                $nh = round($nw \/ $r);$/;"	v
 nh	vendor/umonkey/ufw1/src/Ufw1/Services/Thumbnailer.php	/^        $nh = round($ih * $scale);$/;"	v
 nid	src/Controllers/NodePictureController.php	/^        $nid = $args['id'];$/;"	v
-node	src/Controllers/ErrorController.php	/^        $node = $this->node->where("type = 'wiki' AND deleted = 0 AND id IN (SELECT id FROM nodes_wiki_idx WHERE url = ?)", [$url]);$/;"	v
+node	src/Controllers/ErrorController.php	/^        $node = $this->node->where("type = 'wiki' AND deleted = 0 "$/;"	v
 node	src/Controllers/NodePictureController.php	/^        $node = $this->node->get($nid);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $node = $this->node->save($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Ufw1/Handlers/Account.php	/^        $node = array_merge($form, [$/;"	v
@@ -1165,10 +1167,10 @@ params	vendor/umonkey/ufw1/src/Ufw1/Services/Search.php	/^                $param
 params	vendor/umonkey/ufw1/src/Ufw1/Services/Search.php	/^                $params = [$/;"	v
 parent	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $parent = [$/;"	v
 parent	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $parent = $request->getParam("parent");$/;"	v
-parseHtmlAttrs	src/Util.php	/^    public static function parseHtmlAttrs($tag)$/;"	f
+parseHtmlAttrs	src/Util.php	/^    public static function parseHtmlAttrs(string $tag): array$/;"	f
 parseHtmlAttrs	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function parseHtmlAttrs($tag)$/;"	f
 parseMapItems	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^    protected function parseMapItems($source)$/;"	f
-parsePage	src/Util.php	/^    public static function parsePage(array $page)$/;"	f
+parsePage	src/Util.php	/^    public static function parsePage(array $page): array$/;"	f
 parseTimestamp	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^    protected function parseTimestamp($value)$/;"	f
 part1	vendor/umonkey/ufw1/src/Ufw1/Common.php	/^        $part1 = substr(sha1($_SERVER["DOCUMENT_ROOT"]), 0, 10);$/;"	v
 part1	vendor/umonkey/ufw1/src/Ufw1/UploadHandler.php	/^        $part1 = substr(sha1($_SERVER["DOCUMENT_ROOT"]), 0, 10);$/;"	v

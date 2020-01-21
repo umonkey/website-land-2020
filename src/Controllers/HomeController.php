@@ -1,17 +1,18 @@
 <?php
+
 /**
  * Главная страница.
  *
  * Выводит готовый шаблон, никаких данных.
  **/
 
+declare(strict_types=1);
+
 namespace App\Controllers;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
-
 use App\Controller;
-
 
 class HomeController extends Controller
 {

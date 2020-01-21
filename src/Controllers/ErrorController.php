@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Custom error handler.
  **/
+
+declare(strict_types=1);
 
 namespace App\Controllers;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
-
 use App\Controller;
-
 
 class ErrorController extends Controller
 {
@@ -28,8 +29,10 @@ class ErrorController extends Controller
 
         // Hide arguments: passwords, etc.
         $stack = preg_replace_callback('@(\(([^()]+)\))@', function ($m) {
-            if (is_numeric($m[2]))
+            if (is_numeric($m[2])) {
                 return $m[1];
+            }
+
             return '(...)';
         }, $stack);
 
@@ -65,16 +68,12 @@ class ErrorController extends Controller
             $tpl = "unauthorized.twig";
             $status = 401;
             $notify = false;
-        }
-
-        elseif ($e instanceof \Ufw1\Errors\Forbidden) {
+        } elseif ($e instanceof \Ufw1\Errors\Forbidden) {
             $data['intro'] = $this->node->get(55);
             $tpl = "forbidden.twig";
             $status = 403;
             $notify = false;
-        }
-
-        elseif ($e instanceof \Ufw1\Errors\NotFound) {
+        } elseif ($e instanceof \Ufw1\Errors\NotFound) {
             $tpl = "notfound.twig";
             $status = 404;
             $notify = false;
@@ -98,7 +97,8 @@ class ErrorController extends Controller
 
     protected function getRedirect($url)
     {
-        $node = $this->node->where("type = 'wiki' AND deleted = 0 AND id IN (SELECT id FROM nodes_wiki_idx WHERE url = ?)", [$url]);
+        $node = $this->node->where("type = 'wiki' AND deleted = 0 "
+            . "AND id IN (SELECT id FROM nodes_wiki_idx WHERE url = ?)", [$url]);
 
         if (!empty($node)) {
             return "/wiki?name=" . urlencode($node[0]['name']);

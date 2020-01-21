@@ -1,6 +1,7 @@
 2020-01-21:
 - Use jslint on theme scripts.
 - SPA: wrap in .spa-container
+- PHP code style fixes.
 
 2020-01-20:
 - Reorder dirs: data => var, tmp => var/tmp, src/App => src.

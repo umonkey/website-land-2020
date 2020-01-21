@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Renders images to share posts with.
  **/
 
+declare(strict_types=1);
 
 namespace App\Services;
 

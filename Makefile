@@ -26,6 +26,10 @@ push:
 shell:
 	ssh -t $(REMOTE) cd $(FOLDER) \; bash -l
 
+syntax:
+	find config src -name '*.php' -exec php -l {} \;
+	phpcs --standard=PSR12 --ignore='src/Migrations' --exclude=Generic.Files.LineLength config src
+
 tags:
 	@echo "Rebuilding ctags (see doc/HOWTO_dev.md)"
 	@find src vendor/umonkey/ufw1/src/Ufw1 -name "*.php" | xargs ctags-exuberant -f .tags -h ".php" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP='/abstract class ([^ ]*)/\1/c/' --regex-PHP='/interface ([^ ]*)/\1/c/' --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' >/dev/null 2>&1
