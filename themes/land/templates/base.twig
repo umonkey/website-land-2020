@@ -101,6 +101,8 @@
             <div id="block" style="display: none"></div>
         </div>{# .spa-container #}
 
+        {% include 'parts/chat-widget.html.twig' %}
+
         {% if jsdata %}<script>window.jsdata = {{ jsdata|raw }};</script>{% endif %}
         <script type="text/javascript" src="/js/libs.min.js"></script>
         {% if request.host == "land.local" %}

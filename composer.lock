@@ -1652,7 +1652,7 @@
             "source": {
                 "type": "hg",
                 "url": "/home/hex/src/ufw1",
-                "reference": "7029fd8001a4"
+                "reference": "b70949c59345"
             },
             "require": {
                 "league/commonmark": "1.0.0",
@@ -1673,7 +1673,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Ufw1\\": "src/Ufw1"
+                    "Ufw1\\": "src"
                 }
             },
             "scripts": {
@@ -1688,7 +1688,7 @@
                 }
             ],
             "description": "slim based website framework for pet projects",
-            "time": "2020-01-22T00:18:12+00:00"
+            "time": "2020-01-22T00:47:49+00:00"
         }
     ],
     "packages-dev": [],
