@@ -50,8 +50,8 @@
 
         <title>{% block page_title %}{% if title %}{{ title }}{% else %}Wiki{% endif %} — {{ strings.site_name }}{% endblock %}</title>
     </head>
-    <body class="{% block body_class %}{{ body_class }}{% endblock %}">
-        <div class='spa-container'>
+    <body>
+        <div class='{% block body_class %}{{ body_class }}{% endblock %} spa-container'>
             <header>
                 <div class='title'>
                     <div class='wrap'>

@@ -4,14 +4,14 @@
     object-fit: cover;
 }
 
-body.home header {
+.home header {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.5);
 }
-body.home header .title {
+.home header .title {
     background-color: transparent;
 }
-body.home a.scrolldown {
+.home a.scrolldown {
     position: absolute;
     left: calc(50% - 60px);
     bottom: 10px;
