@@ -15,7 +15,8 @@ Util::containerSetup($container);
 Util::installErrorHandler($container);
 
 $container['kdpv'] = function (ContainerInterface $c) {
-    return new \App\Services\NodePictureService($c);
+    $settings = $c->get('settings')['kdpv'];
+    return new \App\Services\NodePictureService($settings);
 };
 
 $container['errorHandler'] = function (ContainerInterface $c) {
