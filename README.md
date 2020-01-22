@@ -21,5 +21,5 @@ PS. Когда-то это был статический сайт на [Poole][6
 [5]: https://cloud.yandex.ru/docs/storage/s3/
 [6]: https://hg.sr.ht/~obensonne/poole
 [7]: https://github.com/umonkey/ufw1/blob/master/assets/spa.js
-[8]: https://github.com/umonkey/website-land-2020/blob/master/src/Services/NodePictureService.php
+[8]: src/Services/NodePictureService.php
 [9]: https://storage.yandexcloud.net/umonkey-land/kdpv-demo.jpg "Картинка для привлечения внимания"
