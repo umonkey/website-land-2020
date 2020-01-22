@@ -126,7 +126,7 @@ action	vendor/umonkey/ufw1/src/Ufw1/Handlers/TaskQ.php	/^                $action
 action	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function action($command)$/;"	f
 add	vendor/umonkey/ufw1/src/Ufw1/Services/FileFactory.php	/^    public function add($name, $type, $body, array $props = [])$/;"	f
 add	vendor/umonkey/ufw1/src/Ufw1/Services/TaskQueue.php	/^    public function add($action, array $data = [], $priority = 0)$/;"	f
-addAdminRoutes	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function addAdminRoutes(&$app)$/;"	f
+addAdminRoutes	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function addAdminRoutes(App &$app): void$/;"	f
 addDefaults	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^    protected function addDefaults(array $data)$/;"	f
 addFile	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^    protected function addFile($name, $type, $body, $comment = null)$/;"	f
 added	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^            $added = (int)$row["added"];$/;"	v
@@ -226,7 +226,7 @@ class	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $class = Handlers\\TaskQ::
 class	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $class = Handlers\\Wiki::class;$/;"	v
 class.	vendor/umonkey/ufw1/src/Ufw1/Services/Database.php	/^ * Database interface class.$/;"	c
 className	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^            $className = 'image';$/;"	v
-cleanHtml	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function cleanHtml($html)$/;"	f
+cleanHtml	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function cleanHtml(string $html): string$/;"	f
 cls	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^                $cls = "wiki broken";$/;"	v
 cls	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^                $cls = 'external';$/;"	v
 cls	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^            $cls = "wiki good";$/;"	v
@@ -280,7 +280,7 @@ container	vendor/umonkey/ufw1/src/Ufw1/Service.php	/^    protected $container;$/
 container	vendor/umonkey/ufw1/src/Ufw1/Services/S3.php	/^    protected $container;$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^        $this->container = $app->getContainer();$/;"	v
 container	vendor/umonkey/ufw1/src/Ufw1/Tests/Base.php	/^    protected $container;$/;"	v
-containerSetup	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function containerSetup(&$container)$/;"	f
+containerSetup	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function containerSetup(ContainerInterface $container): void$/;"	f
 contents	vendor/umonkey/ufw1/src/Ufw1/Services/S3.php	/^            $contents = [$contents];$/;"	v
 contents	vendor/umonkey/ufw1/src/Ufw1/Services/S3.php	/^        $contents = $data['Contents'];$/;"	v
 context	src/Util.php	/^        $context = stream_context_create(array($/;"	v
@@ -692,7 +692,7 @@ html	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^        $html = preg_replace('@\\s+
 https	vendor/umonkey/ufw1/src/Ufw1/Handlers/Search.php	/^        $https = $request->getServerParam("HTTPS") == "on";$/;"	v
 https	vendor/umonkey/ufw1/src/Ufw1/Handlers/Sitemap.php	/^            $https = $request->getServerParam("HTTPS") == "on";$/;"	v
 hue_to_rgb	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    private function hue_to_rgb($v1, $v2, $vh)$/;"	f
-hyphenate	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function hyphenate($text, $len = 10)$/;"	f
+hyphenate	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function hyphenate(string $text, int $len = 10): string$/;"	f
 i	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                        $i = $i + $this->index_of($next_chunk, '}') + 1;$/;"	v
 i	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^                $i = $i + 1; \/\/ attn: advancing the loop$/;"	v
 i	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $i = $css_chunk_length; \/\/ save initial iterations$/;"	v
@@ -758,16 +758,16 @@ inputIndex	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $inputIndex
 inputLength	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $this->inputLength = strlen($this->input);$/;"	v
 inputLength	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected $inputLength = 0;$/;"	v
 insert	vendor/umonkey/ufw1/src/Ufw1/Services/Database.php	/^    public function insert($tableName, array $fields)$/;"	f
-installAccount	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installAccount($app)$/;"	f
-installAdmin	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installAdmin($app)$/;"	f
+installAccount	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installAccount(App $app): void$/;"	f
+installAdmin	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installAdmin(App $app): void$/;"	f
 installErrorHandler	src/Util.php	/^    public static function installErrorHandler(ContainerInterface $container): void$/;"	f
 installErrorHandler	vendor/umonkey/ufw1/src/Ufw1/App.php	/^    public function installErrorHandler()$/;"	f
-installErrorHandler	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installErrorHandler($container)$/;"	f
-installFiles	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installFiles($app)$/;"	f
-installSearch	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installSearch($app)$/;"	f
+installErrorHandler	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installErrorHandler(ContainerInterface $container): void$/;"	f
+installFiles	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installFiles(App $app): void$/;"	f
+installSearch	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installSearch(App $app): void$/;"	f
 installServices	vendor/umonkey/ufw1/src/Ufw1/App.php	/^    public function installServices()$/;"	f
-installTaskQ	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installTaskQ($app)$/;"	f
-installWiki	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installWiki($app)$/;"	f
+installTaskQ	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installTaskQ(App $app): void$/;"	f
+installWiki	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function installWiki(App $app): void$/;"	f
 interwiki	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^        $interwiki = $this->settings['interwiki'] ?: [];$/;"	v
 isAdmin	vendor/umonkey/ufw1/src/Ufw1/CommonHandler.php	/^    protected function isAdmin(Request $request)$/;"	f
 isAlphaNum	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^    protected function isAlphaNum($c)$/;"	f
@@ -1168,7 +1168,7 @@ params	vendor/umonkey/ufw1/src/Ufw1/Services/Search.php	/^                $param
 parent	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^            $parent = [$/;"	v
 parent	vendor/umonkey/ufw1/src/Ufw1/Handlers/Files.php	/^        $parent = $request->getParam("parent");$/;"	v
 parseHtmlAttrs	src/Util.php	/^    public static function parseHtmlAttrs(string $tag): array$/;"	f
-parseHtmlAttrs	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function parseHtmlAttrs($tag)$/;"	f
+parseHtmlAttrs	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function parseHtmlAttrs(string $tag): array$/;"	f
 parseMapItems	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^    protected function parseMapItems($source)$/;"	f
 parsePage	src/Util.php	/^    public static function parsePage(array $page): array$/;"	f
 parseTimestamp	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^    protected function parseTimestamp($value)$/;"	f
@@ -1228,9 +1228,9 @@ php_limits	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^        $php_limits = arr
 ping	vendor/umonkey/ufw1/src/Ufw1/Services/TaskQueue.php	/^            $this->ping = true;$/;"	v
 ping	vendor/umonkey/ufw1/src/Ufw1/Services/TaskQueue.php	/^    protected $ping = false;$/;"	v
 placeholder	vendor/umonkey/ufw1/src/Ufw1/compress.php	/^            $placeholder = '\/' . self::COMMENT . $i . '___\/';$/;"	v
-plural	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function plural($number, $single, $double, $multiple)$/;"	f
+plural	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function plural(int $number, string $single, string $double, string $multiple): string$/;"	f
 pname	vendor/umonkey/ufw1/src/Ufw1/Handlers/Wiki.php	/^        $pname = "File:" . $fid;$/;"	v
-postUpdate	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function postUpdate()$/;"	f
+postUpdate	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function postUpdate(): void$/;"	f
 prefix	vendor/umonkey/ufw1/src/Ufw1/Services/Logger.php	/^        $prefix = sprintf("%s %06.2f %04u %s: ", strftime("%Y-%m-%d %H:%M:%S"), microtime(true) - $this->startup, ++$this->count, $level);$/;"	v
 prefix	vendor/umonkey/ufw1/src/Ufw1/Services/Stemmer.php	/^        $prefix = mb_substr($word, 0, $region, 'UTF-8');$/;"	v
 prepare	vendor/umonkey/ufw1/src/Ufw1/Services/Database.php	/^    public function prepare($query)$/;"	f
@@ -1247,7 +1247,7 @@ processMaps	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^    protected funct
 processPhotoAlbums	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^    protected function processPhotoAlbums($source)$/;"	f
 processSummary	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^    protected function processSummary($html, array &$res)$/;"	f
 processTypography	vendor/umonkey/ufw1/src/Ufw1/Services/Template.php	/^    protected function processTypography($text)$/;"	f
-processTypography	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function processTypography($text)$/;"	f
+processTypography	vendor/umonkey/ufw1/src/Ufw1/Util.php	/^    public static function processTypography(string $text): string$/;"	f
 processWikiLinks	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^    protected function processWikiLinks($source)$/;"	f
 processYouTube	vendor/umonkey/ufw1/src/Ufw1/Services/Wiki.php	/^    protected function processYouTube($html)$/;"	f
 props	src/Util.php	/^        $props = [$/;"	v
