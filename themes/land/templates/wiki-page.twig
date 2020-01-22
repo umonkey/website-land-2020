@@ -35,6 +35,22 @@
     </div>
 {% endblock %}
 
+{% block splash %}
+    {% if page.splash %}
+        <div id='splash'>
+            <picture>
+                {#
+                <source type='image/webp' srcset='{{ page.splash }}'/>
+                #}
+                <source type='image/jpg' srcset='{{ page.splash }}'/>
+                <img src='{{ page.splash }}'/>
+            </picture>
+            <a href='#content' class='scrolldown'><i class="fas fa-chevron-circle-down"></i></a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
 {% block page_contents %}
     {% if page.meta != 'off' and page.date %}
         <div class='wikimeta'>{{ node.date|date_human }}, <a href='/wiki?name=Блог'>Блог о жизни в деревне</a></div>

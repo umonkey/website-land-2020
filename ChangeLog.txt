@@ -1,5 +1,6 @@
 2020-01-22:
 - VK Community widget, light version: loads the real widget on click.
+- Configurable wiki page splash image.
 
 2020-01-21:
 - Use jslint on theme scripts.

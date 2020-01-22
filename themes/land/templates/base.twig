@@ -51,7 +51,7 @@
         <title>{% block page_title %}{% if title %}{{ title }}{% else %}Wiki{% endif %} — {{ strings.site_name }}{% endblock %}</title>
     </head>
     <body>
-        <div class='{% block body_class %}{{ body_class }}{% endblock %} spa-container'>
+        <div class='{% block body_class %}{{ body_class }}{% endblock %} spa-container{% if page.splash %} with-splash{% endif %}'>
             <header>
                 <div class='title'>
                     <div class='wrap'>

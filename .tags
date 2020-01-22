@@ -684,6 +684,7 @@ id	vendor/umonkey/ufw1/src/CommonHandler.php	/^        $id = $this->sessionGetId
 id	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^                        $id = $file["id"];$/;"	v
 id	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $id = $args["id"];$/;"	v
 id	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $id = $args['id'];$/;"	v
+id	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $id = (int)$args['id'];$/;"	v
 id	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $id = (int)$request->getParam('id');$/;"	v
 id	vendor/umonkey/ufw1/src/Handlers/Files.php	/^                    $id = $old["id"];$/;"	v
 id	vendor/umonkey/ufw1/src/Handlers/Files.php	/^                    $id = $this->dbInsertFile(null, $name, $type, $data, $hash);$/;"	v
@@ -997,7 +998,7 @@ node	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^        $node = $wiki->getPa
 node	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^        $node = $wiki->updatePage($name, $source, $user, $section);$/;"	v
 node	vendor/umonkey/ufw1/src/Handlers/Account.php	/^        $node = $this->node->save($node);$/;"	v
 node	vendor/umonkey/ufw1/src/Handlers/Account.php	/^        $node = array_merge($form, [$/;"	v
-node	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^            $node = $this->node->get($form['id']);$/;"	v
+node	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^            $node = $this->node->get((int)$form['id']);$/;"	v
 node	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^            $node = [$/;"	v
 node	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^            $node = array_merge($node, $form);$/;"	v
 node	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^            $node = json_decode($raw, true);$/;"	v
@@ -1083,8 +1084,8 @@ onDownload	vendor/umonkey/ufw1/src/Handlers/Files.php	/^    public function onDo
 onDump	vendor/umonkey/ufw1/src/Handlers/Files.php	/^    public function onDump(Request $request, Response $response, array $args)$/;"	f
 onDumpNode	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onDumpNode(Request $request, Response $response, array $args)$/;"	f
 onEdit	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^    public function onEdit(Request $request, Response $response, array $args)$/;"	f
-onEditNode	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onEditNode(Request $request, Response $response, array $args)$/;"	f
-onEditRawNode	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onEditRawNode(Request $request, Response $response, array $args)$/;"	f
+onEditNode	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onEditNode(Request $request, Response $response, array $args): Response$/;"	f
+onEditRawNode	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onEditRawNode(Request $request, Response $response, array $args): Response$/;"	f
 onEditSession	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onEditSession(Request $request, Response $response, array $args)$/;"	f
 onEmbedClipboard	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^    public function onEmbedClipboard(Request $request, Response $response, array $args)$/;"	f
 onFormUpload	vendor/umonkey/ufw1/src/Handlers/Files.php	/^    public function onFormUpload(Request $request, Response $response, array $args)$/;"	f
@@ -1127,7 +1128,7 @@ onRunOne	vendor/umonkey/ufw1/src/Handlers/Tasks.php	/^    public function onRunO
 onS3	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onS3(Request $request, Response $response, array $args)$/;"	f
 onSave	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^    public function onSave(Request $request, Response $response, array $args)$/;"	f
 onSaveFile	vendor/umonkey/ufw1/src/Handlers/Files.php	/^    protected function onSaveFile(Request $request, Response $response, array $args)$/;"	f
-onSaveNode	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onSaveNode(Request $request, Response $response, array $args)$/;"	f
+onSaveNode	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onSaveNode(Request $request, Response $response, array $args): Response$/;"	f
 onScheduleS3	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    public function onScheduleS3(Request $request, Response $response, array $args)$/;"	f
 onShorten	vendor/umonkey/ufw1/src/Handlers/Shortener.php	/^    public function onShorten(Request $request, Response $response, array $args)$/;"	f
 onShow	vendor/umonkey/ufw1/src/Handlers/TaskQ.php	/^    public function onShow(Request $request, Response $response, array $args)$/;"	f
