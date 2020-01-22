@@ -2,14 +2,26 @@
 
 /**
  * Renders images to share posts with.
+ *
+ * TODO: save as a file, upload to S3.
  **/
 
 declare(strict_types=1);
 
 namespace App\Services;
 
-class NodePictureService extends \Ufw1\Service
+class NodePictureService
 {
+    /**
+     * @var array
+     */
+    protected $settings;
+
+    public function __construct(array $settings)
+    {
+        $this->settings = $settings;
+    }
+
     public function render(string $text, string $template = null): string
     {
         if (null === $template) {
@@ -36,12 +48,12 @@ class NodePictureService extends \Ufw1\Service
 
     protected function getTemplate()
     {
-        return $this->settings['kdpv']['template'] ?? null;
+        return $this->settings['template'] ?? null;
     }
 
     protected function getFont()
     {
-        $path = $this->settings['kdpv']['font'] ?? null;
+        $path = $this->settings['font'] ?? null;
 
         if (empty($path)) {
             throw new \RuntimeException('kdpv font not set');

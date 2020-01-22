@@ -38,7 +38,7 @@ JSMin_UnterminatedStringException	vendor/umonkey/ufw1/src/compress.php	/^class J
 Logger	vendor/umonkey/ufw1/src/Services/Logger.php	/^class Logger implements LoggerInterface$/;"	c
 NodeFactory	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^class NodeFactory$/;"	c
 NodePictureController	src/Controllers/NodePictureController.php	/^class NodePictureController extends \\App\\Controller$/;"	c
-NodePictureService	src/Services/NodePictureService.php	/^class NodePictureService extends \\Ufw1\\Service$/;"	c
+NodePictureService	src/Services/NodePictureService.php	/^class NodePictureService$/;"	c
 NotFound	vendor/umonkey/ufw1/src/Errors/NotFound.php	/^class NotFound extends \\RuntimeException$/;"	c
 Region	vendor/umonkey/ufw1/src/Services/S3.php	/^        $Region = $this->settings['S3']["bucket_region"];$/;"	v
 S3	vendor/umonkey/ufw1/src/Services/S3.php	/^class S3$/;"	c
@@ -69,6 +69,7 @@ Util	src/Util.php	/^class Util extends \\Ufw1\\Util$/;"	c
 Util	vendor/umonkey/ufw1/src/Util.php	/^class Util$/;"	c
 Wiki	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^class Wiki extends CommonHandler$/;"	c
 Wiki	vendor/umonkey/ufw1/src/Services/Wiki.php	/^class Wiki$/;"	c
+__construct	src/Services/NodePictureService.php	/^    public function __construct(array $settings)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Controller.php	/^    public function __construct(ContainerInterface $container)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Services/Database.php	/^    public function __construct(array $dsn)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^    public function __construct(LoggerInterface $logger, NodeFactory $node, array $settings)$/;"	f
@@ -1200,7 +1201,7 @@ parts	vendor/umonkey/ufw1/src/Services/Wiki.php	/^        $parts = explode('#', 
 parts	vendor/umonkey/ufw1/src/compress.php	/^            $parts = $this->read_sources($sources);$/;"	v
 parts	vendor/umonkey/ufw1/src/compress.php	/^            $parts = $this->read_sources_min($sources);$/;"	v
 password	vendor/umonkey/ufw1/src/Handlers/Account.php	/^            $password = $request->getParam("password");$/;"	v
-path	src/Services/NodePictureService.php	/^        $path = $this->settings['kdpv']['font'] ?? null;$/;"	v
+path	src/Services/NodePictureService.php	/^        $path = $this->settings['font'] ?? null;$/;"	v
 path	vendor/umonkey/ufw1/src/CommonHandler.php	/^        $path = $st['files']['path'] . '\/' . $name;$/;"	v
 path	vendor/umonkey/ufw1/src/Controller.php	/^            $path = $_SERVER["DOCUMENT_ROOT"] . $key;$/;"	v
 path	vendor/umonkey/ufw1/src/Controller.php	/^            $path = $root . $m[2];$/;"	v
@@ -1485,6 +1486,8 @@ set_max_execution_time	vendor/umonkey/ufw1/src/compress.php	/^    public functio
 set_memory_limit	vendor/umonkey/ufw1/src/compress.php	/^    public function set_memory_limit($limit)$/;"	f
 set_pcre_backtrack_limit	vendor/umonkey/ufw1/src/compress.php	/^    public function set_pcre_backtrack_limit($limit)$/;"	f
 set_pcre_recursion_limit	vendor/umonkey/ufw1/src/compress.php	/^    public function set_pcre_recursion_limit($limit)$/;"	f
+settings	src/Services/NodePictureService.php	/^        $this->settings = $settings;$/;"	v
+settings	src/Services/NodePictureService.php	/^    protected $settings;$/;"	v
 settings	vendor/umonkey/ufw1/src/Controller.php	/^        $settings = $this->container->get("settings");$/;"	v
 settings	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $settings = $this->container->get('settings')['taskq'] ?? [];$/;"	v
 settings	vendor/umonkey/ufw1/src/Handlers/Files.php	/^        $settings = $this->container->get("settings")["files"] ?? [];$/;"	v
