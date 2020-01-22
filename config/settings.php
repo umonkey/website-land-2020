@@ -30,16 +30,18 @@ $settings = [
         'symlink' => __DIR__ . '/../var/logs/php.log',
     ],
 
-    'nodes_idx' => [
-        'user' => [
-            'email',
-        ],
-        'picture' => [
-            'author',
-            'status',
-        ],
-        'wiki' => [
-            'url',
+    'node' => [
+        'indexes' => [
+            'user' => [
+                'email',
+            ],
+            'picture' => [
+                'author',
+                'status',
+            ],
+            'wiki' => [
+                'url',
+            ],
         ],
     ],
 

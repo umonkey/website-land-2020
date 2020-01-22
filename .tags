@@ -73,7 +73,7 @@ __construct	vendor/umonkey/ufw1/src/Controller.php	/^    public function __const
 __construct	vendor/umonkey/ufw1/src/Services/Database.php	/^    public function __construct(array $dsn)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^    public function __construct(LoggerInterface $logger, NodeFactory $node, array $settings)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Services/Logger.php	/^    public function __construct(array $config)$/;"	f
-__construct	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^    public function __construct(Database $database, LoggerInterface $logger)$/;"	f
+__construct	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^    public function __construct(array $settings, Database $database, LoggerInterface $logger)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Services/S3.php	/^    public function __construct(array $settings, LoggerInterface $logger, NodeFactory $node, TaskQueue $taskq)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Services/Search.php	/^    public function __construct(Database $database, LoggerInterface $logger)$/;"	f
 __construct	vendor/umonkey/ufw1/src/Services/TaskQueue.php	/^    public function __construct(Database $database, LoggerInterface $logger, array $settings)$/;"	f
@@ -467,7 +467,7 @@ fid	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^        $fid = $file["id"];$/
 fields	vendor/umonkey/ufw1/src/Handlers/Database.php	/^                $fields = explode(",", $fields);$/;"	v
 fields	vendor/umonkey/ufw1/src/Handlers/Database.php	/^                $fields = preg_replace('@--.*$@m', '', $m[1]);$/;"	v
 fields	vendor/umonkey/ufw1/src/Handlers/Database.php	/^                $fields = preg_replace('@\\([^)]+\\)@', '', $fields);$/;"	v
-fields	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^            $fields = $settings["nodes_idx"][$type];$/;"	v
+fields	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^            $fields = $settings["indexes"][$type];$/;"	v
 file	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^                            $file = $tn->updateNode($file);$/;"	v
 file	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^                        $file = $this->file->add($name, $type, $doc["data"]);$/;"	v
 file	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^            $file = $this->node->save($file);$/;"	v
@@ -1495,6 +1495,8 @@ settings	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^        $settings = 
 settings	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^        $this->settings = array_replace([$/;"	v
 settings	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^    protected $settings;$/;"	v
 settings	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^        $settings = $this->settings;$/;"	v
+settings	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^        $this->settings = $settings;$/;"	v
+settings	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^    protected $settings;$/;"	v
 settings	vendor/umonkey/ufw1/src/Services/S3.php	/^        $this->settings = $settings;$/;"	v
 settings	vendor/umonkey/ufw1/src/Services/S3.php	/^    protected $settings;$/;"	v
 settings	vendor/umonkey/ufw1/src/Services/TaskQueue.php	/^            $settings = $this->settings;$/;"	v
@@ -1505,6 +1507,7 @@ settings	vendor/umonkey/ufw1/src/Services/Template.php	/^        $this->settings
 settings	vendor/umonkey/ufw1/src/Services/Template.php	/^    protected $settings;$/;"	v
 settings	vendor/umonkey/ufw1/src/Services/Wiki.php	/^        $this->settings = $settings;$/;"	v
 settings	vendor/umonkey/ufw1/src/Services/Wiki.php	/^    protected $settings;$/;"	v
+settings	vendor/umonkey/ufw1/src/Util.php	/^            $settings = $c->get('settings')['node'];$/;"	v
 settings	vendor/umonkey/ufw1/src/Util.php	/^            $settings = $c->get('settings')['taskq'];$/;"	v
 settings	vendor/umonkey/ufw1/src/Util.php	/^            $settings = $c->get('settings')['telega'];$/;"	v
 settings	vendor/umonkey/ufw1/src/Util.php	/^            $settings = $c->get('settings')['templates'];$/;"	v
@@ -1579,7 +1582,7 @@ st	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $st = $this->container->
 st	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $st = $this->container->get('settings')['node_forms'][$type] ?? null;$/;"	v
 st	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^        $st = $this->container->get('settings')['taskq'];$/;"	v
 st	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^        $st = $this->settings;$/;"	v
-st	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^        $st = $this->settings['node_history'] ?? [];$/;"	v
+st	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^        $st = $this->settings['history'] ?? [];$/;"	v
 st	vendor/umonkey/ufw1/src/Services/S3.php	/^            $st = $this->settings['S3']['auto_upload'];$/;"	v
 st	vendor/umonkey/ufw1/src/Services/Telega.php	/^        $st = $this->settings;$/;"	v
 stack	src/Controllers/ErrorController.php	/^        $stack = $e->getTraceAsString();$/;"	v
