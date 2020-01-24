@@ -4,3 +4,4 @@
 ^public/(css|js)$
 ^settings\..*\.php$
 ^node_modules$
+^\.tags$
