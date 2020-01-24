@@ -18,7 +18,7 @@ class HomeController extends Controller
 {
     public function index(Request $request, Response $response, array $args): Response
     {
-        return $this->render($request, 'home.twig', [
+        return $this->render($request, 'pages/home.twig', [
         ]);
     }
 }

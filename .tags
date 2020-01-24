@@ -341,6 +341,7 @@ css	vendor/umonkey/ufw1/src/compress.php	/^        $css = preg_replace_callback(
 css_chunk_length	vendor/umonkey/ufw1/src/compress.php	/^        $css_chunk_length = 5000; \/\/ aprox size, not exact$/;"	v
 css_chunks	vendor/umonkey/ufw1/src/compress.php	/^        $css_chunks = array();$/;"	v
 current	vendor/umonkey/ufw1/src/compress.php	/^            $current = $this->normalize_int(ini_get($name));$/;"	v
+data	src/Controllers/ErrorController.php	/^        $data = $this->getTemplateData($request, $e);$/;"	v
 data	src/Controllers/ErrorController.php	/^        $data = [];$/;"	v
 data	src/Services/NodePictureService.php	/^        $data = file_get_contents($template);$/;"	v
 data	src/Services/NodePictureService.php	/^        $data = ob_get_clean();$/;"	v
@@ -427,7 +428,7 @@ dst	vendor/umonkey/ufw1/src/compress.php	/^                $dst = substr($dst, 0
 dst	vendor/umonkey/ufw1/src/compress.php	/^                $dst = substr($dst, 0, -3) . "min.css";$/;"	v
 dur	vendor/umonkey/ufw1/src/Services/S3.php	/^                $dur = $now - $reqts;$/;"	v
 dur	vendor/umonkey/ufw1/src/Services/S3.php	/^        $dur = $now - $reqts;$/;"	v
-e	src/Controllers/ErrorController.php	/^        $e = $args["exception"];$/;"	v
+e	src/Controllers/ErrorController.php	/^        $e = $args['exception'];$/;"	v
 e	vendor/umonkey/ufw1/src/Handlers/Error.php	/^        $e = $args["exception"];$/;"	v
 email	vendor/umonkey/ufw1/src/Handlers/Account.php	/^            $email = $request->getParam("email");$/;"	v
 emergency	vendor/umonkey/ufw1/src/Services/Logger.php	/^    public function emergency($message, array $context = [])$/;"	f
@@ -564,6 +565,7 @@ getByKey	vendor/umonkey/ufw1/src/Services/NodeFactory.php	/^    public function 
 getCanonicalRequest	vendor/umonkey/ufw1/src/Services/S3.php	/^    protected function getCanonicalRequest($method, $url, array $headers, $payload)$/;"	f
 getConnectionType	vendor/umonkey/ufw1/src/Services/Database.php	/^    public function getConnectionType(): string$/;"	f
 getDate	vendor/umonkey/ufw1/src/Services/S3.php	/^    protected function getDate(array $headers)$/;"	f
+getExceptionStack	src/Controllers/ErrorController.php	/^    private function getExceptionStack(\\Throwable $e, Request $request): string$/;"	f
 getFile	vendor/umonkey/ufw1/src/Handlers/Upload.php	/^    protected function getFile(Request $request)$/;"	f
 getFileInfo	vendor/umonkey/ufw1/src/Services/Wiki.php	/^    protected function getFileInfo(int $id): array$/;"	f
 getFileList	vendor/umonkey/ufw1/src/Services/S3.php	/^    public function getFileList()$/;"	f
@@ -599,6 +601,7 @@ getStoragePath	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^    public fun
 getStorageSize	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^    public function getStorageSize()$/;"	f
 getStringToSign	vendor/umonkey/ufw1/src/Services/S3.php	/^    protected function getStringToSign(array $headers, array $res)$/;"	f
 getTemplate	src/Services/NodePictureService.php	/^    protected function getTemplate()$/;"	f
+getTemplateData	src/Controllers/ErrorController.php	/^    private function getTemplateData(Request $request, \\Throwable $e): array$/;"	f
 getThumbnail	vendor/umonkey/ufw1/src/Services/Database.php	/^    public function getThumbnail(string $name, string $type): ?array$/;"	f
 getUser	vendor/umonkey/ufw1/src/CommonHandler.php	/^    protected function getUser(Request $request): ?array$/;"	f
 getWarnings	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^    protected function getWarnings()$/;"	f
@@ -639,8 +642,8 @@ html	vendor/umonkey/ufw1/src/Common.php	/^        $html = $converter->convertToH
 html	vendor/umonkey/ufw1/src/Common.php	/^        $html = preg_replace_callback('@<h([12345])>(.+)<\/h([12345])>@', function ($m) use (&$level, &$toc) {$/;"	v
 html	vendor/umonkey/ufw1/src/Common.php	/^        $html = str_replace("<div id=\\"toc\\"><\/div>", "<div id=\\"toc\\">{$toc}<\/div>", $html);$/;"	v
 html	vendor/umonkey/ufw1/src/Controller.php	/^        $html = $this->fixAssetsCache($request, $html);$/;"	v
-html	vendor/umonkey/ufw1/src/Controller.php	/^        $html = $this->renderHTML($request, $templateName, $data);$/;"	v
-html	vendor/umonkey/ufw1/src/Controller.php	/^        $html = $this->template->render($templateName, $data);$/;"	v
+html	vendor/umonkey/ufw1/src/Controller.php	/^        $html = $this->renderHTML($request, $template, $data);$/;"	v
+html	vendor/umonkey/ufw1/src/Controller.php	/^        $html = $this->template->render($template, $data);$/;"	v
 html	vendor/umonkey/ufw1/src/Controller.php	/^        $html = preg_replace_callback('@(src|href)="([^"]+\\.(css|js))"@', function ($m) use ($root) {$/;"	v
 html	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^        $html = $page["html"];$/;"	v
 html	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^        $html = preg_replace('@<script.*?<\/script>@', '', $html);$/;"	v
@@ -651,7 +654,6 @@ html	vendor/umonkey/ufw1/src/Services/Search.php	/^            $html = str_repla
 html	vendor/umonkey/ufw1/src/Services/Template.php	/^            $html = \\Ufw1\\Common::renderMarkdown($src);$/;"	v
 html	vendor/umonkey/ufw1/src/Services/Template.php	/^        $html = $template->render($data);$/;"	v
 html	vendor/umonkey/ufw1/src/Services/Template.php	/^        $html = $this->fixHTML($html);$/;"	v
-html	vendor/umonkey/ufw1/src/Services/Template.php	/^        $html = $this->renderFile($fileName, $data);$/;"	v
 html	vendor/umonkey/ufw1/src/Services/Template.php	/^        $html = Util::cleanHtml($html);$/;"	v
 html	vendor/umonkey/ufw1/src/Services/Wiki.php	/^                $html = '<p>' . $em['title'] . '<\/p>';$/;"	v
 html	vendor/umonkey/ufw1/src/Services/Wiki.php	/^                $html = sprintf('<p><a href="%s">%s<\/a><\/p>', $em['link'], $em['title']);$/;"	v
@@ -760,6 +762,7 @@ isPattern	vendor/umonkey/ufw1/src/compress.php	/^    protected function isPatter
 isRegexpLiteral	vendor/umonkey/ufw1/src/compress.php	/^    protected function isRegexpLiteral()$/;"	f
 isS3AutoUploadEnabled	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^    private function isS3AutoUploadEnabled()$/;"	f
 isVowel	vendor/umonkey/ufw1/src/Services/Stemmer.php	/^    private static function isVowel($char)$/;"	f
+isXHR	src/Controllers/ErrorController.php	/^    private function isXHR(Request $request): bool$/;"	f
 is_css	vendor/umonkey/ufw1/src/compress.php	/^    protected function is_css($fn)$/;"	f
 is_filter	vendor/umonkey/ufw1/src/compress.php	/^            $is_filter = $m[1] !== null && $m[1] !== '';$/;"	v
 is_js	vendor/umonkey/ufw1/src/compress.php	/^    protected function is_js($fn)$/;"	f
@@ -927,7 +930,6 @@ mbIntEnc	vendor/umonkey/ufw1/src/compress.php	/^        $mbIntEnc = null;$/;"	v
 memory_limit	vendor/umonkey/ufw1/src/compress.php	/^        $this->memory_limit = $this->normalize_int($limit);$/;"	v
 memory_limit	vendor/umonkey/ufw1/src/compress.php	/^        $this->memory_limit = 128 * 1048576; \/\/ 128MB in bytes$/;"	v
 memory_limit	vendor/umonkey/ufw1/src/compress.php	/^    private $memory_limit;$/;"	v
-message	src/Controllers/ErrorController.php	/^            $message = "Ошибка {$data["e"]["class"]}: {$data["e"]["message"]}";$/;"	v
 message	vendor/umonkey/ufw1/src/Handlers/Account.php	/^        $message = "Зарегистрирован новый пользователь:\\n";$/;"	v
 message	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^            $message = 'Документ восстановлен.';$/;"	v
 message	vendor/umonkey/ufw1/src/Handlers/Admin.php	/^            $message = 'Документ опубликован';$/;"	v
@@ -976,6 +978,7 @@ name	vendor/umonkey/ufw1/src/Services/Database.php	/^                $name = $th
 name	vendor/umonkey/ufw1/src/Services/Search.php	/^            $name = $page['name'];$/;"	v
 name	vendor/umonkey/ufw1/src/Services/Template.php	/^            $name = $parts[0] . ' ' . mb_substr($parts[1], 0, 1) . '.';$/;"	v
 name	vendor/umonkey/ufw1/src/Services/Wiki.php	/^        $name = explode('#', $name)[0];$/;"	v
+names	vendor/umonkey/ufw1/src/Services/Template.php	/^        $names = implode(", ", $templates);$/;"	v
 new_hash	vendor/umonkey/ufw1/src/compress.php	/^        $new_hash = md5($data);$/;"	v
 next	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^                $next = '\/wiki?name=' . urlencode($res['redirect']);$/;"	v
 next	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^            $next = '\/wiki?name=' . urlencode($st);$/;"	v
@@ -1051,8 +1054,7 @@ normalizeWords	vendor/umonkey/ufw1/src/Services/Search.php	/^    protected funct
 normalize_int	vendor/umonkey/ufw1/src/compress.php	/^    private function normalize_int($size)$/;"	f
 notfound	vendor/umonkey/ufw1/src/Controller.php	/^    protected function notfound(string $message = null): void$/;"	f
 notice	vendor/umonkey/ufw1/src/Services/Logger.php	/^    public function notice($message, array $context = [])$/;"	f
-notify	src/Controllers/ErrorController.php	/^            $notify = false;$/;"	v
-notify	src/Controllers/ErrorController.php	/^        $notify = true;$/;"	v
+notify	src/Controllers/ErrorController.php	/^    private function notify(array $data): void$/;"	f
 notifyAdmin	vendor/umonkey/ufw1/src/Handlers/Account.php	/^    protected function notifyAdmin(Request $request, array $node)$/;"	f
 notifyEdits	vendor/umonkey/ufw1/src/Services/Wiki.php	/^    protected function notifyEdits(array $node, array $user): array$/;"	f
 now	vendor/umonkey/ufw1/src/CommonHandler.php	/^            $now = strftime("%Y-%m-%d %H:%M:%S");$/;"	v
@@ -1207,6 +1209,7 @@ path	vendor/umonkey/ufw1/src/Controller.php	/^            $path = $_SERVER["DOCU
 path	vendor/umonkey/ufw1/src/Controller.php	/^            $path = $root . $m[2];$/;"	v
 path	vendor/umonkey/ufw1/src/Handlers/Files.php	/^            $path = $files->fsgetpath($lpath);$/;"	v
 path	vendor/umonkey/ufw1/src/Services/FileFactory.php	/^        $path = $settings["path"];$/;"	v
+path	vendor/umonkey/ufw1/src/Services/Template.php	/^                $path = $root . '\/' . $template;$/;"	v
 path	vendor/umonkey/ufw1/src/Services/Thumbnailer.php	/^                $path = $this->file->fsput($res);$/;"	v
 pattern	vendor/umonkey/ufw1/src/compress.php	/^                    $pattern = '\/'; \/\/ keep entire pattern in case we need to report it in the exception$/;"	v
 pattern	vendor/umonkey/ufw1/src/compress.php	/^            $pattern = dirname($this->mapPath) . '\/' . $pattern;$/;"	v
@@ -1304,11 +1307,11 @@ reindexNode	vendor/umonkey/ufw1/src/Services/Search.php	/^    public function re
 reindexWikiNode	vendor/umonkey/ufw1/src/Services/Search.php	/^    protected function reindexWikiNode(array $node): void$/;"	f
 removeEndings	vendor/umonkey/ufw1/src/Services/Stemmer.php	/^    public static function removeEndings(&$word, $regex, $region)$/;"	f
 render	src/Services/NodePictureService.php	/^    public function render(string $text, string $template = null): string$/;"	f
-render	vendor/umonkey/ufw1/src/Controller.php	/^    protected function render(Request $request, string $templateName, array $data = []): Response$/;"	f
-render	vendor/umonkey/ufw1/src/Services/Template.php	/^    public function render(string $fileName, array $data = array()): string$/;"	f
+render	vendor/umonkey/ufw1/src/Controller.php	/^    protected function render(Request $request, $template, array $data = []): Response$/;"	f
+render	vendor/umonkey/ufw1/src/Services/Template.php	/^    public function render($templates, array $data = array()): string$/;"	f
 renderFigure	vendor/umonkey/ufw1/src/Services/Wiki.php	/^    protected function renderFigure(array $info): string$/;"	f
 renderFile	vendor/umonkey/ufw1/src/Services/Template.php	/^    public function renderFile(string $fileName, array $data): string$/;"	f
-renderHTML	vendor/umonkey/ufw1/src/Controller.php	/^    protected function renderHTML(Request $request, string $templateName, array $data = []): string$/;"	f
+renderHTML	vendor/umonkey/ufw1/src/Controller.php	/^    protected function renderHTML(Request $request, $template, array $data = []): string$/;"	f
 renderMarkdown	vendor/umonkey/ufw1/src/Common.php	/^    public static function renderMarkdown($source)$/;"	f
 renderPage	vendor/umonkey/ufw1/src/Services/Wiki.php	/^    public function renderPage(array $node): array$/;"	f
 renderRSS	vendor/umonkey/ufw1/src/Controller.php	/^    protected function renderRSS(Request $request, array $channel, array $items): Response$/;"	f
@@ -1388,7 +1391,7 @@ res	vendor/umonkey/ufw1/src/compress.php	/^        $res = array();$/;"	v
 resHeaders	vendor/umonkey/ufw1/src/Services/S3.php	/^        $resHeaders = array();$/;"	v
 resizeImage	vendor/umonkey/ufw1/src/Services/Thumbnailer.php	/^    protected function resizeImage($img, int $nw, int $nh)$/;"	f
 resizeImage	vendor/umonkey/ufw1/src/Services/Thumbnailer2.php	/^    protected function resizeImage($img, $nw, $nh)$/;"	f
-response	src/Controllers/ErrorController.php	/^        $response = $this->render($request, $tpl, $data);$/;"	v
+response	src/Controllers/ErrorController.php	/^            $response = $this->render($request, $templates, $data);$/;"	v
 response	vendor/umonkey/ufw1/src/Controller.php	/^            $response = $response->withHeader("Last-Modified", $ts);$/;"	v
 response	vendor/umonkey/ufw1/src/Controller.php	/^        $response = $response->withHeader("Content-Type", $type)$/;"	v
 response	vendor/umonkey/ufw1/src/Controller.php	/^        $response = new Response(200);$/;"	v
@@ -1407,7 +1410,7 @@ role	vendor/umonkey/ufw1/src/Services/Wiki.php	/^        $role = $user['role'] ?
 roles	vendor/umonkey/ufw1/src/Services/Wiki.php	/^        $roles = $this->settings['editor_roles'] ?? null;$/;"	v
 roles	vendor/umonkey/ufw1/src/Services/Wiki.php	/^        $roles = $this->settings['reader_roles'] ?? null;$/;"	v
 rollback	vendor/umonkey/ufw1/src/Services/Database.php	/^    public function rollback(): void$/;"	f
-root	src/Controllers/ErrorController.php	/^        $root = dirname($_SERVER["DOCUMENT_ROOT"]);$/;"	v
+root	src/Controllers/ErrorController.php	/^        $root = dirname($request->getServerParam('DOCUMENT_ROOT'));$/;"	v
 root	vendor/umonkey/ufw1/src/Controller.php	/^        $root = $request->getServerParam("DOCUMENT_ROOT");$/;"	v
 root	vendor/umonkey/ufw1/src/Handlers/Error.php	/^        $root = dirname($_SERVER["DOCUMENT_ROOT"]);$/;"	v
 round_number	vendor/umonkey/ufw1/src/compress.php	/^    private function round_number($n)$/;"	f
@@ -1591,7 +1594,7 @@ st	vendor/umonkey/ufw1/src/Services/S3.php	/^            $st = $this->settings['
 st	vendor/umonkey/ufw1/src/Services/Telega.php	/^        $st = $this->settings;$/;"	v
 stack	src/Controllers/ErrorController.php	/^        $stack = $e->getTraceAsString();$/;"	v
 stack	src/Controllers/ErrorController.php	/^        $stack = preg_replace_callback('@(\\(([^()]+)\\))@', function ($m) {$/;"	v
-stack	src/Controllers/ErrorController.php	/^        $stack = str_replace($root . "\/", "", $stack);$/;"	v
+stack	src/Controllers/ErrorController.php	/^        $stack = str_replace($root . '\/', '', $stack);$/;"	v
 stack	vendor/umonkey/ufw1/src/Handlers/Error.php	/^        $stack = $e->getTraceAsString();$/;"	v
 stack	vendor/umonkey/ufw1/src/Handlers/Error.php	/^        $stack = str_replace($root . "\/", "", $stack);$/;"	v
 start_index	vendor/umonkey/ufw1/src/compress.php	/^                    $start_index = $i;$/;"	v
@@ -1605,10 +1608,6 @@ startup	vendor/umonkey/ufw1/src/Services/Logger.php	/^    protected $startup = n
 state	vendor/umonkey/ufw1/src/Services/Stemmer.php	/^                        $state = 1;$/;"	v
 state	vendor/umonkey/ufw1/src/Services/Stemmer.php	/^                        $state = 2;$/;"	v
 state	vendor/umonkey/ufw1/src/Services/Stemmer.php	/^        $state = 0;$/;"	v
-status	src/Controllers/ErrorController.php	/^            $status = 401;$/;"	v
-status	src/Controllers/ErrorController.php	/^            $status = 403;$/;"	v
-status	src/Controllers/ErrorController.php	/^            $status = 404;$/;"	v
-status	src/Controllers/ErrorController.php	/^        $status = 500;$/;"	v
 status	vendor/umonkey/ufw1/src/Handlers/Error.php	/^            $status = 401;$/;"	v
 status	vendor/umonkey/ufw1/src/Handlers/Error.php	/^            $status = 403;$/;"	v
 status	vendor/umonkey/ufw1/src/Handlers/Error.php	/^            $status = 404;$/;"	v
@@ -1643,6 +1642,12 @@ tasks	vendor/umonkey/ufw1/src/Handlers/Tasks.php	/^        $tasks = $this->db->f
 tasks	vendor/umonkey/ufw1/src/Handlers/Tasks.php	/^        $tasks = $this->db->fetch("SELECT * FROM `tasks` WHERE `run_after` <= ? ORDER BY `priority`, `created`", [time()]);$/;"	v
 template	src/Services/NodePictureService.php	/^            $template = $this->getTemplate();$/;"	v
 template	vendor/umonkey/ufw1/src/Services/Template.php	/^        $template = $this->twig->load($fileName);$/;"	v
+templates	src/Controllers/ErrorController.php	/^            $templates = ['errors\/forbidden.twig', 'errors\/403.twig', 'errors\/default.twig'];$/;"	v
+templates	src/Controllers/ErrorController.php	/^            $templates = ['errors\/notfound.twig', 'errors\/404.twig', 'errors\/default.twig'];$/;"	v
+templates	src/Controllers/ErrorController.php	/^            $templates = ['errors\/other.twig', 'errors\/default.twig'];$/;"	v
+templates	src/Controllers/ErrorController.php	/^            $templates = ['errors\/unauthorized.twig', 'errors\/401.twig', 'errors\/default.twig'];$/;"	v
+templates	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^            $templates = [$/;"	v
+templates	vendor/umonkey/ufw1/src/Services/Template.php	/^            $templates = [$templates];$/;"	v
 templates	vendor/umonkey/ufw1/src/Services/Template.php	/^        $templates = $settings["template_path"];$/;"	v
 terminator	vendor/umonkey/ufw1/src/compress.php	/^                $terminator = ')';$/;"	v
 terminator	vendor/umonkey/ufw1/src/compress.php	/^            $terminator = $m[1]; \/\/ ', " or empty (not quoted)$/;"	v
@@ -1702,13 +1707,9 @@ token_tring	vendor/umonkey/ufw1/src/compress.php	/^                $token_tring 
 top	src/Services/NodePictureService.php	/^        $top = 220;$/;"	v
 total	vendor/umonkey/ufw1/src/Services/S3.php	/^                $total = $ult;$/;"	v
 total	vendor/umonkey/ufw1/src/Services/S3.php	/^        $total = null;$/;"	v
-tpl	src/Controllers/ErrorController.php	/^            $tpl = "forbidden.twig";$/;"	v
-tpl	src/Controllers/ErrorController.php	/^            $tpl = "notfound.twig";$/;"	v
-tpl	src/Controllers/ErrorController.php	/^            $tpl = "unauthorized.twig";$/;"	v
-tpl	src/Controllers/ErrorController.php	/^        $tpl = "error.twig";$/;"	v
-tpl	vendor/umonkey/ufw1/src/Handlers/Error.php	/^            $tpl = "notfound.twig";$/;"	v
-tpl	vendor/umonkey/ufw1/src/Handlers/Error.php	/^            $tpl = "unauthorized.twig";$/;"	v
-tpl	vendor/umonkey/ufw1/src/Handlers/Error.php	/^        $tpl = "error.twig";$/;"	v
+tpl	vendor/umonkey/ufw1/src/Handlers/Error.php	/^            $tpl = "errors\/notfound.twig";$/;"	v
+tpl	vendor/umonkey/ufw1/src/Handlers/Error.php	/^            $tpl = "errors\/unauthorized.twig";$/;"	v
+tpl	vendor/umonkey/ufw1/src/Handlers/Error.php	/^        $tpl = "errors\/default.twig";$/;"	v
 tq	vendor/umonkey/ufw1/src/CommonHandler.php	/^        $tq = $this->container->get('taskq');$/;"	v
 transact	vendor/umonkey/ufw1/src/Services/Database.php	/^    public function transact($callback)$/;"	f
 ts	vendor/umonkey/ufw1/src/Controller.php	/^            $ts = gmstrftime("%a, %d %b %Y %H:%M:%S %z", $lastmod);$/;"	v
@@ -1828,7 +1829,6 @@ words	vendor/umonkey/ufw1/src/Services/Search.php	/^        $words = array_diff(
 words	vendor/umonkey/ufw1/src/Services/Search.php	/^        $words = preg_split('@[^a-zабвгдеёжзийклмнопрстуфхцчшщыьэъюя0-9]+@u', $text, -1, PREG_SPLIT_NO_EMPTY);$/;"	v
 write	vendor/umonkey/ufw1/src/compress.php	/^    protected function write($dst, $data)$/;"	f
 x	vendor/umonkey/ufw1/src/Controllers/Wiki.php	/^                    $x = strnatcasecmp($a["name"], $b["name"]);$/;"	v
-xhr	src/Controllers/ErrorController.php	/^        $xhr = $_SERVER['HTTP_X_REQUESTED_WITH'] ?? null;$/;"	v
 xml	vendor/umonkey/ufw1/src/Controller.php	/^        $xml = $this->template->render($templateName, $data);$/;"	v
 xml	vendor/umonkey/ufw1/src/Controller.php	/^        $xml = preg_replace('@>\\s*<@', "><", $xml);$/;"	v
 xml	vendor/umonkey/ufw1/src/Handlers/Search.php	/^        $xml = "<OpenSearchDescription xmlns='http:\/\/a9.com\/-\/spec\/opensearch\/1.1\/' xmlns:moz='http:\/\/www.mozilla.org\/2006\/browser\/search\/'>\\n";$/;"	v

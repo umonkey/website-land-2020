@@ -1,3 +1,6 @@
+2020-01-24:
+- Organize templates in folders: layouts, pages, errors.
+
 2020-01-22:
 - VK Community widget, light version: loads the real widget on click.
 - Configurable wiki page splash image.
