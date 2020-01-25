@@ -33,3 +33,7 @@ set foldenable
 "set foldclose=all
 "set foldcolumn=4
 set foldnestmax=2
+
+
+" Local NERDTree bookmarks
+let g:NERDTreeBookmarksFile = '.NERDTreeBookmarks'
