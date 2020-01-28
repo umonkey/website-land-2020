@@ -15,7 +15,7 @@ require __DIR__ . '/functions.php';
 
 // Instantiate the app
 $settings = require __DIR__ . '/settings.php';
-$app = new \Slim\App($settings);
+$app = new \Ufw1\App($settings);
 
 // Set up dependencies
 require __DIR__ . '/dependencies.php';
