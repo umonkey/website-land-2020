@@ -39,7 +39,7 @@ upgrade:
 	hg addremove vendor composer.*
 
 deploy: assets
-	rsync -avz -e ssh --delete --exclude .hg --exclude .git public vendor src templates $(REMOTE):$(FOLDER)
+	rsync -avz -e ssh --delete --exclude .hg bin config public src themes vendor $(REMOTE):$(FOLDER)
 
 update-ufw:
 	hg --cwd vendor/umonkey/ufw1/ up -C
