@@ -10,7 +10,7 @@ sql:
 	sqlite3 -header var/database/database.sqlite3
 
 sql-remote:
-	ssh -t $(REMOTE) mysql
+	ssh -t $(REMOTE) cd $(FOLDER) \; sqlite3 -header var/database/database.sqlite3
 
 log:
 	ssh $(REMOTE) tail -F $(FOLDER)/tmp/php.log
