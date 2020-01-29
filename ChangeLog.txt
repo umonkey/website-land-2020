@@ -1,3 +1,6 @@
+2020-01-29:
+- Properly reload disqus comments.
+
 2020-01-24:
 - Organize templates in folders: layouts, pages, errors.
 

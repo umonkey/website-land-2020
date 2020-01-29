@@ -88,6 +88,6 @@
     {% endif %}
 
     {% if page.comments != 'off' %}
-        <div id="disqus_thread"></div>
+        <div id="disqus_thread"{% if page.disqus_id %} data-id="{{ page.disqus_id }}"{% endif %}{% if page.title %} data-title="{{ page.title }}"{% endif %}></div>
     {% endif %}
 {% endblock %}
