@@ -10,6 +10,7 @@ $app->installAccount($app);
 $app->installAdmin($app);
 $app->installFiles($app);
 $app->installSearch($app);
+$app->installSitemap($app);
 $app->installTaskQ($app);
 $app->installWiki($app);
 
