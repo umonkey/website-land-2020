@@ -5,3 +5,5 @@
 - [ ] Переключить старые урлы на /node/123.
 - [ ] Главная (или лагерь) как на https://thecloveclub.com/
 - [ ] WSOD: http://land.local/draft
+- [ ] Яндекс.Турбо
+- [ ] Google Amp
