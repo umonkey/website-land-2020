@@ -12,7 +12,7 @@ namespace App\Controllers;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
-use App\Controller;
+use Ufw1\Controller;
 
 class HomeController extends Controller
 {

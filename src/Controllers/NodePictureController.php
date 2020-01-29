@@ -10,8 +10,9 @@ namespace App\Controllers;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Ufw1\Controller;
 
-class NodePictureController extends \App\Controller
+class NodePictureController extends Controller
 {
     public function index(Request $request, Response $response, array $args): Response
     {

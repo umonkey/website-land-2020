@@ -14,6 +14,6 @@ $app->installSitemap($app);
 $app->installTaskQ($app);
 $app->installWiki($app);
 
-$app->get('/', '\App\Controllers\HomeController:index');
-$app->post('/admin/upload', '\Ufw1\Handlers\Wiki:onUpload');
-$app->get('/node/{id:[0-9]+}/kdpv', '\App\Controllers\NodePictureController:index');
+$app->get('/', 'App\Controllers\HomeController:index');
+$app->post('/admin/upload', 'Ufw1\Handlers\Wiki:onUpload');
+$app->get('/node/{id:[0-9]+}/kdpv', 'App\Controllers\NodePictureController:index');
