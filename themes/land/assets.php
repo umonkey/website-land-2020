@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'blacklist' => [
+        '/vendor/umonkey/ufw1/assets/photoalbum.css',
+    ],
+
     'public/css/app.css' => [
         '/vendor/umonkey/ufw1/assets/*.css',
         'css/*.css',
