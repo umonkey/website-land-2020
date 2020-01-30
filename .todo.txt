@@ -7,3 +7,4 @@
 - [ ] WSOD: http://land.local/draft
 - [ ] Яндекс.Турбо
 - [ ] Google Amp
+- [ ] Dashboard: metrika visitors, new pages, new files.
