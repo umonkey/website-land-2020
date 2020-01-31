@@ -1,6 +1,6 @@
 {% if user.role == 'admin' %}
     <div id='admin_bar'>
         <div class='left'>ufw &middot; <a href='/admin'>admin</a>{% if edit_link %} &middot; <a href='{{ edit_link }}'>edit page</a>{% endif %} &middot; <a href='{{ request.uri }}{% if '?' in request.uri %}&amp;{% else %}?{% endif %}debug=tpl'>dump</a></div>
-        <div class='right'><a href='/logout'>logout</a></div>
+        <div class='right'><a href='https://github.com/umonkey/ufw1' target='_blank'>Git</a> &middot; <a href='/logout'>Log Out</a></div>
     </div>
 {% endif %}
