@@ -1,5 +1,6 @@
 2020-01-31:
 - Added admin bar.
+- Trivial CLI rewrite editor (import-export).
 
 2020-01-29:
 - Properly reload disqus comments.
