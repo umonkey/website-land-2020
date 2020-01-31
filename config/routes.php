@@ -9,6 +9,7 @@ declare(strict_types=1);
 $app->installAccount($app);
 $app->installAdmin($app);
 $app->installFiles($app);
+$app->installRewrite($app);
 $app->installSearch($app);
 $app->installSitemap($app);
 $app->installTaskQ($app);
