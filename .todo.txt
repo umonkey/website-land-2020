@@ -1,12 +1,12 @@
-- [ ] Rewrite UI.
-- [ ] Floating admin panel on the website.
+- [x] Rewrite UI.
+- [x] Floating admin panel on the website.
 - [ ] Fail on undefined variables.
-- [ ] Запустить в исходном виде, без подмены урлов.
+- [x] Запустить в исходном виде, без подмены урлов.
 - [ ] Починить кнопку загрузки картинок в редакторе статей.
-- [ ] Переделать статьи и заметки в wiki.
+- [x] Переделать статьи и заметки в wiki.
 - [ ] Переключить старые урлы на /node/123.
 - [ ] Главная (или лагерь) как на https://thecloveclub.com/
-- [ ] WSOD: http://land.local/draft
+- [x] WSOD: http://land.local/draft
 - [ ] Яндекс.Турбо
 - [ ] Google Amp
-- [ ] Dashboard: metrika visitors, new pages, new files.
+- [x] Dashboard: metrika visitors, new pages, new files.
