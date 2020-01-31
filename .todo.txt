@@ -1,4 +1,5 @@
 - [ ] Rewrite UI.
+- [ ] Floating admin panel on the website.
 - [ ] Fail on undefined variables.
 - [ ] Запустить в исходном виде, без подмены урлов.
 - [ ] Починить кнопку загрузки картинок в редакторе статей.
