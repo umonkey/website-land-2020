@@ -18,7 +18,10 @@ class HomeController extends Controller
 {
     public function index(Request $request, Response $response, array $args): Response
     {
+        $user = $this->auth->getUser($request);
+
         return $this->render($request, 'pages/home.twig', [
+            'user' => $user,
         ]);
     }
 }

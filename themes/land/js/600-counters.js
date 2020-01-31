@@ -5,6 +5,8 @@
  **/
 jQuery(function ($) {
     $(document).on('ufw:reload', function () {
-        ym(14608519, 'hit', window.location.href);
+        if (typeof ym !== 'undefined') {
+            ym(14608519, 'hit', window.location.href);
+        }
     });
 });

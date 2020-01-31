@@ -52,24 +52,7 @@
     </head>
     <body>
         <div class='{% block body_class %}{{ body_class }}{% endblock %} spa-container{% if page.splash %} with-splash{% endif %}'>
-            <header>
-                <div class='title'>
-                    <div class='wrap'>
-                        <a href='/'>
-                            <img src='/images/logo-trees.png' alt='Ясный лес'/>
-                        </a>
-                    </div>
-                </div>
-
-                <div class='menu'>
-                    <ul class='wrap'>
-                        <li class='{% if page.name == 'Блог' or page.section == 'blog' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Блог'>Блог</a></li>
-                        <li class='{% if page.name == 'Питомник' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Питомник'>Питомник</a></li>
-                        <li class='{% if page.name == 'Лагерь' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=Лагерь'>Волонтёрам</a></li>
-                        <li class='{% if page.name == 'О нас' %}active{% else %}inactive{% endif %}'><a href='/wiki?name=О нас'>О нас</a></li>
-                    </ul>
-                </div>
-            </header>
+            {% include 'parts/header.twig' %}
 
             {% block splash %}{% endblock %}
 

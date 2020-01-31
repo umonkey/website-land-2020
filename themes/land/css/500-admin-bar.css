@@ -1,0 +1,14 @@
+#admin_bar {
+    line-height: 30px;
+    padding: 0 10px;
+    background-color: #000;
+    color: #ccc;
+    font-size: 14px;
+    display: flex;
+}
+#admin_bar a {
+    color: #fff;
+}
+#admin_bar .left {
+    flex-grow: 1;
+}
