@@ -15,6 +15,9 @@ sql-remote:
 log:
 	ssh $(REMOTE) tail -F $(FOLDER)/tmp/php.log
 
+log-404:
+	ssh $(REMOTE) grep '" 404 "' /var/log/nginx/land.umonkey.net-access.log \| cut -d'" "'  -f 7 \| sort -u
+
 pull-db:
 	ssh $(REMOTE) mysqldump u468297_pro | pv | mysql
 	echo "DELETE FROM sessions;" | mysql
