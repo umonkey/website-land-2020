@@ -52,7 +52,9 @@
     </head>
     <body>
         <div class='{% block body_class %}{{ body_class }}{% endblock %} spa-container{% if page.splash %} with-splash{% endif %}'>
-            {% include 'parts/header.twig' %}
+            {% block header %}
+                {% include 'parts/header.twig' %}
+            {% endblock %}
 
             {% block splash %}{% endblock %}
 
@@ -74,12 +76,14 @@
                 </div>
             </main>
 
-            <footer>
-                <div class='container'>
-                    <p><a href="/">Главная</a> &middot; <a href="/wiki?name=Питомник">питомник</a> &middot; <a href="/wiki?name=Блог">блог</a> &middot; <a href="/wiki?name=Лагерь">волонтёрам</a> &middot; <a href="/wiki?name=Карта сайта">карта сайта</a></p>
-                    <p>&copy; 2012–2019 <a href="/wiki?name=О нас">Владимир и&nbsp;Юлия Фрунзе</a> &middot; <a href="/wiki?name=Связаться с нами">написать письмо</a> &middot; <a href="https://vk.com/umonkey.land" target="_blank" title="Жизнь в&nbsp;деревьях">vk.com</a> &middot; <a href="https://twitter.com/umonkey" target="_blank">twitter</a> &middot; <a href="https://www.youtube.com/user/umonkey/videos" target="_blank">youtube</a> &middot; <a href="https://www.instagram.com/nebo_eco_village/" target="_blank">instagram</a></p>
-                </div>
-            </footer>
+            {% block footer %}
+                <footer>
+                    <div class='container'>
+                        <p><a href="/">Главная</a> &middot; <a href="/wiki?name=Питомник">питомник</a> &middot; <a href="/wiki?name=Блог">блог</a> &middot; <a href="/wiki?name=Лагерь">волонтёрам</a> &middot; <a href="/wiki?name=Карта сайта">карта сайта</a></p>
+                        <p>&copy; 2012–2019 <a href="/wiki?name=О нас">Владимир и&nbsp;Юлия Фрунзе</a> &middot; <a href="/wiki?name=Связаться с нами">написать письмо</a> &middot; <a href="https://vk.com/umonkey.land" target="_blank" title="Жизнь в&nbsp;деревьях">vk.com</a> &middot; <a href="https://twitter.com/umonkey" target="_blank">twitter</a> &middot; <a href="https://www.youtube.com/user/umonkey/videos" target="_blank">youtube</a> &middot; <a href="https://www.instagram.com/nebo_eco_village/" target="_blank">instagram</a></p>
+                    </div>
+                </footer>
+            {% endblock %}
 
             <div id="block" style="display: none"></div>
 

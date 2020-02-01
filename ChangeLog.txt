@@ -1,6 +1,7 @@
 2020-02-01:
 - Added RSS.
 - Fixed horizontal scrollbars.
+- Wiki editor update.
 
 2020-01-31:
 - Added admin bar.
