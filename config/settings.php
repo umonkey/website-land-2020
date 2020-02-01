@@ -43,6 +43,14 @@ $settings = [
                 'url',
             ],
         ],
+
+        'rss' => [
+            'wiki' => [
+                'title' => 'Жизнь в деревьях',
+                'link' => 'https://land.umonkey.net/wiki?name=%D0%91%D0%BB%D0%BE%D0%B3',
+                'limit' => 10,
+            ],
+        ],
     ],
 
     'node_forms' => include __DIR__ . '/node-forms.php',
