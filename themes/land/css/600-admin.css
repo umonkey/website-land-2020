@@ -44,3 +44,7 @@ table.hover tr:hover {
 table.small td {
     font-size: 14px;
 }
+
+.admin-first {
+    margin-bottom: 20px;
+}

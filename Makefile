@@ -39,8 +39,6 @@ tags:
 
 templates:
 	php -f bin/compile-templates.php
-	find var/twig_cache -type d -exec chmod 755 {} \;
-	find var/twig_cache -type f -exec chmod 644 {} \;
 
 upgrade:
 	composer upgrade
