@@ -22,6 +22,7 @@
 .wikinav {
     background-color: #f8f8f8;
     padding: 10px;
+    margin: 20px 0;
 }
 .wikinav > div > div {
     display: inline-block;
