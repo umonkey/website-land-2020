@@ -1,7 +1,7 @@
 REMOTE=vhost.umonkey.net
 FOLDER=hosts/land.umonkey.net
 
-all: assets tags
+all: assets templates tags
 
 assets:
 	php -f vendor/bin/build-assets themes/land/assets.php
@@ -36,6 +36,11 @@ syntax:
 tags:
 	@echo "Rebuilding ctags (see doc/HOWTO_dev.md)"
 	@find src vendor/umonkey/ufw1/src -name "*.php" | xargs ctags-exuberant -f .tags -h ".php" -R --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP='/abstract class ([^ ]*)/\1/c/' --regex-PHP='/interface ([^ ]*)/\1/c/' --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' >/dev/null 2>&1
+
+templates:
+	php -f bin/compile-templates.php
+	find var/twig_cache -type d -exec chmod 755 {} \;
+	find var/twig_cache -type f -exec chmod 644 {} \;
 
 upgrade:
 	composer upgrade
