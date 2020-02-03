@@ -21,7 +21,13 @@ jQuery(function ($) {
 
     $(document).on('keydown', 'form', function (e) {
         if (e.ctrlKey && e.keyCode === 13) {
-            $(this).find('.btn-primary').eq(0).click();
+            var btn = $(this).find('.toolbar .btn:visible');
+            if (btn.length == 0) {
+                btn = $(this).find('.btn:visible');
+            }
+            if (btn.length > 0) {
+                btn.eq(0).click();
+            }
         }
     });
 
