@@ -1,0 +1,35 @@
+/**
+ * Форма подписки на новости.
+ **/
+.subscribe {
+    margin: 50px 0;
+    background-color: rgba(0, 128, 0, 0.5);
+}
+.subscribe > .wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    color: #040;
+}
+.subscribe input {
+    width: 200px;
+}
+.subscribe button {
+    margin-left: 10px;
+    background-color: #040;
+    color: #fff;
+    margin-right: .5em;
+}
+.subscribe button:hover {
+    background-color: #040;
+}
+.subscribe input,
+.subscribe button {
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 1px solid #040;
+    border-radius: 5px;
+}

@@ -1,0 +1,18 @@
+{##
+ # Форма подписки на новости.
+ ##}
+
+{% if node.section == 'blog' %}
+    </article></div>
+
+    <div class='subscribe'>
+        <div class='wrap'>
+            <form action='https://tinyletter.com/umonkey' method='post' target='_blank'>
+                <input type='email' name='email' placeholder='Email для отправки новостей'/>
+                <button class='btn' type='submit'>Подписаться</button> на новости, 1-2 раза в месяц
+            </form>
+        </div>
+    </div>
+
+    <div class='container'><article>
+{% endif %}

@@ -70,6 +70,8 @@
         {% endif %}
     </div>
 
+    {% include 'parts/subscribe.twig' ignore missing %}
+
     {% if page.prev or page.next %}
         <div class='wikinav'>
             <div class='wrap'>

@@ -1,3 +1,6 @@
+2020-02-04:
+- Subscribe form in blog pages.
+
 2020-02-01:
 - Added RSS.
 - Fixed horizontal scrollbars.
