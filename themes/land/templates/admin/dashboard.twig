@@ -11,7 +11,7 @@
 {% block page_contents %}
     {% include 'parts/admin-breadcrumbs.twig' with {'path': []} %}
 
-    <div class='admin-first'>
+    <div>
         <div>Управление: <a href='/admin/nodes'>документы</a>, <a href='/admin/nodes/file'>файлы</a>, <a href='/admin/nodes/user'>пользователи</a>, <a href='/admin/rewrite'>редиректы</a>.</div>
         <div>Справки: <a href='/admin/database'>состояние базы</a>, <a href='/admin/taskq'>очередь задач</a>, <a href='/admin/s3'>облачное хранилище</a>.</div>
     </div>
