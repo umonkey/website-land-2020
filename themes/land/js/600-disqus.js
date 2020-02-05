@@ -43,5 +43,6 @@ jQuery(function ($) {
         }
     };
 
+    disqus_load();
     $(document).on('ufw:reload', disqus_reload);
 });
